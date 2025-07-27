@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USMLE Step 1 Style Quiz: Diseases of the Pituitary Gland</title>
+    <style>
+        /*
+         * Custom CSS mimicking Tailwind CSS for a modern, clean design.
+         * All styles are embedded directly to ensure the file works offline
+         * without external dependencies or CDN links, as per requirements.
+         */
+
+        /* Base styles for the body */
+        body {
+            font-family: 'Inter', sans-serif; /* A clean, modern sans-serif font */
+            background-color: #f0f4f8; /* Light blue-gray background (similar to Tailwind's bg-blue-gray-100) */
+            color: #334155; /* Dark slate gray text (similar to Tailwind's text-slate-700) */
+            margin: 0;
+            padding: 1rem; /* Default padding for smaller screens (p-4) */
+            line-height: 1.5; /* Default line height */
+        }
+
+        /* Responsive padding for larger screens (sm:p-8) */
+        @media (min-width: 640px) { /* Tailwind's 'sm' breakpoint */
+            body {
+                padding: 2rem;
+            }
+        }
+
+        /* Wrapper for the entire quiz content */
+        .quiz-wrapper {
+            max-width: 48rem; /* Equivalent to Tailwind's max-w-3xl (which is 48rem or 768px) */
+            margin-left: auto; /* mx-auto to center the block */
+            margin-right: auto;
+        }
+
+        /* Main title styling */
+        .quiz-title {
+            font-size: 2.25rem; /* text-4xl */
+            font-weight: 700; /* font-bold */
+            text-align: center; /* text-center */
+            margin-bottom: 2rem; /* mb-8 */
+            color: #1d4ed8; /* A vibrant blue (similar to Tailwind's text-blue-700) */
+        }
+
+        /* Styling for each individual question card */
+        .question-card {
+            background-color: #ffffff; /* White background (bg-white) */
+            border-radius: 0.75rem; /* Rounded corners (rounded-xl) */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Soft shadow (shadow-md) */
+            padding: 1.5rem; /* Inner padding (p-6) */
+            margin-bottom: 1.5rem; /* Space between question cards (mb-6) */
+        }
+
+        /* Styling for the question text */
+        .question-text {
+            font-size: 1.25rem; /* text-xl */
+            font-weight: 600; /* font-semibold */
+            margin-bottom: 1rem; /* mb-4 */
+            color: #1f2937; /* Dark gray text (text-gray-800) */
+        }
+
+        /* Styling for each answer option item */
+        .option-item {
+            cursor: pointer; /* Indicates it's clickable */
+            padding: 0.75rem 1rem; /* Vertical and horizontal padding (py-3 px-4) */
+            border-radius: 0.5rem; /* Slightly rounded corners (rounded-lg) */
+            margin-bottom: 0.5rem; /* Space between options (mb-2) */
+            transition: background-color 0.2s ease-in-out; /* Smooth transition for hover effect */
+            border: 1px solid #e2e8f0; /* Light gray border (border border-gray-200) */
+            color: #374151; /* Medium dark gray text (text-gray-700) */
+        }
+
+        /* Hover effect for answer options */
+        .option-item:hover {
+            background-color: #f3f4f6; /* Light gray background on hover (hover:bg-gray-100) */
+        }
+
+        /* Highlight for the correct answer when explanation is shown */
+        .correct-answer {
+            background-color: #d1fae5; /* Light green background (bg-green-100) */
+            border-color: #34d399; /* Green border (border-green-400) */
+        }
+
+        /* Styling for the explanation section */
+        .explanation {
+            display: none; /* Hidden by default */
+            margin-top: 1rem; /* Space above explanation (mt-4) */
+            padding-top: 1rem; /* Padding above explanation text (pt-4) */
+            border-top: 1px solid #e2e8f0; /* Top border (border-t border-gray-200) */
+            color: #475569; /* Slate gray text (text-slate-600) */
+            font-size: 0.95rem; /* Slightly smaller text for explanation */
+            line-height: 1.6;
+        }
+
+        /* Class to show the explanation */
+        .explanation.show {
+            display: block;
+        }
+
+        /* Styling for the "Show Explanation" button */
+        .show-explanation-btn {
+            background-color: #3b82f6; /* Blue background (bg-blue-500) */
+            color: white; /* White text (text-white) */
+            padding: 0.75rem 1.25rem; /* Padding (py-3 px-5) */
+            border-radius: 0.5rem; /* Rounded corners (rounded-lg) */
+            font-weight: 600; /* Semi-bold text (font-semibold) */
+            transition: background-color 0.2s ease-in-out; /* Smooth transition for hover effect */
+            margin-top: 1rem; /* Space above the button (mt-4) */
+            border: none; /* Remove default button border */
+            cursor: pointer; /* Indicates it's clickable */
+            outline: none; /* Remove outline on focus */
+        }
+
+        /* Hover effect for the button */
+        .show-explanation-btn:hover {
+            background-color: #2563eb; /* Darker blue on hover (hover:bg-blue-600) */
+        }
+
+        /* Styling for the disclaimer text */
+        .disclaimer {
+            text-align: center; /* Center align text (text-center) */
+            margin-top: 3rem; /* Top margin (mt-12) */
+            padding: 1rem; /* Padding (p-4) */
+            font-size: 0.875rem; /* Small text (text-sm) */
+            color: #4b5563; /* Gray text (text-gray-600) */
+            border-top: 1px solid #d1d5db; /* Top border (border-t border-gray-300) */
+            padding-top: 1.5rem; /* Padding above text after border (pt-6) */
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-wrapper">
+        <h1 class="quiz-title">USMLE Step 1 Style Questions: Diseases of the Pituitary Gland</h1>
+
+        <div id="quiz-container">
+            <!-- Questions will be dynamically loaded here by JavaScript -->
+        </div>
+
+        <div class="disclaimer">
+            Disclaimer: This file was created by Ktp, with assistance from AI tools (e.g., ChatGPT, Gemini, Claude, and Perplexity) for content generation and editing. Please double-check all information for accuracy and reliability.
+        </div>
+    </div>
+
+    <script>
+        // Array containing all quiz questions, options, correct answers, and explanations.
+        // This data structure makes it easy to manage and render the quiz content.
+        const questionsData = [
+            {
+                question: "The anterior pituitary gland comprises approximately what percentage of the total pituitary gland volume?",
+                options: {
+                    A: "60%",
+                    B: "70%",
+                    C: "80%",
+                    D: "90%",
+                    E: "95%"
+                },
+                correct: "C",
+                explanation: "The anterior pituitary (adenohypophysis) makes up approximately 80% of the total pituitary gland volume, while the posterior pituitary comprises the remaining 20%. This anatomical fact is fundamental to understanding pituitary physiology and pathology. 60% and 70% underestimate the proportion, while 90% and 95% overestimate it."
+            },
+            {
+                question: "Which cell type in the anterior pituitary is responsible for producing growth hormone?",
+                options: {
+                    A: "Lactotrophs",
+                    B: "Corticotrophs",
+                    C: "Thyrotrophs",
+                    D: "Somatotrophs",
+                    E: "Gonadotrophs"
+                },
+                correct: "D",
+                explanation: "Somatotrophs are the specific cell type in the anterior pituitary that produces growth hormone (GH). Lactotrophs produce prolactin, corticotrophs produce ACTH, thyrotrophs produce TSH, and gonadotrophs produce FSH and LH. Understanding these cell-hormone relationships is essential for comprehending pituitary adenoma classifications."
+            },
+            {
+                question: "What is the pathognomonic visual field defect associated with optic chiasm compression by a pituitary mass?",
+                options: {
+                    A: "Homonymous hemianopsia",
+                    B: "Bitemporal hemianopsia",
+                    C: "Monocular blindness",
+                    D: "Central scotoma",
+                    E: "Quadrantanopia"
+                },
+                correct: "B",
+                explanation: "Bitemporal hemianopsia (loss of lateral visual fields) is pathognomonic for suprasellar mass lesions compressing the optic chiasm. This occurs because the crossing fibers from the nasal retina (responsible for temporal vision) are compressed. Homonymous hemianopsia suggests posterior visual pathway lesions, while monocular blindness, central scotoma, and quadrantanopia indicate different anatomical involvement."
+            },
+            {
+                question: "Which hormone is most commonly elevated in functional pituitary adenomas?",
+                options: {
+                    A: "Growth hormone",
+                    B: "ACTH",
+                    C: "TSH",
+                    D: "Prolactin",
+                    E: "FSH"
+                },
+                correct: "D",
+                explanation: "Prolactinomas are the most common functioning pituitary adenomas, accounting for approximately 30% of all pituitary adenomas. They are particularly common as microadenomas in women of reproductive age. Growth hormone-secreting adenomas, ACTH-secreting adenomas, and TSH-secreting adenomas are less common, while FSH-secreting adenomas are typically non-functioning clinically."
+            },
+            {
+                question: "What percentage of anterior pituitary parenchyma must be lost before clinical hypopituitarism becomes apparent?",
+                options: {
+                    A: "25%",
+                    B: "50%",
+                    C: "65%",
+                    D: "75%",
+                    E: "90%"
+                },
+                correct: "D",
+                explanation: "Approximately 75% of anterior pituitary parenchyma must be lost before clinical signs of hypopituitarism become apparent. This demonstrates the significant functional reserve of the pituitary gland. Lesser percentages (25%, 50%, 65%) are insufficient to cause clinical manifestations, while 90% would represent very severe destruction that would cause obvious symptoms much earlier in the disease process."
+            },
+            {
+                question: "A 25-year-old woman presents with amenorrhea and galactorrhea. Before attributing these symptoms to a prolactinoma, which conditions must be excluded?",
+                options: {
+                    A: "Hypothyroidism and pregnancy",
+                    B: "Diabetes mellitus and hypertension",
+                    C: "Hyperthyroidism and menopause",
+                    D: "Adrenal insufficiency and liver disease",
+                    E: "Kidney disease and heart failure"
+                },
+                correct: "A",
+                explanation: "Pregnancy and hypothyroidism are essential exclusions before diagnosing prolactinoma as the cause of hyperprolactinemia. Pregnancy naturally elevates prolactin levels, and hypothyroidism increases TRH, which stimulates prolactin release. The other combinations, while potentially relevant to general health assessment, are not primary causes of pathological hyperprolactinemia that would mimic prolactinoma."
+            },
+            {
+                question: "Which genetic mutation is found in approximately 40% of growth hormone-secreting pituitary adenomas?",
+                options: {
+                    A: "MEN1 mutations",
+                    B: "USP8 mutations",
+                    C: "GNAS mutations",
+                    D: "TP53 mutations",
+                    E: "RET mutations"
+                },
+                correct: "C",
+                explanation: "GNAS mutations are found in approximately 40% of somatotroph (growth hormone-secreting) adenomas. These mutations result in persistent cAMP generation and unchecked cellular proliferation. MEN1 mutations predispose to multiple adenoma types but are less specific to GH adenomas. USP8 mutations are associated with corticotroph adenomas. TP53 and RET mutations are not typically associated with pituitary adenomas."
+            },
+            {
+                question: "What is the best screening test for acromegaly?",
+                options: {
+                    A: "Random growth hormone level",
+                    B: "IGF-1 level",
+                    C: "Oral glucose tolerance test",
+                    D: "Growth hormone stimulation test",
+                    E: "24-hour urine growth hormone"
+                },
+                correct: "B",
+                explanation: "IGF-1 is the best screening test for acromegaly because it reflects integrated growth hormone secretion over time and is not subject to the pulsatile fluctuations that make random GH levels unreliable. The oral glucose suppression test is the gold standard for confirming diagnosis but is not used for screening. Growth hormone stimulation tests are used for GH deficiency, and 24-hour urine GH is not a standard test."
+            },
+            {
+                question: "A 45-year-old man presents with enlarged hands and feet, prognathism, and excessive sweating. His condition developed after epiphyseal plate closure. What is the most likely diagnosis?",
+                options: {
+                    A: "Gigantism",
+                    B: "Acromegaly",
+                    C: "Cushing's disease",
+                    D: "Hypothyroidism",
+                    E: "Hyperparathyroidism"
+                },
+                correct: "B",
+                explanation: "Acromegaly occurs when growth hormone excess develops after epiphyseal plate closure in adults, leading to enlargement of hands, feet, and facial features including prognathism. Gigantism occurs before epiphyseal closure in children and causes generalized body size increase. Cushing's disease would present with different features like moon facies and truncal obesity. Hypothyroidism and hyperparathyroidism do not typically cause these specific skeletal changes."
+            },
+            {
+                question: "A postpartum woman cannot lactate and develops amenorrhea, fatigue, and inability to tan. What is the most likely underlying pathophysiology?",
+                options: {
+                    A: "Hypothalamic tumor",
+                    B: "Postpartum thyroiditis",
+                    C: "Pituitary apoplexy",
+                    D: "Sheehan syndrome",
+                    E: "Lymphocytic hypophysitis"
+                },
+                correct: "D",
+                explanation: "Sheehan syndrome is ischemic necrosis of the pituitary following obstetric hemorrhage and shock. The inability to lactate (prolactin deficiency) is often the first manifestation, followed by other hormone deficiencies causing amenorrhea (gonadotropin deficiency), fatigue (ACTH/TSH deficiency), and inability to tan (ACTH deficiency). The pregnancy-enlarged pituitary is particularly vulnerable to ischemia without proportional blood supply increase."
+            },
+            {
+                question: "What distinguishes Nelson syndrome from typical Cushing's disease?",
+                options: {
+                    A: "It occurs before adrenalectomy and causes hyperpigmentation",
+                    B: "It occurs after bilateral adrenalectomy and causes hyperpigmentation",
+                    C: "It occurs spontaneously and causes only mass effects",
+                    D: "It occurs after unilateral adrenalectomy and causes diabetes",
+                    E: "It occurs after thyroidectomy and causes visual symptoms"
+                },
+                correct: "B",
+                explanation: "Nelson syndrome is characterized by a large, destructive pituitary adenoma that develops after bilateral adrenalectomy, with associated hyperpigmentation due to MSH co-secretion with ACTH. The pathogenesis involves loss of cortisol's inhibitory feedback on a pre-existing microadenoma, allowing uncontrolled growth. The timing (post-bilateral adrenalectomy) and hyperpigmentation are key distinguishing features."
+            },
+            {
+                question: "A 30-year-old woman presents with severe headache, nausea, vomiting, and visual field defects of sudden onset. She has a known pituitary adenoma. What is the most appropriate immediate management?",
+                options: {
+                    A: "Increase oral corticosteroids and schedule outpatient MRI",
+                    B: "Prescribe analgesics and arrange routine endocrinology follow-up",
+                    C: "Perform lumbar puncture to rule out meningitis",
+                    D: "Obtain immediate neurosurgical consultation",
+                    E: "Start dopamine agonist therapy and monitor closely"
+                },
+                correct: "D",
+                explanation: "This presentation is consistent with pituitary apoplexy, a neurosurgical emergency involving hemorrhagic infarction of a pituitary adenoma. The sudden onset of severe headache, nausea, vomiting, and visual defects in a patient with known adenoma requires immediate neurosurgical evaluation due to potential for rapid clinical deterioration. Delaying treatment or pursuing other management options could be life-threatening."
+            },
+            {
+                question: "A patient produces 4 liters of dilute urine daily. After DDAVP administration, urine osmolality increases by 60% at 60 minutes. What is the most likely diagnosis?",
+                options: {
+                    A: "Primary polydipsia",
+                    B: "Nephrogenic diabetes insipidus",
+                    C: "Central diabetes insipidus",
+                    D: "SIADH",
+                    E: "Normal physiologic variation"
+                },
+                correct: "C",
+                explanation: "A >50% increase in urine osmolality following DDAVP administration indicates severe central diabetes insipidus. This response pattern demonstrates that the kidneys can respond to exogenous ADH, confirming that the problem is inadequate ADH secretion rather than renal resistance. Nephrogenic DI would show minimal or no response to DDAVP, while primary polydipsia and SIADH would present differently."
+            },
+            {
+                question: "A 28-year-old woman with a 15mm pituitary adenoma has normal prolactin levels but presents with amenorrhea and visual field defects. What is the most likely explanation for her clinical presentation?",
+                options: {
+                    A: "The adenoma is too small to cause symptoms",
+                    B: "She has a non-functioning adenoma causing mass effects and secondary hypogonadism",
+                    C: "She has undiagnosed primary ovarian failure",
+                    D: "The prolactin assay results are falsely normal",
+                    E: "She has concurrent hypothalamic dysfunction"
+                },
+                correct: "B",
+                explanation: "A 15mm adenoma (macroadenoma) with normal prolactin levels but causing mass effects (visual field defects) and secondary hypogonadism (amenorrhea from gonadotropin deficiency) is consistent with a non-functioning adenoma. These tumors cause symptoms through compression of normal pituitary tissue and adjacent structures rather than hormone excess. The size is significant enough to cause symptoms, prolactin would be elevated if it were a prolactinoma, and the pattern doesn't suggest primary ovarian failure or hypothalamic dysfunction."
+            },
+            {
+                question: "A 45-year-old man with small-cell lung carcinoma develops confusion, nausea, and seizures. Laboratory studies show plasma sodium of 118 mEq/L and plasma osmolality of 245 mOsm/kg. What is the most likely underlying mechanism?",
+                options: {
+                    A: "Tumor lysis syndrome causing hyperkalemia",
+                    B: "Ectopic ADH secretion causing water retention",
+                    C: "Paraneoplastic diabetes insipidus causing dehydration",
+                    D: "Chemotherapy-induced nephrotoxicity",
+                    E: "Malnutrition causing protein loss"
+                },
+                correct: "B",
+                explanation: "Small-cell lung carcinoma is the most frequent cause of ectopic ADH secretion leading to SIADH. The clinical presentation of confusion, nausea, and seizures with severe hyponatremia (118 mEq/L) and low plasma osmolality (245 mOsm/kg) is classic for SIADH. The mechanism involves excessive ADH leading to water retention, dilutional hyponatremia, and decreased plasma osmolality. The other options don't explain this specific electrolyte and osmolality pattern."
+            },
+            {
+                question: "A 55-year-old woman presents with fatigue, weight loss, and hyponatremia. She has a history of traumatic brain injury 2 years ago. Her morning cortisol is low, but aldosterone levels are normal. What hormone deficiency best explains her presentation?",
+                options: {
+                    A: "Growth hormone deficiency",
+                    B: "Thyroid hormone deficiency",
+                    C: "ACTH deficiency",
+                    D: "ADH excess",
+                    E: "Prolactin deficiency"
+                },
+                correct: "C",
+                explanation: "ACTH deficiency (secondary adrenal insufficiency) best explains this presentation. The combination of fatigue, weight loss, hyponatremia, and low morning cortisol following traumatic brain injury is classic for ACTH deficiency. Importantly, aldosterone levels remain normal because aldosterone production is primarily regulated by the renin-angiotensin system, not ACTH. This distinguishes secondary from primary adrenal insufficiency. The other hormone deficiencies wouldn't cause this specific pattern."
+            },
+            {
+                question: "A 35-year-old woman has undergone bilateral adrenalectomy for Cushing's syndrome. Two years later, she develops severe headaches, visual field defects, and marked skin hyperpigmentation. What preventative measure might have avoided this complication?",
+                options: {
+                    A: "More aggressive postoperative corticosteroid replacement",
+                    B: "Preoperative pituitary irradiation",
+                    C: "Unilateral rather than bilateral adrenalectomy",
+                    D: "Concurrent thyroidectomy",
+                    E: "Prophylactic growth hormone therapy"
+                },
+                correct: "B",
+                explanation: "This describes Nelson syndrome, which could have been prevented by preoperative pituitary irradiation. The syndrome develops when loss of cortisol feedback allows an existing pituitary microadenoma to grow unchecked, causing mass effects and hyperpigmentation from ACTH/MSH excess. Pituitary irradiation before adrenalectomy can prevent this progression by treating the underlying pituitary adenoma. Corticosteroid replacement, unilateral adrenalectomy, thyroidectomy, or GH therapy would not address the fundamental problem."
+            },
+            {
+                question: "A 42-year-old man with acromegaly is found to have a family history of pancreatic islet cell tumors and hyperparathyroidism. Genetic testing would most likely reveal a mutation in which gene?",
+                options: {
+                    A: "GNAS",
+                    B: "USP8",
+                    C: "MEN1",
+                    D: "RET",
+                    E: "VHL"
+                },
+                correct: "C",
+                explanation: "The combination of acromegaly (pituitary adenoma), pancreatic islet cell tumors, and hyperparathyroidism (parathyroid adenoma/hyperplasia) is classic for Multiple Endocrine Neoplasia type 1 (MEN1) syndrome. MEN1 gene mutations predispose to multiple adenoma types affecting these three organ systems. While GNAS mutations occur in sporadic GH adenomas, the family history and multi-organ involvement strongly suggests MEN1. USP8 affects corticotroph adenomas, RET is associated with MEN2, and VHL causes different tumor patterns."
+            },
+            {
+                question: "A postpartum woman presents with inability to lactate, amenorrhea, and episodes of confusion. Her sodium is 128 mEq/L. She likely has deficiencies of multiple pituitary hormones. Which combination of hormone replacement therapies should be initiated first?",
+                options: {
+                    A: "Levothyroxine and growth hormone",
+                    B: "Estrogen and progesterone",
+                    C: "Hydrocortisone and levothyroxine",
+                    D: "Prolactin and growth hormone",
+                    E: "DDAVP and hydrocortisone"
+                },
+                correct: "C",
+                explanation: "This represents Sheehan syndrome with multiple hormone deficiencies including hyponatremia suggesting possible ACTH deficiency. Hydrocortisone (for ACTH deficiency) must be started before levothyroxine (for TSH deficiency) because thyroid hormone replacement can precipitate adrenal crisis in untreated adrenal insufficiency by increasing cortisol metabolism. The combination of hydrocortisone and levothyroxine addresses the most life-threatening deficiencies first. Sex hormones and growth hormone are important but not immediately life-threatening."
+            },
+            {
+                question: "A 38-year-old woman presents with galactorrhea and amenorrhea. Her prolactin level is 85 ng/mL (normal <25). MRI shows a 12mm pituitary lesion. She is started on cabergoline, but after 6 months, her prolactin increases to 150 ng/mL and the tumor enlarges to 18mm. What is the most likely explanation for this treatment failure?",
+                options: {
+                    A: "The patient is non-compliant with medication",
+                    B: "The lesion is not a prolactinoma but a non-functioning adenoma with stalk compression",
+                    C: "The patient has developed dopamine receptor resistance",
+                    D: "The initial prolactin level was falsely elevated",
+                    E: "The patient has concurrent primary hypothyroidism"
+                },
+                correct: "B",
+                explanation: "When a pituitary lesion fails to respond to dopamine agonist therapy and actually grows larger with increasing prolactin levels, it's most likely a non-functioning adenoma causing stalk compression rather than a true prolactinoma. Non-functioning adenomas compress the pituitary stalk, interrupting dopamine transport and causing modest prolactin elevation (usually <100 ng/mL). These tumors don't respond to dopamine agonists and may continue growing. True prolactinomas typically shrink dramatically with dopamine agonist therapy. The clinical course described is inconsistent with medication non-compliance, receptor resistance, false lab values, or hypothyroidism."
+            }
+        ];
+
+        // Fisher-Yates shuffle algorithm: A common and efficient way to shuffle an array.
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+            }
+        }
+
+        // This function runs once the entire HTML document has been loaded and parsed.
+        document.addEventListener('DOMContentLoaded', () => {
+            const quizContainer = document.getElementById('quiz-container');
+
+            // Iterate over each question in our data array to create its HTML representation.
+            questionsData.forEach((qData, index) => {
+                // Create the main container for a single question (card).
+                const questionCard = document.createElement('div');
+                questionCard.className = 'question-card'; // Apply styling defined in the <style> block.
+
+                // Create and append the question title (e.g., "Question 1: ...").
+                const questionTitle = document.createElement('h2');
+                questionTitle.className = 'question-text'; // Apply styling for question text.
+                questionTitle.textContent = `Question ${index + 1}: ${qData.question}`;
+                questionCard.appendChild(questionTitle);
+
+                // Create a container specifically for the answer options.
+                const optionsContainer = document.createElement('div');
+                optionsContainer.className = 'options-container'; // A simple class for organization.
+                questionCard.appendChild(optionsContainer);
+
+                // Get the options as an array of [letter, text] pairs (e.g., ["A", "Option A Text"]).
+                // This allows us to shuffle the display order while retaining the original letter for correctness check.
+                let shuffledOptions = Object.entries(qData.options);
+                shuffleArray(shuffledOptions); // Shuffle the order of options.
+
+                // Create and append HTML for each shuffled option.
+                shuffledOptions.forEach(([letter, text]) => {
+                    const optionItem = document.createElement('div');
+                    optionItem.className = 'option-item'; // Apply styling for individual options.
+                    // Store the original option letter as a data attribute for later comparison.
+                    optionItem.setAttribute('data-option-letter', letter);
+                    optionItem.textContent = `${letter}) ${text}`; // Display the option letter and text.
+                    optionsContainer.appendChild(optionItem);
+                });
+
+                // Create the "Show Explanation" button.
+                const showExplanationBtn = document.createElement('button');
+                showExplanationBtn.className = 'show-explanation-btn'; // Apply button styling.
+                showExplanationBtn.textContent = 'Show Explanation';
+                questionCard.appendChild(showExplanationBtn);
+
+                // Create the explanation div, initially hidden.
+                const explanationDiv = document.createElement('div');
+                explanationDiv.className = 'explanation'; // Apply styling for the explanation.
+                // Use innerHTML to allow for bolding of "Explanation" and "Correct answer".
+                explanationDiv.innerHTML = `<strong>Explanation:</strong> ${qData.explanation}<br><strong>Correct answer:</strong> ${qData.correct}`;
+                questionCard.appendChild(explanationDiv);
+
+                // Add an event listener to the "Show Explanation" button.
+                showExplanationBtn.addEventListener('click', () => {
+                    // Toggle the 'show' class to reveal or hide the explanation.
+                    explanationDiv.classList.toggle('show');
+
+                    // Find all option items within this question's container.
+                    const options = optionsContainer.querySelectorAll('.option-item');
+                    options.forEach(option => {
+                        // Check if the current option's data-option-letter matches the correct answer.
+                        if (option.getAttribute('data-option-letter') === qData.correct) {
+                            // Toggle the 'correct-answer' class to apply/remove the green highlight.
+                            option.classList.toggle('correct-answer');
+                        }
+                    });
+
+                    // Change the button text based on the explanation's visibility state.
+                    if (explanationDiv.classList.contains('show')) {
+                        showExplanationBtn.textContent = 'Hide Explanation';
+                    } else {
+                        showExplanationBtn.textContent = 'Show Explanation';
+                    }
+                });
+
+                // Append the completed question card to the main quiz container.
+                quizContainer.appendChild(questionCard);
+            });
+        });
+    </script>
+</body>
+</html>

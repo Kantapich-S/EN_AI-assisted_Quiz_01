@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Growth Hormone and Prolactin: USMLE Step 1 Practice Questions</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: "Inter", sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Align to top */
+            min-height: 100vh;
+            padding: 2rem 1rem; /* Add padding for mobile */
+            box-sizing: border-box;
+        }
+        .quiz-container {
+            max-width: 800px;
+            width: 100%;
+            background-color: #ffffff;
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            box-sizing: border-box;
+        }
+        .question-card {
+            background-color: #fdfdfd;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e5e7eb;
+        }
+        .question-text {
+            font-size: 1.125rem; /* text-lg */
+            font-weight: 600; /* font-semibold */
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        .option {
+            padding: 0.75rem 1rem;
+            margin-bottom: 0.5rem;
+            background-color: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+            color: #4b5563;
+        }
+        .option:hover {
+            background-color: #f3f4f6;
+        }
+        .option.correct-answer {
+            background-color: #d1fae5; /* green-100 */
+            border-color: #34d399; /* green-400 */
+            font-weight: 500;
+        }
+        .explanation-section {
+            margin-top: 1rem;
+            padding: 1rem;
+            background-color: #ecfdf5; /* green-50 */
+            border: 1px solid #a7f3d0; /* green-200 */
+            border-radius: 0.5rem;
+            color: #065f46; /* green-800 */
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .explanation-section p {
+            margin-bottom: 0.5rem;
+        }
+        .explanation-section strong {
+            color: #047857; /* green-700 */
+        }
+        .show-explanation-btn {
+            background-color: #3b82f6; /* blue-500 */
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 0.5rem;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+            font-weight: 500;
+            margin-top: 0.75rem;
+        }
+        .show-explanation-btn:hover {
+            background-color: #2563eb; /* blue-600 */
+            transform: translateY(-1px);
+        }
+        .show-explanation-btn:active {
+            transform: translateY(0);
+        }
+        .disclaimer {
+            margin-top: 2rem;
+            font-size: 0.8rem;
+            color: #6b7280;
+            text-align: center;
+            padding-top: 1rem;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .quiz-container {
+                padding: 1.5rem;
+            }
+            .question-card {
+                padding: 1rem;
+            }
+            .question-text {
+                font-size: 1rem;
+            }
+            .option {
+                padding: 0.6rem 0.8rem;
+                font-size: 0.9rem;
+            }
+            .show-explanation-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+            .explanation-section {
+                padding: 0.8rem;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1 class="text-3xl font-bold text-center mb-6 text-gray-800">Growth Hormone and Prolactin: USMLE Step 1 Practice Questions</h1>
+        <div id="quiz-questions">
+            <!-- Questions will be dynamically loaded here by JavaScript -->
+        </div>
+        <p class="disclaimer">
+            Disclaimer: This file was created by Ktp, with assistance from AI tools (e.g., ChatGPT, Gemini, Claude, and Perplexity) for content generation and editing. Please double-check all information for accuracy and reliability.
+        </p>
+    </div>
+
+    <script>
+        const questionsData = [
+            {
+                question: "Growth hormone is composed of how many amino acids?",
+                options: ["165 amino acids", "178 amino acids", "191 amino acids", "204 amino acids", "217 amino acids"],
+                correctAnswer: "191 amino acids",
+                explanation: "Growth hormone is a peptide hormone from the anterior pituitary that consists of exactly 191 amino acids. This is a fundamental structural characteristic that distinguishes it from other pituitary hormones. The other numerical options represent plausible but incorrect amino acid counts that might be confused with other hormones or represent common test distractors."
+            },
+            {
+                question: "Which hypothalamic hormone provides the primary inhibitory control of prolactin secretion?",
+                options: ["Somatostatin", "Dopamine", "Growth hormone-releasing hormone (GHRH)", "Thyrotropin-releasing hormone (TRH)", "Corticotropin-releasing hormone (CRH)"],
+                correctAnswer: "Dopamine",
+                explanation: "Dopamine from the hypothalamus provides continuous inhibitory control over prolactin secretion, making prolactin unique among anterior pituitary hormones as the only one under primary inhibitory control. Somatostatin inhibits growth hormone, not prolactin. GHRH stimulates growth hormone release. TRH actually stimulates prolactin release as a prolactin-releasing factor. CRH stimulates ACTH release from the anterior pituitary."
+            },
+            {
+                question: "During which phase of sleep does growth hormone experience its most significant secretion?",
+                options: ["REM sleep initiation", "Light NREM sleep", "1-2 hours after deep sleep onset", "During dream phases", "Upon morning awakening"],
+                correctAnswer: "1-2 hours after deep sleep onset",
+                explanation: "Growth hormone demonstrates a distinct diurnal rhythm with prolonged secretion bursts occurring 1-2 hours after deep sleep onset. This sleep-dependent pattern is crucial for normal GH physiology. REM sleep and dream phases are not associated with peak GH release. Light NREM sleep and morning awakening do not correspond to peak secretion periods."
+            },
+            {
+                question: "Which mechanism primarily mediates growth hormone's growth-promoting effects?",
+                options: ["Direct activation of muscle protein synthesis", "Stimulation of hepatic glucose production", "IGF-I production following liver GH receptor activation", "Enhanced calcium reabsorption in the kidneys", "Increased lipolysis in adipose tissue"],
+                correctAnswer: "IGF-I production following liver GH receptor activation",
+                explanation: "Growth hormone's growth-promoting effects are primarily mediated indirectly through IGF-I (somatomedin C) production after GH receptor activation in the liver. While GH has direct effects on muscle protein synthesis, lipolysis, and glucose production, the major growth-promoting actions occur via the IGF-I pathway. Calcium reabsorption is a direct effect but not the primary growth mechanism."
+            },
+            {
+                question: "What is the normal prolactin level range that should be restored within 6-8 weeks postpartum?",
+                options: ["2-5 ng/ml", "10-20 ng/ml", "25-35 ng/ml", "40-50 ng/ml", "55-65 ng/ml"],
+                correctAnswer: "10-20 ng/ml",
+                explanation: "Normal postpartum prolactin levels should return to the baseline range of 10-20 ng/ml within 6-8 weeks after delivery. This restoration occurs as the hormonal influences of pregnancy subside. Lower ranges (2-5 ng/ml) would be too low for normal physiological function. Higher ranges (25 ng/ml and above) would suggest continued elevation beyond normal postpartum recovery."
+            },
+            {
+                question: "In Laron dwarfism, which laboratory finding pattern is characteristic?",
+                options: ["Low GH levels with low IGF-I levels", "Low GH levels with normal IGF-I levels", "Normal GH levels with low IGF-I levels", "Elevated GH levels with decreased IGF-I levels", "Elevated GH levels with elevated IGF-I levels"],
+                correctAnswer: "Elevated GH levels with decreased IGF-I levels",
+                explanation: "Laron dwarfism is a GH resistance syndrome caused by GH receptor mutations, resulting in impaired tissue responsiveness to GH. This leads to elevated GH levels (due to lack of negative feedback) with decreased IGF-I levels (due to inability to respond to GH). The other patterns would suggest different conditions: low GH with low IGF-I suggests GH deficiency, while elevated GH with elevated IGF-I would suggest GH excess without resistance."
+            },
+            {
+                question: "Which condition represents a classic cause of growth hormone deficiency in women?",
+                options: ["Kallmann syndrome", "Sheehan's syndrome", "Turner syndrome", "McCune-Albright syndrome", "Prader-Willi syndrome"],
+                correctAnswer: "Sheehan's syndrome",
+                explanation: "Sheehan's syndrome, which involves postpartum pituitary infarction secondary to uterine hemorrhage, represents a classic cause of GH deficiency in women and can lead to hypopituitarism. Kallmann syndrome affects GnRH, not primarily GH. Turner syndrome is a chromosomal disorder that may affect growth through multiple mechanisms. McCune-Albright syndrome involves endocrine hyperfunction. Prader-Willi syndrome has complex endocrine abnormalities but is not a classic cause of isolated GH deficiency in women."
+            },
+            {
+                question: "During pregnancy, why doesn't milk production occur despite elevated prolactin levels?",
+                options: ["Insufficient mammary gland development", "Lack of adequate nipple stimulation", "Estrogen and progesterone inhibition of milk production", "Excessive dopamine suppression of prolactin", "Inadequate oxytocin for milk ejection"],
+                correctAnswer: "Estrogen and progesterone inhibition of milk production",
+                explanation: "During pregnancy, despite elevated prolactin levels and massive breast tissue growth, actual milk production is inhibited by high levels of estrogen and progesterone. This represents a physiological paradox where the mammary glands are prepared for lactation but milk synthesis is hormonally suppressed until after delivery when estrogen and progesterone levels drop. Mammary development is actually enhanced during pregnancy. Nipple stimulation is not the limiting factor. Dopamine suppression would decrease, not increase, prolactin. Oxytocin affects milk ejection, not synthesis."
+            },
+            {
+                question: "A 35-year-old man presents with progressive enlargement of hands and feet, coarsening facial features, and a hollow-sounding voice. Which diagnostic test would be most appropriate?",
+                options: ["Insulin-induced hypoglycemia stimulation test", "Oral glucose tolerance test with GH suppression", "Dexamethasone suppression test", "Water deprivation test", "Cosyntropin stimulation test"],
+                correctAnswer: "Oral glucose tolerance test with GH suppression",
+                explanation: "The clinical presentation describes acromegaly, which requires confirmation of GH excess. The oral glucose tolerance test with GH suppression is the appropriate diagnostic test - normally, glucose administration should suppress both GH and IGF-I levels, but in acromegaly this suppression fails to occur. Insulin-induced hypoglycemia tests for GH deficiency, not excess. The dexamethasone suppression test evaluates cortisol excess. Water deprivation tests posterior pituitary function. Cosyntropin stimulation evaluates adrenal insufficiency."
+            },
+            {
+                question: "A 28-year-old woman presents with galactorrhea and secondary amenorrhea. Her prolactin level is significantly elevated. Which medication class would be most appropriate for treatment?",
+                options: ["GnRH agonists", "Dopamine agonists", "Somatostatin analogs", "Aromatase inhibitors", "Selective estrogen receptor modulators"],
+                correctAnswer: "Dopamine agonists",
+                explanation: "Hyperprolactinemia with galactorrhea and amenorrhea is best treated with dopamine agonists, which restore normal dopaminergic inhibition of prolactin secretion. Since prolactin is under primary inhibitory control by dopamine, enhancing this pathway effectively reduces prolactin levels. GnRH agonists would worsen hypogonadism. Somatostatin analogs are used for GH excess. Aromatase inhibitors and SERMs address estrogen-related conditions but don't directly address the prolactin excess."
+            },
+            {
+                question: "Why is growth hormone considered a 'diabetogenic' hormone?",
+                options: ["It directly destroys pancreatic beta cells", "It stimulates excessive insulin production leading to hypoglycemia", "It causes insulin receptor downregulation and promotes glucose intolerance", "It inhibits glucose absorption in the intestines", "It accelerates renal glucose excretion"],
+                correctAnswer: "It causes insulin receptor downregulation and promotes glucose intolerance",
+                explanation: "Growth hormone is diabetogenic because it has anti-insulin effects, including insulin receptor downregulation and decreased glucose uptake by muscle and adipose tissue, leading to elevated blood glucose and glucose intolerance. This can progress to diabetes in susceptible individuals through hyperinsulinism and eventual beta-cell exhaustion. GH doesn't directly destroy beta cells initially, doesn't cause hypoglycemia, doesn't affect intestinal absorption primarily, and doesn't increase renal glucose excretion as a primary mechanism."
+            },
+            {
+                question: "Which statement best describes the relationship between growth hormone and prolactin receptors?",
+                options: ["GH and prolactin have equal affinity for both receptor types", "GH has affinity for prolactin receptors, but prolactin lacks affinity for GH receptors", "Prolactin has affinity for GH receptors, but GH lacks affinity for prolactin receptors", "Neither hormone can bind to the other's receptors", "Both hormones require heterodimerization to bind their respective receptors"],
+                correctAnswer: "GH has affinity for prolactin receptors, but prolactin lacks affinity for GH receptors",
+                explanation: "Due to their structural similarity as hormone family members, GH demonstrates affinity for prolactin receptors, while prolactin lacks affinity for GH receptors. This explains some of the overlapping physiological effects and cross-reactivity seen with these hormones. The relationship is not reciprocal - it's unidirectional with GH being able to interact with prolactin receptors but not vice versa."
+            },
+            {
+                question: "A 45-year-old man with acromegaly develops glucose intolerance. Which sequence of events best explains this metabolic complication?",
+                options: ["GH excess → enhanced insulin sensitivity → hypoglycemia → compensatory glucose production", "GH excess → insulin receptor upregulation → excessive glucose uptake → reactive hyperglycemia", "GH excess → insulin receptor downregulation → decreased glucose uptake → hyperinsulinism → beta-cell exhaustion", "GH excess → direct pancreatic damage → immediate insulin deficiency → ketoacidosis", "GH excess → enhanced gluconeogenesis → immediate diabetes without insulin involvement"],
+                correctAnswer: "GH excess → insulin receptor downregulation → decreased glucose uptake → hyperinsulinism → beta-cell exhaustion",
+                explanation: "In GH excess, the anti-insulin effects lead to insulin receptor downregulation and decreased glucose uptake by tissues, resulting in elevated blood glucose. This triggers hyperinsulinism as a compensatory mechanism, which eventually leads to beta-cell exhaustion and glucose intolerance progressing to diabetes. This explains why approximately 50% of acromegaly patients develop glucose intolerance and 10% develop frank diabetes. The other sequences don't accurately represent the pathophysiology of GH-induced glucose intolerance."
+            },
+            {
+                question: "A breastfeeding mother notices her milk supply is decreasing. Her prolactin levels are normal at baseline but show an appropriate 10-fold elevation with suckling. What is the most likely explanation?",
+                options: ["Primary prolactin deficiency requiring hormone replacement", "Normal physiology - the suckling response is adequate for milk maintenance", "Dopamine excess requiring dopamine antagonist therapy", "Secondary hyperprolactinemia requiring evaluation for pituitary adenoma", "Inadequate breast stimulation requiring increased nursing frequency"],
+                correctAnswer: "Normal physiology - the suckling response is adequate for milk maintenance",
+                explanation: "This represents normal postpartum lactation physiology. The description shows normal baseline prolactin levels (10-20 ng/ml range after 6-8 weeks postpartum) with appropriate 10-fold elevation in response to suckling, which is the normal physiological response that maintains milk production. A decreasing milk supply despite normal prolactin response suggests other factors (inadequate emptying, insufficient frequency, or other non-hormonal causes). The prolactin response described is physiologically appropriate and doesn't indicate deficiency, excess, or need for medication."
+            },
+            {
+                question: "A 16-year-old boy presents with continued linear growth despite his peers having completed their growth spurts. His hands and feet are disproportionately large. What condition should be suspected, and what is the key pathophysiological difference from the adult form?",
+                options: ["Acromegaly; no pathophysiological difference from adults", "Constitutional growth delay; delayed but normal epiphyseal closure", "Gigantism; occurs before epiphyseal closure allowing continued linear growth", "Marfan syndrome; connective tissue disorder affecting growth plates", "Hyperthyroidism; accelerated metabolism affecting growth hormone"],
+                correctAnswer: "Gigantism; occurs before epiphyseal closure allowing continued linear growth",
+                explanation: "This presentation suggests gigantism, which occurs in children when GH excess develops before epiphyseal closure, allowing continued linear growth acceleration. This is the key pathophysiological difference from acromegaly, which occurs after epiphyseal closure in adults and manifests as soft tissue enlargement rather than linear growth. Constitutional delay would not cause disproportionate hand and foot enlargement. Marfan syndrome has different clinical features and inheritance patterns. Hyperthyroidism doesn't typically cause this pattern of disproportionate growth."
+            },
+            {
+                question: "A 32-year-old woman with a history of postpartum hemorrhage presents with fatigue, cold intolerance, and inability to lactate. Her growth hormone stimulation test shows no response to insulin-induced hypoglycemia. Which additional findings would you expect?",
+                options: ["Elevated prolactin and normal thyroid function", "Low prolactin and hypothyroidism", "Normal prolactin and hyperthyroidism", "Elevated prolactin and hyperthyroidism", "Low prolactin and hypercortisolism"],
+                correctAnswer: "Low prolactin and hypothyroidism",
+                explanation: "This clinical presentation suggests Sheehan's syndrome (postpartum pituitary infarction) with hypopituitarism. The inability to lactate indicates prolactin deficiency, and the failed GH stimulation test confirms GH deficiency. The cold intolerance suggests hypothyroidism from TSH deficiency. In hypopituitarism, you would expect low levels of anterior pituitary hormones (including prolactin) and secondary hypothyroidism, not hyperthyroidism. Hypercortisolism would not be expected in this context of pituitary insufficiency."
+            },
+            {
+                question: "A 29-year-old man presents with gynecomastia, decreased libido, and infertility. His prolactin level is 150 ng/ml (normal <20 ng/ml). MRI shows a pituitary adenoma. Which mechanism best explains his reproductive symptoms?",
+                options: ["Direct prolactin stimulation of breast tissue with normal gonadal function", "Prolactin-induced GnRH suppression leading to reduced LH and FSH secretion", "Adenoma mass effect compressing normal pituitary tissue", "Prolactin-induced testosterone excess causing negative feedback", "Direct prolactin inhibition of testicular Leydig cells"],
+                correctAnswer: "Prolactin-induced GnRH suppression leading to reduced LH and FSH secretion",
+                explanation: "Hyperprolactinemia suppresses reproductive function by inhibiting GnRH release and reducing gonadotroph sensitivity to GnRH, leading to decreased LH and FSH secretion. This results in hypogonadism, explaining the decreased libido and infertility. The gynecomastia results from the hormonal imbalance and potential galactorrhea. While mass effect could contribute, the primary mechanism is the direct suppressive effect of prolactin on the hypothalamic-pituitary-gonadal axis. Prolactin doesn't cause testosterone excess or directly inhibit Leydig cells as the primary mechanism."
+            },
+            {
+                question: "A patient with acromegaly undergoes an oral glucose tolerance test. Two hours after glucose administration, his GH level is 8 ng/ml and IGF-I remains elevated. In a normal individual, what would you expect these values to be?",
+                options: ["GH >10 ng/ml, IGF-I elevated", "GH 5-7 ng/ml, IGF-I normal", "GH <2 ng/ml, IGF-I decreased", "GH <1 ng/ml, IGF-I unchanged", "GH undetectable, IGF-I elevated"],
+                correctAnswer: "GH <2 ng/ml, IGF-I decreased",
+                explanation: "In a normal individual, oral glucose administration should suppress GH to very low levels (<2 ng/ml) and also decrease IGF-I levels. The failure of both GH and IGF-I to suppress appropriately in this patient confirms the diagnosis of acromegaly, likely due to a pituitary adenoma that is autonomously secreting GH. Values >10 ng/ml would indicate even more severe excess. Intermediate values (5-7 ng/ml) would still be inappropriately high after glucose suppression. Unchanged IGF-I with suppressed GH would be inconsistent with normal physiology."
+            },
+            {
+                question: "A 38-year-old woman presents with amenorrhea, galactorrhea, and hirsutism. Her prolactin is elevated at 85 ng/ml. The hirsutism is most likely explained by which mechanism?",
+                options: ["Prolactin directly stimulating androgen production in the ovaries", "Prolactin-induced suppression of gonadotropins leading to altered androgen/estrogen ratio", "Prolactin cross-reactivity with growth hormone causing metabolic changes", "Pituitary adenoma co-secreting prolactin and androgens", "Prolactin-induced insulin resistance promoting androgen synthesis"],
+                correctAnswer: "Prolactin-induced suppression of gonadotropins leading to altered androgen/estrogen ratio",
+                explanation: "The hirsutism in hyperprolactinemia results from prolactin's suppression of gonadotropins (LH and FSH), which alters the normal androgen/estrogen ratio by reducing estrogen production while relatively preserving androgen production. This shift toward a more androgenic hormonal environment promotes masculine characteristics like hirsutism. Prolactin doesn't directly stimulate ovarian androgen production. While prolactin has structural similarity to GH, this doesn't explain hirsutism. Pituitary adenomas typically secrete single hormones. Insulin resistance is not the primary mechanism in prolactin-induced hirsutism."
+            },
+            {
+                question: "A research study examines the effects of a new medication on pituitary hormone secretion. The drug blocks dopamine receptors in the hypothalamus and also has anti-insulin effects. Predict the most likely hormonal changes and clinical consequences after chronic administration.",
+                options: ["Decreased prolactin, improved glucose tolerance, enhanced fertility", "Increased prolactin, glucose intolerance, reproductive dysfunction", "Normal prolactin, severe hypoglycemia, increased libido", "Decreased prolactin, normal glucose metabolism, no reproductive effects", "Increased prolactin, improved insulin sensitivity, enhanced lactation only"],
+                correctAnswer: "Increased prolactin, glucose intolerance, reproductive dysfunction",
+                explanation: "Blocking dopamine receptors would remove the primary inhibitory control of prolactin, leading to hyperprolactinemia. Combined with anti-insulin effects, this would cause glucose intolerance (similar to GH's diabetogenic effects). The elevated prolactin would suppress the reproductive axis through GnRH inhibition, causing reproductive dysfunction. This combination of effects makes option B the most physiologically consistent outcome. The other options don't account for the combined effects of dopamine blockade (prolactin elevation) and anti-insulin properties (glucose intolerance) working together to impair multiple endocrine systems."
+            }
+        ];
+
+        // Fisher-Yates shuffle algorithm
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function renderQuiz() {
+            const quizContainer = document.getElementById('quiz-questions');
+            quizContainer.innerHTML = ''; // Clear existing content
+
+            questionsData.forEach((qData, index) => {
+                const questionCard = document.createElement('div');
+                questionCard.className = 'question-card';
+                questionCard.id = `question-${index}`;
+
+                const questionText = document.createElement('p');
+                questionText.className = 'question-text';
+                questionText.textContent = `Question ${index + 1}: ${qData.question}`;
+                questionCard.appendChild(questionText);
+
+                const shuffledOptions = [...qData.options]; // Create a copy to shuffle
+                shuffleArray(shuffledOptions);
+
+                shuffledOptions.forEach(optionText => {
+                    const optionDiv = document.createElement('div');
+                    optionDiv.className = 'option';
+                    optionDiv.textContent = optionText;
+                    // Store the correct answer on the element for easy lookup
+                    if (optionText === qData.correctAnswer) {
+                        optionDiv.dataset.correct = 'true';
+                    }
+                    questionCard.appendChild(optionDiv);
+                });
+
+                const showExplanationBtn = document.createElement('button');
+                showExplanationBtn.className = 'show-explanation-btn';
+                showExplanationBtn.textContent = 'Show Explanation';
+                questionCard.appendChild(showExplanationBtn);
+
+                const explanationSection = document.createElement('div');
+                explanationSection.className = 'explanation-section hidden'; // Initially hidden
+                explanationSection.innerHTML = `<p><strong>Explanation:</strong> ${qData.explanation}</p><p><strong>Correct answer:</strong> ${qData.correctAnswer}</p>`;
+                questionCard.appendChild(explanationSection);
+
+                showExplanationBtn.addEventListener('click', () => {
+                    const isHidden = explanationSection.classList.contains('hidden');
+                    if (isHidden) {
+                        explanationSection.classList.remove('hidden');
+                        showExplanationBtn.textContent = 'Hide Explanation';
+                        // Highlight the correct answer
+                        const options = questionCard.querySelectorAll('.option');
+                        options.forEach(option => {
+                            if (option.dataset.correct === 'true') {
+                                option.classList.add('correct-answer');
+                            }
+                        });
+                    } else {
+                        explanationSection.classList.add('hidden');
+                        showExplanationBtn.textContent = 'Show Explanation';
+                        // Remove highlight
+                        const options = questionCard.querySelectorAll('.option');
+                        options.forEach(option => {
+                            option.classList.remove('correct-answer');
+                        });
+                    }
+                });
+
+                quizContainer.appendChild(questionCard);
+            });
+        }
+
+        // Render the quiz when the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', renderQuiz);
+    </script>
+</body>
+</html>

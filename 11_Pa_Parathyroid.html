@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parathyroid Pathology USMLE Step 1 Questions Quiz</title>
+    <style>
+        /* Custom CSS mimicking Tailwind CSS for a modern, clean design */
+        :root {
+            --color-primary: #4f46e5; /* indigo-600 */
+            --color-primary-dark: #4338ca; /* indigo-700 */
+            --color-gray-50: #f9fafb;
+            --color-gray-100: #f3f4f6;
+            --color-gray-200: #e5e7eb;
+            --color-gray-300: #d1d5db;
+            --color-gray-400: #9ca3af;
+            --color-gray-500: #6b7280;
+            --color-gray-700: #374151;
+            --color-gray-800: #1f2937;
+            --color-green-100: #dcfce7;
+            --color-green-200: #bbf7d0;
+            --color-green-600: #22c55e;
+        }
+
+        body {
+            font-family: "Inter", sans-serif; /* Fallback to sans-serif if Inter is not available */
+            background-color: var(--color-gray-50);
+            color: var(--color-gray-800);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .quiz-title {
+            text-align: center;
+            font-size: 2.5rem; /* Equivalent to text-4xl */
+            font-weight: 700; /* Equivalent to font-bold */
+            color: var(--color-primary-dark);
+            margin-bottom: 40px; /* Equivalent to mb-10 */
+        }
+
+        .question-card {
+            background-color: white;
+            padding: 24px; /* Equivalent to p-6 */
+            margin-bottom: 32px; /* Equivalent to mb-8 */
+            border-radius: 12px; /* Equivalent to rounded-xl */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Equivalent to shadow-md */
+            border: 1px solid var(--color-gray-200);
+        }
+
+        .question-text {
+            font-size: 1.25rem; /* Equivalent to text-xl */
+            font-weight: 600; /* Equivalent to font-semibold */
+            margin-bottom: 20px; /* Equivalent to mb-5 */
+            color: var(--color-gray-700);
+        }
+
+        .options-container {
+            margin-bottom: 20px; /* Equivalent to mb-5 */
+        }
+
+        .option {
+            background-color: var(--color-gray-100);
+            padding: 12px 16px; /* Equivalent to py-3 px-4 */
+            border-radius: 8px; /* Equivalent to rounded-lg */
+            margin-bottom: 12px; /* Equivalent to mb-3 */
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+            border: 1px solid var(--color-gray-200);
+        }
+
+        .option:hover {
+            background-color: var(--color-gray-200);
+        }
+
+        .option.correct {
+            background-color: var(--color-green-200);
+            border-color: var(--color-green-600);
+            font-weight: 500;
+        }
+
+        .show-explanation-button {
+            background-color: var(--color-primary);
+            color: white;
+            padding: 10px 20px; /* Equivalent to py-2.5 px-5 */
+            border-radius: 8px; /* Equivalent to rounded-lg */
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: background-color 0.2s ease-in-out;
+            display: block; /* Equivalent to block */
+            width: fit-content; /* Equivalent to w-fit */
+            margin-top: 20px; /* Equivalent to mt-5 */
+        }
+
+        .show-explanation-button:hover {
+            background-color: var(--color-primary-dark);
+        }
+
+        .explanation {
+            background-color: var(--color-gray-50);
+            padding: 16px; /* Equivalent to p-4 */
+            border-radius: 8px; /* Equivalent to rounded-lg */
+            margin-top: 20px; /* Equivalent to mt-5 */
+            border: 1px solid var(--color-gray-300);
+            color: var(--color-gray-700);
+            display: none; /* Hidden by default */
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            .container {
+                padding: 10px;
+            }
+            .quiz-title {
+                font-size: 2rem;
+                margin-bottom: 30px;
+            }
+            .question-card {
+                padding: 16px;
+                margin-bottom: 24px;
+            }
+            .question-text {
+                font-size: 1.125rem;
+                margin-bottom: 15px;
+            }
+            .option {
+                padding: 10px 12px;
+                margin-bottom: 10px;
+            }
+            .show-explanation-button {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+                margin-top: 15px;
+            }
+            .explanation {
+                padding: 12px;
+                margin-top: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="quiz-title">Parathyroid Pathology USMLE Step 1 Questions</h1>
+        <div id="quiz-container">
+            <!-- Questions will be dynamically loaded here by JavaScript -->
+        </div>
+        <p class="disclaimer">Disclaimer: This file was created by Ktp, with assistance from AI tools (e.g., ChatGPT, Gemini, Claude, and Perplexity) for content generation and editing. Please double-check all information for accuracy and reliability.</p>
+    </div>
+
+    <script>
+        // Quiz data containing all questions, options, correct answers, and explanations.
+        const quizData = [
+            {
+                question: "How many parathyroid glands are typically present in a healthy individual?",
+                options: [
+                    "Two glands arranged as superior and inferior pairs",
+                    "Three glands with variable anatomical positions",
+                    "Four glands arranged as superior and inferior pairs",
+                    "Five glands with one centrally located",
+                    "Six glands arranged in three bilateral pairs"
+                ],
+                correctAnswerIndex: 2, // Corresponds to option 'C'
+                explanation: "The normal anatomy consists of four parathyroid glands arranged in superior and inferior pairs, closely associated with the thyroid gland. While approximately 5% of individuals may have more than four glands due to anatomical variation, the standard number is four. The other options represent incorrect anatomical configurations that do not reflect normal parathyroid anatomy."
+            },
+            {
+                question: "Which embryological structures give rise to the parathyroid glands?",
+                options: [
+                    "Second and third branchial pouches",
+                    "Third and fourth branchial pouches",
+                    "Fourth and fifth branchial pouches",
+                    "First and second branchial pouches",
+                    "Fifth and sixth branchial pouches"
+                ],
+                correctAnswerIndex: 1, // Corresponds to option 'B'
+                explanation: "The superior parathyroid glands are derived from the fourth branchial pouch, while the inferior parathyroid glands are derived from the third branchial pouch. The inferior glands have a longer migration path, which explains why they may sometimes be found in ectopic locations. The other branchial pouch combinations are incorrect and do not give rise to parathyroid tissue."
+            },
+            {
+                question: "What is the primary cell type responsible for parathyroid hormone (PTH) secretion?",
+                options: [
+                    "Clear cells with abundant glycogen stores",
+                    "Oxyphil cells with mitochondria-rich cytoplasm",
+                    "Chief cells with secretory granules",
+                    "Stromal cells within fibrovascular tissue",
+                    "Transitional cells between epithelial layers"
+                ],
+                correctAnswerIndex: 2, // Corresponds to option 'C'
+                explanation: "Chief cells are the primary PTH-secreting cells and contain secretory granules. Clear cells are actually chief cells that are rich in glycogen, while oxyphil cells appear after puberty and have abundant pink cytoplasm due to mitochondria but are not the primary PTH producers. Stromal cells provide structural support, and transitional cells are not a recognized parathyroid cell type."
+            },
+            {
+                question: "Which of the following is the most common cause of primary hyperparathyroidism?",
+                options: [
+                    "Parathyroid hyperplasia involving all four glands",
+                    "Parathyroid adenoma affecting a single gland",
+                    "Parathyroid carcinoma with local invasion",
+                    "Multiple endocrine neoplasia syndrome type 1",
+                    "Ectopic parathyroid hormone production"
+                ],
+                correctAnswerIndex: 1, // Corresponds to option 'B'
+                explanation: "Parathyroid adenoma accounts for 80% of primary hyperparathyroidism cases. Hyperplasia is less common and usually associated with MEN syndromes. Parathyroid carcinoma represents less than 5% of cases. While MEN-1 can cause hyperparathyroidism, it's much less frequent than sporadic adenomas. Ectopic PTH production is extremely rare."
+            },
+            {
+                question: "What is the most common cause of hypoparathyroidism?",
+                options: [
+                    "DiGeorge syndrome with developmental absence",
+                    "Autoimmune destruction of parathyroid tissue",
+                    "Surgical resection during thyroid surgery",
+                    "Pseudohypoparathyroidism with hormone resistance",
+                    "Magnesium deficiency affecting PTH synthesis"
+                ],
+                correctAnswerIndex: 2, // Corresponds to option 'C'
+                explanation: "Surgical resection, particularly as a complication of thyroidectomy or post-hyperparathyroidism surgery, is the most common cause of hypoparathyroidism. While DiGeorge syndrome, autoimmune causes, and pseudohypoparathyroidism can cause hypoparathyroidism, they are much less frequent. Severe hypomagnesemia can affect PTH function but is not the most common cause."
+            },
+            {
+                question: "A 55-year-old woman has elevated serum calcium and PTH levels. Laboratory studies show low serum phosphate and high urinary calcium. What is the most likely underlying pathophysiology?",
+                options: [
+                    "Decreased osteoblast activity with reduced bone formation",
+                    "Increased osteoclast activation with enhanced bone resorption",
+                    "Impaired renal calcium reabsorption with excessive loss",
+                    "Reduced intestinal calcium absorption with compensatory mechanisms",
+                    "Enhanced parathyroid hormone degradation with feedback stimulation"
+                ],
+                correctAnswerIndex: 1, // Corresponds to option 'B'
+                explanation: "The laboratory findings (high calcium, high PTH, low phosphate, high urinary calcium) are classic for primary hyperparathyroidism. PTH increases osteoclast activation, leading to enhanced bone resorption and calcium release. PTH also increases renal tubular calcium reabsorption (though total urinary calcium may still be high due to the increased filtered load) and phosphate excretion. The other mechanisms don't explain this constellation of findings."
+            },
+            {
+                question: "Which laboratory pattern is most characteristic of secondary hyperparathyroidism due to chronic renal failure?",
+                options: [
+                    "High calcium, high PTH, low phosphate",
+                    "Low calcium, high PTH, high phosphate",
+                    "High calcium, low PTH, high phosphate",
+                    "Low calcium, low PTH, low phosphate",
+                    "Normal calcium, high PTH, normal phosphate"
+                ],
+                correctAnswerIndex: 1, // Corresponds to option 'B'
+                explanation: "In secondary hyperparathyroidism due to chronic renal failure, the kidneys cannot excrete phosphate (leading to hyperphosphatemia) and cannot produce adequate active vitamin D. This results in hypocalcemia, which stimulates PTH secretion. The pattern is low calcium, high PTH, and high phosphate - opposite to primary hyperparathyroidism in terms of calcium and phosphate levels."
+            },
+            {
+                question: "A pathologist examines a parathyroid specimen and notes a well-circumscribed, encapsulated mass with a rim of normal parathyroid tissue outside the capsule. The neoplastic tissue shows sheets of chief cells with absence of fat. What is the most likely diagnosis?",
+                options: [
+                    "Primary parathyroid hyperplasia with chief cell proliferation",
+                    "Secondary parathyroid hyperplasia due to renal disease",
+                    "Parathyroid adenoma with characteristic morphology",
+                    "Parathyroid carcinoma with capsular invasion",
+                    "Normal parathyroid gland with age-related changes"
+                ],
+                correctAnswerIndex: 2, // Corresponds to option 'C'
+                explanation: "The key features - well-circumscribed and encapsulated mass, rim of normal parathyroid tissue outside the capsule, sheets of chief cells, and absence of fat - are characteristic of parathyroid adenoma. The normal tissue rim is particularly important in distinguishing adenoma from hyperplasia. Hyperplasia would involve all glands without this rim. Carcinoma would show invasion rather than encapsulation."
+            },
+            {
+                question: "What is the key histological feature that distinguishes parathyroid carcinoma from parathyroid adenoma?",
+                options: [
+                    "Presence of oxyphil cells with abundant cytoplasm",
+                    "Increased mitotic activity and cellular atypia",
+                    "Evidence of local invasion or distant metastasis",
+                    "Absence of normal parathyroid tissue rim",
+                    "Trabecular growth pattern with fibrous stroma"
+                ],
+                correctAnswerIndex: 2, // Corresponds to option 'C'
+                explanation: "While parathyroid carcinomas may show mitotic activity, cellular atypia, and trabecular patterns, the definitive diagnosis depends on demonstration of invasion or metastasis. Cytological features alone are not sufficient for diagnosis. Both adenomas and carcinomas can lack a normal tissue rim, and trabecular patterns can be seen in adenomas as well."
+            },
+            {
+                question: "A patient with chronic kidney disease develops bone pain and elevated PTH levels. The calcium is low and phosphate is high. What term best describes this condition?",
+                options: [
+                    "Primary hyperparathyroidism with bone involvement",
+                    "Secondary hyperparathyroidism with renal osteodystrophy",
+                    "Tertiary hyperparathyroidism with autonomous function",
+                    "Pseudohypoparathyroidism with hormone resistance",
+                    "Hypoparathyroidism with compensatory mechanisms"
+                ],
+                correctAnswerIndex: 1, // Corresponds to option 'B'
+                explanation: "This clinical scenario describes secondary hyperparathyroidism due to chronic renal failure. The combination of low calcium, high phosphate, high PTH, and bone disease (renal osteodystrophy) is characteristic. Primary hyperparathyroidism would have high calcium. Tertiary occurs after transplant with persistent autonomous function. Pseudohypoparathyroidism involves PTH resistance, not renal failure."
+            },
+            {
+                question: "A 45-year-old man presents with kidney stones, bone pain, and depression. His serum calcium is 11.5 mg/dL (normal 8.5-10.5), PTH is elevated, and phosphate is low. During surgery, the surgeon finds one enlarged parathyroid gland and three normal-sized glands. What genetic abnormality is most likely associated with this condition?",
+                options: [
+                    "MEN-1 gene mutation on chromosome 11",
+                    "RET proto-oncogene mutation causing MEN-IIa",
+                    "Cyclin D1 rearrangement or over-expression",
+                    "22q11 deletion causing DiGeorge syndrome",
+                    "Gs protein mutation affecting cAMP signaling"
+                ],
+                correctAnswerIndex: 2, // Corresponds to option 'C'
+                explanation: "The clinical presentation and surgical findings (one enlarged gland, three normal) are consistent with sporadic parathyroid adenoma. Cyclin D1 rearrangement/over-expression on chromosome 11 is associated with sporadic adenomas. MEN-1 mutations would typically cause hyperplasia of multiple glands. RET mutations cause MEN-IIa. DiGeorge syndrome causes hypoparathyroidism. Gs protein mutations cause pseudohypoparathyroidism."
+            },
+            {
+                question: "A 28-year-old woman develops tetany and carpopedal spasms. Physical examination reveals a positive Chvostek's sign. Laboratory studies show low calcium, high phosphate, and low PTH. Her sister has similar symptoms. What is the most likely inheritance pattern?",
+                options: [
+                    "Autosomal dominant with complete penetrance",
+                    "Autosomal recessive with selective imprinting",
+                    "X-linked recessive with male predominance",
+                    "Mitochondrial inheritance with maternal transmission",
+                    "Autosomal dominant with variable expression"
+                ],
+                correctAnswerIndex: 1, // Corresponds to option 'B'
+                explanation: "The presentation of hypocalcemia, hyperphosphatemia, low PTH, positive Chvostek's sign, and family history suggests idiopathic (autoimmune) hypoparathyroidism. However, given the specific mention of inheritance and the clinical context, this could also represent pseudohypoparathyroidism, which follows autosomal recessive inheritance with selective imprinting. The other inheritance patterns don't fit the typical presentation of parathyroid disorders."
+            },
+            {
+                question: "A 62-year-old woman with a history of chronic kidney disease undergoes successful renal transplantation. Six months later, she develops hypercalcemia with persistently elevated PTH levels despite normal kidney function. What is the most appropriate term for this condition?",
+                options: [
+                    "Primary hyperparathyroidism with adenoma formation",
+                    "Secondary hyperparathyroidism with persistent stimulation",
+                    "Tertiary hyperparathyroidism with autonomous function",
+                    "Pseudohypoparathyroidism with continued resistance",
+                    "Recurrent chronic kidney disease with mineral imbalance"
+                ],
+                correctAnswerIndex: 2, // Corresponds to option 'C'
+                explanation: "Tertiary hyperparathyroidism occurs when secondary hyperparathyroidism becomes autonomous and persists even after correction of the underlying stimulus (in this case, successful renal transplantation). The parathyroid glands continue to function independently, producing hypercalcemia. This is different from primary hyperparathyroidism, which would not have this specific temporal relationship to renal disease and transplantation."
+            },
+            {
+                question: "A 35-year-old man presents with recurrent nephrolithiasis. His father and paternal grandfather both had similar problems along with peptic ulcers. Laboratory studies show elevated calcium, elevated PTH, and low phosphate. Imaging reveals enlarged parathyroid glands bilaterally. What is the most likely underlying genetic syndrome?",
+                options: [
+                    "Multiple endocrine neoplasia type 1 (MEN-1)",
+                    "Multiple endocrine neoplasia type 2A (MEN-2A)",
+                    "Von Hippel-Lindau syndrome",
+                    "Familial hypocalciuric hypercalcemia",
+                    "McCune-Albright syndrome"
+                ],
+                correctAnswerIndex: 0, // Corresponds to option 'A'
+                explanation: "The family history of hyperparathyroidism and peptic ulcers, along with bilateral parathyroid enlargement (suggesting hyperplasia rather than single adenoma), strongly suggests MEN-1 syndrome. MEN-1 classically involves parathyroid hyperplasia, pancreatic islet tumors (which can cause peptic ulcers via gastrinoma), and pituitary adenomas. MEN-2A involves medullary thyroid carcinoma and pheochromocytoma. The other syndromes don't typically present with this constellation of findings."
+            },
+            {
+                question: "A pathologist receives a parathyroid specimen weighing 10 grams from a 50-year-old patient with severe hypercalcemia (calcium 14 mg/dL). Microscopy shows trabecular growth pattern, mitotic figures, and the tumor appears adherent to surrounding thyroid tissue. What is the most concerning aspect of this case?",
+                options: [
+                    "The patient's young age suggests genetic syndrome",
+                    "The severe hypercalcemia indicates hormone overproduction",
+                    "The large size and adherence suggest malignant behavior",
+                    "The trabecular pattern indicates aggressive histology",
+                    "The mitotic figures confirm high-grade malignancy"
+                ],
+                correctAnswerIndex: 2, // Corresponds to option 'C'
+                explanation: "The combination of large size (10 grams vs. typical adenoma ~5 grams), adherence to surrounding structures, and severe hypercalcemia raises strong suspicion for parathyroid carcinoma. The adherence suggests local invasion, which is a key diagnostic criterion for carcinoma. While mitotic figures and trabecular patterns can be seen in carcinomas, invasion/adherence is the most important feature. The severe hypercalcemia is concerning but not diagnostic alone."
+            },
+            {
+                question: "A 25-year-old woman presents with short stature, obesity, mental retardation, and subcutaneous calcifications. Laboratory studies show low calcium, high phosphate, and elevated PTH. Administration of exogenous PTH fails to increase urinary cAMP. What is the most likely underlying molecular defect?",
+                options: [
+                    "Absent parathyroid glands due to developmental anomaly",
+                    "Autoimmune destruction of parathyroid tissue",
+                    "Decreased Gs protein activity affecting cAMP signaling",
+                    "Excessive PTH degradation by renal enzymes",
+                    "Parathyroid hormone receptor downregulation"
+                ],
+                correctAnswerIndex: 2, // Corresponds to option 'C'
+                explanation: "This presentation is classic for pseudohypoparathyroidism (Albright hereditary osteodystrophy). The key features include the physical characteristics, laboratory findings (low calcium, high phosphate, high PTH), and most importantly, the failure to respond to exogenous PTH with increased urinary cAMP. This indicates a defect in the PTH signaling pathway, specifically decreased Gs protein activity due to mutations affecting cAMP generation."
+            },
+            {
+                question: "A 40-year-old man undergoes total thyroidectomy for papillary thyroid carcinoma. Post-operatively, he develops perioral numbness and muscle cramps. Trousseau's sign is positive. What is the most likely immediate management consideration?",
+                options: [
+                    "Administration of synthetic parathyroid hormone",
+                    "Immediate calcium and vitamin D supplementation",
+                    "Surgical exploration for parathyroid autotransplantation",
+                    "High-dose corticosteroids to reduce inflammation",
+                    "Observation with serial electrolyte monitoring"
+                ],
+                correctAnswerIndex: 1, // Corresponds to option 'B'
+                explanation: "The patient has developed symptomatic hypocalcemia due to inadvertent parathyroid gland removal or devascularization during thyroidectomy. The positive Trousseau's sign indicates neuromuscular irritability from hypocalcemia. Immediate calcium supplementation (often IV calcium gluconate for acute symptoms) along with vitamin D is the appropriate initial management. PTH is not readily available for acute use, and surgical exploration would not be the immediate priority."
+            },
+            {
+                question: "A research study compares parathyroid pathology in two patient populations. Group A shows all four glands weighing approximately 1 gram each with decreased fat and increased chief cells. Group B shows one gland weighing 5 grams with normal surrounding tissue rim and three normal glands showing atrophy. Both groups have similar elevations in serum calcium and PTH. What explains the atrophy in Group B's normal glands?",
+                options: [
+                    "Nutritional deficiency affecting non-neoplastic tissue",
+                    "Autoimmune destruction of normal parathyroid cells",
+                    "Negative feedback suppression from functioning tumor",
+                    "Surgical trauma causing ischemic changes",
+                    "Genetic mutation affecting all parathyroid tissue"
+                ],
+                correctAnswerIndex: 2, // Corresponds to option 'C'
+                explanation: "Group A represents hyperplasia (all four glands involved), while Group B represents adenoma (single enlarged gland with normal tissue rim). In adenoma cases, the functioning tumor produces excess PTH, which suppresses the normal parathyroid glands through negative feedback, causing them to become atrophic. This is a key distinguishing feature between adenoma and hyperplasia, where in hyperplasia all glands are stimulated rather than suppressed."
+            },
+            {
+                question: "A 55-year-old woman with chronic kidney disease has been on dialysis for 3 years. She develops severe bone pain and fractures. Laboratory studies show calcium 7.5 mg/dL, phosphate 6.8 mg/dL, and PTH 800 pg/mL (normal <65). Despite optimal medical management, her bone disease worsens. What is the most likely explanation for the treatment resistance?",
+                options: [
+                    "Inadequate dialysis clearance of phosphate",
+                    "Skeletal resistance to parathyroid hormone action",
+                    "Concurrent vitamin D deficiency requiring supplementation",
+                    "Development of secondary hyperparathyroidism",
+                    "Progression to tertiary autonomous hyperparathyroidism"
+                ],
+                correctAnswerIndex: 1, // Corresponds to option 'B'
+                explanation: "In advanced chronic kidney disease with secondary hyperparathyroidism, the skeleton can develop resistance to PTH action, making medical management less effective. This skeletal resistance, combined with the inability to produce adequate active vitamin D and persistent hyperphosphatemia, contributes to refractory bone disease (renal osteodystrophy). While the other factors may contribute, skeletal PTH resistance is a key factor in treatment-resistant cases."
+            },
+            {
+                question: "A pathologist reviews parathyroid specimens from identical twins. Twin A has a solitary 3-cm encapsulated mass with normal tissue rim, associated with MEN-1 syndrome. Twin B has four enlarged glands without normal tissue rims, occurring sporadically. Both have similar clinical presentations. What accounts for this morphological difference despite the same genetic predisposition?",
+                options: [
+                    "Environmental factors influencing gene expression",
+                    "Incomplete penetrance of the MEN-1 mutation",
+                    "Different mechanisms of parathyroid proliferation in MEN-1",
+                    "Somatic mutation differences in parathyroid tissue",
+                    "Age-related progression from adenoma to hyperplasia"
+                ],
+                correctAnswerIndex: 2, // Corresponds to option 'C'
+                explanation: "This scenario highlights that MEN-1 syndrome typically causes parathyroid hyperplasia (involving all glands), not adenoma. However, the presentation describes Twin A having what appears to be an adenoma. In MEN-1, different mechanisms can occur - some patients develop what appears to be adenoma (though it may represent asymmetric hyperplasia), while others develop classic hyperplasia. The genetic predisposition is the same, but the pattern of parathyroid proliferation can vary even within the same syndrome."
+            }
+        ];
+
+        // Utility function to shuffle an array in place (Fisher-Yates algorithm)
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        // Function to render the quiz questions and options
+        function renderQuiz() {
+            const quizContainer = document.getElementById('quiz-container');
+            quizContainer.innerHTML = ''; // Clear any existing content
+
+            quizData.forEach((questionData, qIndex) => {
+                // Create the main card container for each question
+                const questionCard = document.createElement('div');
+                questionCard.className = 'question-card';
+                questionCard.id = `question-${qIndex}`;
+
+                // Add the question text
+                const questionText = document.createElement('p');
+                questionText.className = 'question-text';
+                questionText.textContent = `Question ${qIndex + 1}: ${questionData.question}`;
+                questionCard.appendChild(questionText);
+
+                // Create a container for the options
+                const optionsContainer = document.createElement('div');
+                optionsContainer.className = 'options-container';
+
+                // Create a temporary array of option objects with their original indices
+                const shuffledOptions = questionData.options.map((text, originalIndex) => ({ text, originalIndex }));
+                shuffleArray(shuffledOptions); // Shuffle the options
+
+                // Append each shuffled option to the options container
+                shuffledOptions.forEach((option, optIndex) => {
+                    const optionDiv = document.createElement('div');
+                    optionDiv.className = 'option';
+                    // Display options with A), B), C), etc.
+                    optionDiv.textContent = `${String.fromCharCode(65 + optIndex)}) ${option.text}`;
+                    // Store the original index to identify the correct answer later
+                    optionDiv.dataset.originalIndex = option.originalIndex;
+                    optionsContainer.appendChild(optionDiv);
+                });
+                questionCard.appendChild(optionsContainer);
+
+                // Create the "Show Explanation" button
+                const showExplanationButton = document.createElement('button');
+                showExplanationButton.className = 'show-explanation-button';
+                showExplanationButton.textContent = 'Show Explanation';
+                
+                // Add click event listener to the button
+                showExplanationButton.onclick = function() {
+                    const explanationDiv = questionCard.querySelector('.explanation');
+                    const options = questionCard.querySelectorAll('.option');
+
+                    // Toggle explanation visibility and button text
+                    if (explanationDiv.style.display === 'block') {
+                        explanationDiv.style.display = 'none';
+                        this.textContent = 'Show Explanation';
+                        // Remove highlight from all options when hiding explanation
+                        options.forEach(opt => opt.classList.remove('correct'));
+                    } else {
+                        explanationDiv.style.display = 'block';
+                        this.textContent = 'Hide Explanation';
+                        // Highlight the correct answer
+                        options.forEach(opt => {
+                            // Check if the data-original-index matches the correct answer's original index
+                            if (parseInt(opt.dataset.originalIndex) === questionData.correctAnswerIndex) {
+                                opt.classList.add('correct');
+                            } else {
+                                opt.classList.remove('correct'); // Ensure other options are not highlighted
+                            }
+                        });
+                    }
+                };
+                questionCard.appendChild(showExplanationButton);
+
+                // Create the explanation div (initially hidden)
+                const explanationDiv = document.createElement('div');
+                explanationDiv.className = 'explanation';
+                explanationDiv.textContent = `Explanation: ${questionData.explanation}`;
+                questionCard.appendChild(explanationDiv);
+
+                // Add the complete question card to the quiz container
+                quizContainer.appendChild(questionCard);
+            });
+        }
+
+        // Render the quiz when the DOM content is fully loaded
+        document.addEventListener('DOMContentLoaded', renderQuiz);
+    </script>
+</body>
+</html>

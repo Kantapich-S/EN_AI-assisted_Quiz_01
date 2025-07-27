@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USMLE Step 1 Style MCQs: Endocrine Physiology and Pituitary Hormones</title>
+    <!-- Tailwind CSS CDN - for offline use, you would typically build this,
+         but for a single self-contained file, embedding the full CSS is impractical.
+         However, the prompt specified "no external dependencies" and "embedded within the HTML".
+         To meet the spirit of "no external dependencies" for a single HTML file,
+         I will include a minimal set of Tailwind classes directly in a <style> tag.
+         For a full Tailwind setup without a build step, the CDN is usually required.
+         Given the constraint, I'll provide a basic set of styles that mimic Tailwind's utility classes.
+         If a full Tailwind build is truly required offline without a CDN,
+         the user would need to compile it themselves.
+         For this response, I'm interpreting "embedded within the HTML" as using
+         Tailwind-like utility classes directly in a <style> block.
+    -->
+    <style>
+        /* Minimal Tailwind-like utility classes for demonstration */
+        body {
+            font-family: 'Inter', sans-serif; /* Using Inter as per instructions */
+            background-color: #f3f4f6; /* gray-100 */
+            color: #1f2937; /* gray-900 */
+            margin: 0;
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background-color: #ffffff; /* white */
+            padding: 2rem;
+            border-radius: 0.5rem; /* rounded-lg */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+        h1 {
+            font-size: 2.25rem; /* text-4xl */
+            font-weight: 700; /* font-bold */
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #111827; /* gray-900 */
+        }
+        .question-card {
+            background-color: #f9fafb; /* gray-50 */
+            padding: 1.5rem;
+            border-radius: 0.5rem; /* rounded-lg */
+            margin-bottom: 1.5rem;
+            border: 1px solid #e5e7eb; /* gray-200 */
+        }
+        .question-text {
+            font-size: 1.25rem; /* text-xl */
+            font-weight: 600; /* font-semibold */
+            margin-bottom: 1rem;
+            color: #1f2937; /* gray-900 */
+        }
+        .options-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .option-item {
+            background-color: #ffffff; /* white */
+            padding: 0.75rem 1rem;
+            margin-bottom: 0.5rem;
+            border-radius: 0.375rem; /* rounded-md */
+            border: 1px solid #d1d5db; /* gray-300 */
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+        }
+        .option-item:hover {
+            background-color: #eff6ff; /* blue-50 */
+        }
+        .option-item.correct {
+            background-color: #d1fae5; /* green-100 */
+            border-color: #34d399; /* green-500 */
+        }
+        .explanation-section {
+            background-color: #e0f2fe; /* blue-50 */
+            padding: 1rem;
+            border-radius: 0.375rem; /* rounded-md */
+            margin-top: 1rem;
+            border: 1px solid #93c5fd; /* blue-300 */
+            display: none; /* Hidden by default */
+        }
+        .explanation-text {
+            font-size: 0.95rem;
+            color: #1e40af; /* blue-800 */
+        }
+        .show-explanation-btn {
+            background-color: #3b82f6; /* blue-500 */
+            color: #ffffff; /* white */
+            padding: 0.6rem 1.2rem;
+            border: none;
+            border-radius: 0.375rem; /* rounded-md */
+            cursor: pointer;
+            margin-top: 1rem;
+            transition: background-color 0.2s ease-in-out;
+            font-size: 0.9rem;
+        }
+        .show-explanation-btn:hover {
+            background-color: #2563eb; /* blue-600 */
+        }
+        .disclaimer {
+            margin-top: 2rem;
+            font-size: 0.8rem;
+            color: #6b7280; /* gray-500 */
+            text-align: center;
+            padding-top: 1rem;
+            border-top: 1px solid #e5e7eb; /* gray-200 */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>USMLE Step 1 Style MCQs: Endocrine Physiology and Pituitary Hormones</h1>
+
+        <div id="quiz-container">
+            <!-- Questions will be loaded here by JavaScript -->
+        </div>
+
+        <p class="disclaimer">Disclaimer: This file was created by Ktp, with assistance from AI tools (e.g., ChatGPT, Gemini, Claude, and Perplexity) for content generation and editing. Please double-check all information for accuracy and reliability.</p>
+
+    </div>
+
+    <script>
+        // Array of quiz questions
+        const questions = [
+            {
+                question: "Which of the following hormones is classified as a steroid hormone?",
+                options: [
+                    "Growth hormone",
+                    "Insulin",
+                    "Cortisol",
+                    "Thyroid-stimulating hormone",
+                    "Antidiuretic hormone"
+                ],
+                correctAnswer: "Cortisol",
+                explanation: "Steroid hormones are lipid-soluble and include cortisol, aldosterone, estrogen, progesterone, and testosterone. Growth hormone and insulin are protein hormones, TSH is a glycoprotein hormone, and ADH is a peptide hormone. All non-steroid hormones are water-soluble and require membrane receptors."
+            },
+            {
+                question: "The posterior pituitary gland releases which two hormones?",
+                options: [
+                    "Growth hormone and prolactin",
+                    "ACTH and TSH",
+                    "FSH and LH",
+                    "ADH and oxytocin",
+                    "Cortisol and aldosterone"
+                ],
+                correctAnswer: "ADH and oxytocin",
+                explanation: "The posterior pituitary releases ADH (vasopressin) and oxytocin, both of which are synthesized in the hypothalamus. Growth hormone and prolactin are anterior pituitary hormones, ACTH and TSH are anterior pituitary hormones, FSH and LH are anterior pituitary gonadotropins, and cortisol and aldosterone are adrenal cortex hormones."
+            },
+            {
+                question: "Which hypothalamic hormone inhibits growth hormone release?",
+                options: [
+                    "Growth hormone-releasing hormone (GHRH)",
+                    "Thyrotropin-releasing hormone (TRH)",
+                    "Corticotropin-releasing hormone (CRH)",
+                    "Somatostatin (GHIH)",
+                    "Gonadotropin-releasing hormone (GnRH)"
+                ],
+                correctAnswer: "Somatostatin (GHIH)",
+                explanation: "Somatostatin, also known as growth hormone-inhibiting hormone (GHIH), inhibits growth hormone release from the anterior pituitary. GHRH stimulates growth hormone release, while TRH, CRH, and GnRH control other anterior pituitary hormones."
+            },
+            {
+                question: "The primary mechanism by which ADH increases water reabsorption in the kidney involves:",
+                options: [
+                    "Increasing sodium-potassium pump activity in the proximal tubule",
+                    "Inserting aquaporin-2 water channels in collecting duct cells",
+                    "Stimulating aldosterone release from the adrenal cortex",
+                    "Activating carbonic anhydrase in the distal convoluted tubule",
+                    "Enhancing glucose reabsorption in the loop of Henle"
+                ],
+                correctAnswer: "Inserting aquaporin-2 water channels in collecting duct cells",
+                explanation: "ADH acts on V2 receptors in the distal convoluted tubules and medullary collecting ducts to insert aquaporin-2 water channels, increasing water reabsorption. The other mechanisms listed are not the primary actions of ADH on water balance."
+            },
+            {
+                question: "Which type of feedback mechanism is primarily responsible for maintaining homeostasis in the endocrine system?",
+                options: [
+                    "Positive feedback",
+                    "Negative feedback",
+                    "Neutral feedback",
+                    "Forward feedback",
+                    "Oscillatory feedback"
+                ],
+                correctAnswer: "Negative feedback",
+                explanation: "Negative feedback is the primary mechanism for maintaining homeostasis, where the end product inhibits further production to prevent excessive hormone levels. Positive feedback amplifies responses but is used only in specific situations like ovulation and labor, not for general homeostasis."
+            },
+            {
+                question: "Melatonin production by the pineal gland is primarily controlled by:",
+                options: [
+                    "Direct hypothalamic releasing hormones",
+                    "Circulating cortisol levels",
+                    "Light-dark cycles via sympathetic innervation",
+                    "Anterior pituitary stimulation",
+                    "Blood glucose concentrations"
+                ],
+                correctAnswer: "Light-dark cycles via sympathetic innervation",
+                explanation: "Melatonin production is controlled by light-dark cycles through a pathway involving retinal cells, sympathetic neurons, and the pineal gland. Darkness stimulates sympathetic activation and increases melatonin production, while light suppresses it. This system regulates circadian rhythms."
+            },
+            {
+                question: "A patient presents with excessive thirst, polyuria, and dilute urine with low osmolality. These symptoms are most consistent with:",
+                options: [
+                    "Syndrome of inappropriate ADH secretion (SIADH)",
+                    "Diabetes insipidus",
+                    "Primary aldosteronism",
+                    "Cushing's syndrome",
+                    "Addison's disease"
+                ],
+                correctAnswer: "Diabetes insipidus",
+                explanation: "Diabetes insipidus results from ADH deficiency or resistance, leading to inadequate water reabsorption and the classic triad of excessive thirst (polydipsia), excessive urination (polyuria), and dilute urine. SIADH would cause water retention and concentrated urine, while the other conditions have different primary presentations."
+            },
+            {
+                question: "The alarm phase of the stress response is primarily mediated by:",
+                options: [
+                    "Cortisol and growth hormone",
+                    "Insulin and glucagon",
+                    "Epinephrine and norepinephrine",
+                    "Aldosterone and ADH",
+                    "Thyroid hormones and parathyroid hormone"
+                ],
+                correctAnswer: "Epinephrine and norepinephrine",
+                explanation: "The alarm phase represents the immediate stress response mediated by the sympatho-adrenal system, which releases epinephrine and norepinephrine. These hormones cause glucose mobilization, circulatory redistribution, and increased heart rate and blood pressure. Cortisol and growth hormone are involved in the resistance phase."
+            },
+            {
+                question: "Which anterior pituitary hormone has the additional function of promoting growth of its target organ?",
+                options: [
+                    "Prolactin only",
+                    "FSH and LH only",
+                    "Growth hormone only",
+                    "All anterior pituitary hormones",
+                    "TSH and ACTH only"
+                ],
+                correctAnswer: "All anterior pituitary hormones",
+                explanation: "All anterior pituitary hormones exhibit trophic effects, meaning they not only stimulate target organ function but also promote structural growth and development of their target tissues. This is a fundamental characteristic of anterior pituitary hormones."
+            },
+            {
+                question: "A synergistic hormone interaction means that:",
+                options: [
+                    "One hormone blocks the action of another hormone",
+                    "One hormone is required for another to have any effect",
+                    "The combined effect of two hormones exceeds either alone",
+                    "Two hormones have identical mechanisms of action",
+                    "One hormone converts into another hormone"
+                ],
+                correctAnswer: "The combined effect of two hormones exceeds either alone",
+                explanation: "Synergistic effects occur when the combined action of two hormones produces a greater response than the sum of their individual effects. This is different from permissive effects (where one hormone enhances responsiveness to another) or inhibitory interactions (where hormones counteract each other)."
+            },
+            {
+                question: "A 25-year-old woman has been exposed to bright LED screens late at night for several months. This exposure would most likely result in:",
+                options: [
+                    "Increased melatonin production and improved sleep quality",
+                    "Decreased melatonin production and disrupted circadian rhythms",
+                    "Enhanced growth hormone release during sleep",
+                    "Suppressed cortisol production in the morning",
+                    "Increased prolactin levels and galactorrhea"
+                ],
+                correctAnswer: "Decreased melatonin production and disrupted circadian rhythms",
+                explanation: "Light exposure, particularly from LED screens, suppresses melatonin synthesis and release by inhibiting the sympathetic pathway to the pineal gland. This disrupts natural circadian rhythms and can contribute to sleep difficulties, as melatonin is essential for regulating the sleep-wake cycle."
+            },
+            {
+                question: "A patient with lung carcinoma develops signs and symptoms of acromegaly. The most likely explanation is:",
+                options: [
+                    "Paraneoplastic syndrome with ectopic ACTH production",
+                    "Metastasis to the anterior pituitary gland",
+                    "Ectopic growth hormone production by the tumor",
+                    "Secondary hyperparathyroidism from bone metastases",
+                    "Tumor-induced hypercalcemia affecting bone growth"
+                ],
+                correctAnswer: "Ectopic growth hormone production by the tumor",
+                explanation: "The document specifically mentions that growth hormone can be produced ectopically by lung carcinomas. This ectopic GH production would cause acromegaly in adults, characterized by excessive growth of bones and soft tissues. This represents a paraneoplastic syndrome where the tumor produces hormones not normally made by that tissue."
+            },
+            {
+                question: "In the hypothalamo-pituitary-target gland axis, negative feedback regulation occurs at:",
+                options: [
+                    "The hypothalamic level only",
+                    "The anterior pituitary level only",
+                    "The target gland level only",
+                    "Both hypothalamic and anterior pituitary levels",
+                    "All levels including peripheral tissues"
+                ],
+                correctAnswer: "Both hypothalamic and anterior pituitary levels",
+                explanation: "Multi-level regulation is a key feature of the hypothalamo-pituitary-target gland axis, where target gland hormones provide negative feedback to both the hypothalamus and anterior pituitary. This prevents excessive hormone production and maintains homeostasis through redundant control mechanisms."
+            },
+            {
+                question: "A patient presents with hyponatremia (serum Na+ 125 mmol/L), ECF osmolality of 265 mOsm/kg, and urine osmolality of 320 mosm/kg with urine sodium of 25 mmol/L. These findings are most consistent with:",
+                options: [
+                    "Diabetes insipidus with compensatory water intake",
+                    "Primary polydipsia with water intoxication",
+                    "Syndrome of inappropriate ADH secretion (SIADH)",
+                    "Addison's disease with mineralocorticoid deficiency",
+                    "Nephrogenic diabetes insipidus with dehydration"
+                ],
+                correctAnswer: "Syndrome of inappropriate ADH secretion (SIADH)",
+                explanation: "The combination of hyponatremia, low ECF osmolality (<270 mOsm/kg), inappropriately concentrated urine (>300 mOsm/kg), and elevated urine sodium (>20 mmol/L) are diagnostic criteria for SIADH. The key feature is concentrated urine despite low serum osmolality, indicating inappropriate ADH activity."
+            },
+            {
+                question: "A 35-year-old woman in labor experiences progressively stronger uterine contractions. The mechanism responsible for this escalating response involves:",
+                options: [
+                    "Negative feedback inhibition of oxytocin release",
+                    "Positive feedback amplification through oxytocin and prostaglandins",
+                    "Sympathetic nervous system activation and catecholamine release",
+                    "Cortisol-mediated enhancement of myometrial sensitivity",
+                    "Growth hormone stimulation of uterine muscle growth"
+                ],
+                correctAnswer: "Positive feedback amplification through oxytocin and prostaglandins",
+                explanation: "Labor involves a positive feedback mechanism where cervical dilation stimulates oxytocin release, which causes stronger myometrial contractions and prostaglandin production. This creates a self-amplifying cycle that continues until delivery terminates the stimulus, making it a classic example of positive feedback in physiology."
+            },
+            {
+                question: "A patient with chronic stress has progressed through the alarm and resistance phases and is now in the exhaustion phase. Which of the following findings would be most expected?",
+                options: [
+                    "Elevated cortisol levels with enhanced glucose mobilization",
+                    "Increased sympathetic activity with tachycardia and hypertension",
+                    "Cortisol production failure with electrolyte imbalances",
+                    "Enhanced growth hormone release with anabolic effects",
+                    "Hyperglycemia with increased insulin sensitivity"
+                ],
+                correctAnswer: "Cortisol production failure with electrolyte imbalances",
+                explanation: "The exhaustion phase represents the pathological outcome of chronic stress where homeostatic mechanisms break down. Key features include cortisol production failure, electrolyte imbalances, lipid reserve depletion, and potential vital organ damage. This phase requires immediate medical intervention."
+            },
+            {
+                question: "A researcher studying hormone interactions finds that estrogen treatment increases the number of progesterone receptors in uterine tissue, but estrogen alone has minimal effects on the tissue. This represents which type of hormone interaction?",
+                options: [
+                    "Synergistic interaction between estrogen and progesterone",
+                    "Inhibitory interaction with progesterone blocking estrogen",
+                    "Permissive effect of estrogen on progesterone action",
+                    "Competitive antagonism between the two hormones",
+                    "Sequential negative feedback regulation"
+                ],
+                correctAnswer: "Permissive effect of estrogen on progesterone action",
+                explanation: "This describes a permissive effect, where estrogen enhances target organ responsiveness to progesterone by upregulating progesterone receptors. The permissive hormone (estrogen) doesn't have the primary effect but enables or enhances the action of the second hormone (progesterone)."
+            },
+            {
+                question: "A 45-year-old patient presents with normal serum cortisol levels but clinical signs of cortisol deficiency. Further testing reveals normal ACTH levels and normal adrenal gland structure on imaging. The most likely explanation is:",
+                options: [
+                    "Primary adrenal insufficiency (Addison's disease)",
+                    "Secondary adrenal insufficiency from pituitary dysfunction",
+                    "Cortisol resistance syndrome due to receptor dysfunction",
+                    "Ectopic ACTH syndrome from occult malignancy",
+                    "Iatrogenic adrenal suppression from exogenous steroids"
+                ],
+                correctAnswer: "Cortisol resistance syndrome due to receptor dysfunction",
+                explanation: "Normal hormone levels with inadequate physiological response, combined with normal ACTH and gland structure, suggests hormone resistance syndrome. This occurs when receptors are structurally or functionally abnormal, preventing normal hormone action despite adequate hormone production."
+            },
+            {
+                question: "A patient with a hypothalamic lesion affecting the portal system connection to the anterior pituitary would most likely present with:",
+                options: [
+                    "Isolated ADH deficiency with diabetes insipidus",
+                    "Isolated oxytocin deficiency affecting lactation",
+                    "Multiple anterior pituitary hormone deficiencies",
+                    "Selective growth hormone excess from loss of inhibition",
+                    "Primary target gland hyperfunction from loss of feedback"
+                ],
+                correctAnswer: "Multiple anterior pituitary hormone deficiencies",
+                explanation: "The hypothalamo-pituitary portal system is essential for delivering releasing hormones to the anterior pituitary. Disruption would affect multiple endocrine axes simultaneously, causing deficiencies in multiple anterior pituitary hormones (GH, ACTH, TSH, FSH, LH, prolactin), not just isolated defects."
+            },
+            {
+                question: "A pharmaceutical company is developing a treatment for growth hormone deficiency that must account for natural physiological rhythms. Based on endocrine principles, the optimal dosing strategy would involve:",
+                options: [
+                    "Continuous intravenous infusion to maintain steady levels",
+                    "Single daily dose in the morning to mimic cortisol patterns",
+                    "Pulsatile administration that mimics natural GHRH release",
+                    "Twice daily dosing to maintain consistent blood levels",
+                    "Weekly depot injection to ensure patient compliance"
+                ],
+                correctAnswer: "Pulsatile administration that mimics natural GHRH release",
+                explanation: "Growth hormone is naturally released in a pulsatile pattern, particularly associated with sleep. Successful hormone replacement therapy must consider physiological rhythms and feedback mechanisms. Pulsatile administration that mimics natural GHRH release patterns would be most physiologically appropriate and effective."
+            }
+        ];
+
+        /**
+         * Shuffles an array in place using the Fisher-Yates algorithm.
+         * @param {Array} array The array to shuffle.
+         */
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+            }
+        }
+
+        /**
+         * Renders all quiz questions to the DOM.
+         */
+        function renderQuiz() {
+            const quizContainer = document.getElementById('quiz-container');
+            quizContainer.innerHTML = ''; // Clear existing content
+
+            questions.forEach((q, index) => {
+                const questionCard = document.createElement('div');
+                questionCard.classList.add('question-card');
+
+                const questionText = document.createElement('p');
+                questionText.classList.add('question-text');
+                questionText.textContent = `Question ${index + 1}: ${q.question}`;
+                questionCard.appendChild(questionText);
+
+                const optionsList = document.createElement('ul');
+                optionsList.classList.add('options-list');
+
+                // Create a copy of options and shuffle them
+                const shuffledOptions = [...q.options];
+                shuffleArray(shuffledOptions);
+
+                shuffledOptions.forEach(option => {
+                    const optionItem = document.createElement('li');
+                    optionItem.classList.add('option-item');
+                    optionItem.textContent = option;
+                    optionsList.appendChild(optionItem);
+                });
+                questionCard.appendChild(optionsList);
+
+                const showExplanationBtn = document.createElement('button');
+                showExplanationBtn.classList.add('show-explanation-btn');
+                showExplanationBtn.textContent = 'Show Explanation';
+                showExplanationBtn.onclick = () => toggleExplanation(questionCard, q.correctAnswer, q.explanation);
+                questionCard.appendChild(showExplanationBtn);
+
+                const explanationSection = document.createElement('div');
+                explanationSection.classList.add('explanation-section');
+                explanationSection.id = `explanation-${index}`; // Unique ID for each explanation
+                questionCard.appendChild(explanationSection);
+
+                quizContainer.appendChild(questionCard);
+            });
+        }
+
+        /**
+         * Toggles the visibility of the explanation and highlights the correct answer.
+         * @param {HTMLElement} questionCard The HTML element representing the question card.
+         * @param {string} correctAnswer The text of the correct answer.
+         * @param {string} explanationText The explanation text.
+         */
+        function toggleExplanation(questionCard, correctAnswer, explanationText) {
+            const explanationSection = questionCard.querySelector('.explanation-section');
+            const options = questionCard.querySelectorAll('.option-item');
+            const showExplanationBtn = questionCard.querySelector('.show-explanation-btn');
+
+            // Toggle visibility
+            if (explanationSection.style.display === 'block') {
+                explanationSection.style.display = 'none';
+                showExplanationBtn.textContent = 'Show Explanation';
+                // Remove highlight from all options
+                options.forEach(option => {
+                    option.classList.remove('correct');
+                });
+            } else {
+                explanationSection.style.display = 'block';
+                showExplanationBtn.textContent = 'Hide Explanation';
+
+                // Populate explanation text
+                explanationSection.innerHTML = `<p class="explanation-text"><strong>Explanation:</strong> ${explanationText}</p>`;
+
+                // Highlight the correct answer
+                options.forEach(option => {
+                    if (option.textContent === correctAnswer) {
+                        option.classList.add('correct');
+                    } else {
+                        option.classList.remove('correct'); // Ensure others are not highlighted
+                    }
+                });
+            }
+        }
+
+        // Render the quiz when the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', renderQuiz);
+    </script>
+</body>
+</html>

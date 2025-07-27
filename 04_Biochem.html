@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USMLE Step 1 Style Quiz: Biochemical Aspects of Hormones</title>
+    <style>
+        /* Custom CSS mimicking a subset of Tailwind CSS for self-containment */
+        body {
+            font-family: 'Inter', sans-serif; /* Using a common sans-serif font, 'Inter' is a good default */
+            background-color: #f3f4f6; /* Equivalent to Tailwind's bg-gray-100 */
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px; /* Equivalent to Tailwind's max-w-3xl (approx) */
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 24px; /* Equivalent to Tailwind's p-6 */
+            background-color: #ffffff; /* Equivalent to Tailwind's bg-white */
+            border-radius: 8px; /* Equivalent to Tailwind's rounded-lg */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Equivalent to Tailwind's shadow-md */
+        }
+        .question-card {
+            margin-bottom: 24px; /* Equivalent to Tailwind's mb-6 */
+            padding: 24px; /* Equivalent to Tailwind's p-6 */
+            background-color: #f9fafb; /* Equivalent to Tailwind's bg-gray-50 */
+            border-radius: 8px; /* Equivalent to Tailwind's rounded-lg */
+            border: 1px solid #e5e7eb; /* Equivalent to Tailwind's border-gray-200 */
+        }
+        .question-text {
+            font-size: 1.25rem; /* Equivalent to Tailwind's text-xl */
+            font-weight: 700; /* Equivalent to Tailwind's font-bold */
+            margin-bottom: 16px; /* Equivalent to Tailwind's mb-4 */
+            color: #1f2937; /* Equivalent to Tailwind's text-gray-900 */
+        }
+        .option {
+            display: block;
+            padding: 12px; /* Equivalent to Tailwind's p-3 */
+            border-radius: 6px; /* Equivalent to Tailwind's rounded-md */
+            margin-bottom: 8px; /* Equivalent to Tailwind's mb-2 */
+            cursor: pointer;
+            background-color: #ffffff; /* Equivalent to Tailwind's bg-white */
+            border: 1px solid #d1d5db; /* Equivalent to Tailwind's border-gray-300 */
+            transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out; /* Equivalent to Tailwind's transition-colors duration-200 */
+            color: #374151; /* Equivalent to Tailwind's text-gray-700 */
+        }
+        .option:hover {
+            background-color: #f3f4f6; /* Equivalent to Tailwind's hover:bg-gray-100 */
+            border-color: #9ca3af; /* Equivalent to Tailwind's hover:border-gray-400 */
+        }
+        .option.correct {
+            background-color: #d1fae5; /* Equivalent to Tailwind's bg-green-100 */
+            border-color: #34d399; /* Equivalent to Tailwind's border-green-500 */
+            color: #065f46; /* Equivalent to Tailwind's text-green-800 */
+        }
+        .explanation-button {
+            background-color: #3b82f6; /* Equivalent to Tailwind's bg-blue-500 */
+            color: #ffffff; /* Equivalent to Tailwind's text-white */
+            font-weight: 700; /* Equivalent to Tailwind's font-bold */
+            padding: 8px 16px; /* Equivalent to Tailwind's py-2 px-4 */
+            border-radius: 6px; /* Equivalent to Tailwind's rounded-md */
+            margin-top: 16px; /* Equivalent to Tailwind's mt-4 */
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.2s ease-in-out;
+        }
+        .explanation-button:hover {
+            background-color: #2563eb; /* Equivalent to Tailwind's hover:bg-blue-600 */
+        }
+        .explanation-content {
+            background-color: #eff6ff; /* Equivalent to Tailwind's bg-blue-50 */
+            padding: 16px; /* Equivalent to Tailwind's p-4 */
+            border-radius: 6px; /* Equivalent to Tailwind's rounded-md */
+            margin-top: 16px; /* Equivalent to Tailwind's mt-4 */
+            font-size: 0.875rem; /* Equivalent to Tailwind's text-sm */
+            color: #4b5563; /* Equivalent to Tailwind's text-gray-700 */
+            border: 1px solid #bfdbfe; /* Equivalent to Tailwind's border-blue-200 */
+            display: none; /* Hidden by default */
+        }
+        .disclaimer {
+            margin-top: 40px; /* Equivalent to Tailwind's mt-10 */
+            padding-top: 20px; /* Equivalent to Tailwind's pt-5 */
+            border-top: 1px solid #e5e7eb; /* Equivalent to Tailwind's border-t border-gray-200 */
+            font-size: 0.75rem; /* Equivalent to Tailwind's text-xs */
+            color: #6b7280; /* Equivalent to Tailwind's text-gray-500 */
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="quiz-container" class="container">
+        <h1 class="text-3xl font-extrabold text-center mb-8 text-gray-800">USMLE Step 1 Style Quiz: Biochemical Aspects of Hormones</h1>
+        <!-- Questions will be dynamically loaded here by JavaScript -->
+    </div>
+
+    <script>
+        // Data structure for all quiz questions, options, and explanations
+        const questionsData = [
+            {
+                question: "Which of the following best describes the primary difference between autocrine and paracrine signaling?",
+                options: [
+                    { text: "Autocrine signals act on the same cell that produced them, while paracrine signals act on nearby cells", isCorrect: true },
+                    { text: "Autocrine signals require protein carriers, while paracrine signals travel freely in plasma", isCorrect: false },
+                    { text: "Autocrine signals use intracellular receptors, while paracrine signals use cell surface receptors", isCorrect: false },
+                    { text: "Autocrine signals have longer half-lives, while paracrine signals are rapidly degraded", isCorrect: false },
+                    { text: "Autocrine signals are lipid-soluble, while paracrine signals are water-soluble", isCorrect: false }
+                ],
+                explanation: "Autocrine signaling refers to signals that act on the same cell that produced them, such as Interleukin-1 and VEGF. Paracrine signaling involves signals that act on nearby cells without entering the bloodstream, such as somatostatin and histamine. The distinction is based on the target location relative to the source cell, not on transport mechanisms, receptor types, half-lives, or solubility properties."
+            },
+            {
+                question: "Peptide and protein hormones are primarily stored in which cellular location before release?",
+                options: [
+                    { text: "Rough endoplasmic reticulum cisternae", isCorrect: false },
+                    { text: "Golgi apparatus vesicles", isCorrect: false },
+                    { text: "Secretory vesicles", isCorrect: true },
+                    { text: "Cytoplasmic granules", isCorrect: false },
+                    { text: "Nuclear envelope spaces", isCorrect: false }
+                ],
+                explanation: "Peptide and protein hormones are stored in secretory vesicles after processing through the rough endoplasmic reticulum and Golgi apparatus. This storage allows for rapid release when needed through exocytosis. The rough endoplasmic reticulum and Golgi apparatus are involved in synthesis and processing, not storage. Cytoplasmic granules and nuclear envelope spaces are not the primary storage sites for these hormones."
+            },
+            {
+                question: "Which enzyme catalyzes the rate-limiting step in catecholamine biosynthesis?",
+                options: [
+                    { text: "Dopamine beta-hydroxylase", isCorrect: false },
+                    { text: "Phenylethanolamine N-methyltransferase (PNMT)", isCorrect: false },
+                    { text: "Tyrosine hydroxylase", isCorrect: true },
+                    { text: "Monoamine oxidase (MAO)", isCorrect: false },
+                    { text: "Catechol-O-methyltransferase (COMT)", isCorrect: false }
+                ],
+                explanation: "Tyrosine hydroxylase catalyzes the conversion of tyrosine to L-DOPA, which is the rate-limiting step in catecholamine biosynthesis. Dopamine beta-hydroxylase converts dopamine to norepinephrine, PNMT converts norepinephrine to epinephrine, while MAO and COMT are involved in catecholamine metabolism rather than synthesis."
+            },
+            {
+                question: "The zona fasciculata of the adrenal cortex is primarily responsible for producing which hormone?",
+                options: [
+                    { text: "Aldosterone", isCorrect: false },
+                    { text: "Cortisol", isCorrect: true },
+                    { text: "Dehydroepiandrosterone (DHEA)", isCorrect: false },
+                    { text: "Androstenedione", isCorrect: false },
+                    { text: "Epinephrine", isCorrect: false }
+                ],
+                explanation: "The zona fasciculata is the middle layer of the adrenal cortex and is responsible for producing cortisol, a glucocorticoid. The zona glomerulosa produces aldosterone (mineralocorticoid), the zona reticularis produces androgens like DHEA and androstenedione, and epinephrine is produced in the adrenal medulla, not the cortex."
+            },
+            {
+                question: "Which transport protein primarily binds cortisol in the circulation?",
+                options: [
+                    { text: "Sex hormone-binding globulin (SHBG)", isCorrect: false },
+                    { text: "Thyroxine-binding globulin (TBG)", isCorrect: false },
+                    { text: "Corticosteroid-binding globulin (CBG)", isCorrect: true },
+                    { text: "Albumin", isCorrect: false },
+                    { text: "Transferrin", isCorrect: false }
+                ],
+                explanation: "Corticosteroid-binding globulin (CBG) is the specific transport protein that binds cortisol and aldosterone in the circulation. While albumin also binds cortisol non-specifically, CBG is the primary specific carrier. SHBG binds sex hormones, TBG binds thyroid hormones, and transferrin binds iron."
+            },
+            {
+                question: "A patient presents with amenorrhea and is found to have low LH, low FSH, and low estradiol levels. Which of the following best describes this hormonal pattern?",
+                options: [
+                    { text: "Primary ovarian failure with compensatory pituitary response", isCorrect: false },
+                    { text: "Pituitary adenoma causing gonadotroph destruction", isCorrect: false },
+                    { text: "Hypothalamic dysfunction affecting GnRH release", isCorrect: true },
+                    { text: "End-organ resistance to gonadotropin stimulation", isCorrect: false },
+                    { text: "Polycystic ovary syndrome with insulin resistance", isCorrect: false }
+                ],
+                explanation: "Low LH, low FSH, and low estradiol indicate hypogonadotropic hypogonadism, which can result from either hypothalamic dysfunction (tertiary) or pituitary failure (secondary). However, the pattern is most consistent with hypothalamic causes such as functional hypothalamic amenorrhea. Primary ovarian failure would show high LH/FSH, end-organ resistance would typically show high gonadotropins, and PCOS usually presents with different hormonal patterns."
+            },
+            {
+                question: "Which of the following mechanisms best explains why steroid hormones have a slower onset but longer duration of action compared to peptide hormones?",
+                options: [
+                    { text: "Steroid hormones require protein carriers for transport in blood", isCorrect: false },
+                    { text: "Steroid hormones activate intracellular receptors that alter gene transcription", isCorrect: true },
+                    { text: "Steroid hormones are synthesized on demand rather than stored", isCorrect: false },
+                    { text: "Steroid hormones undergo extensive first-pass metabolism in the liver", isCorrect: false },
+                    { text: "Steroid hormones have higher binding affinity for their receptors", isCorrect: false }
+                ],
+                explanation: "Steroid hormones work by binding to intracellular receptors (cytosolic or nuclear) that function as transcription factors. This mechanism requires time for gene transcription and protein synthesis, resulting in slower onset but longer-lasting effects. While protein binding and on-demand synthesis are characteristics of steroid hormones, they don't directly explain the onset and duration differences. First-pass metabolism and receptor affinity are not the primary factors determining these temporal characteristics."
+            },
+            {
+                question: "A laboratory reports a patient's TSH as 45 mU/L (normal: 0.5-5.0) and free T4 as 0.3 ng/dL (normal: 0.8-1.8). This pattern is most consistent with which condition?",
+                options: [
+                    { text: "Secondary hypothyroidism due to pituitary adenoma", isCorrect: false },
+                    { text: "Primary hypothyroidism due to autoimmune thyroiditis", isCorrect: true },
+                    { text: "Subclinical hyperthyroidism with TSH suppression", isCorrect: false },
+                    { text: "Thyroid hormone resistance syndrome", isCorrect: false },
+                    { text: "Tertiary hypothyroidism due to hypothalamic dysfunction", isCorrect: false }
+                ],
+                explanation: "High TSH with low free T4 indicates primary hypothyroidism, where the thyroid gland itself is failing. The pituitary responds appropriately by increasing TSH production in an attempt to stimulate the failing thyroid. Secondary hypothyroidism would show low or normal TSH with low T4, subclinical hyperthyroidism would show suppressed TSH, thyroid hormone resistance typically shows high T4 with inappropriately normal/high TSH, and tertiary hypothyroidism would show low TSH."
+            },
+            {
+                question: "A patient with suspected Cushing's syndrome undergoes a low-dose dexamethasone suppression test. The morning cortisol level fails to suppress below 1.8 microg/dL. What is the most appropriate next step?",
+                options: [
+                    { text: "Measure 24-hour urine free cortisol", isCorrect: false },
+                    { text: "Perform a high-dose dexamethasone suppression test", isCorrect: false },
+                    { text: "Obtain plasma ACTH levels", isCorrect: true },
+                    { text: "Schedule adrenal imaging with CT scan", isCorrect: false },
+                    { text: "Repeat the low-dose dexamethasone test", isCorrect: false }
+                ],
+                explanation: "An abnormal low-dose dexamethasone suppression test (failure to suppress cortisol) confirms the presence of Cushing's syndrome. The next step is to measure plasma ACTH levels to distinguish between ACTH-dependent (pituitary or ectopic ACTH) and ACTH-independent (adrenal) causes. High-dose dexamethasone testing comes later in the workup to differentiate pituitary from ectopic ACTH sources. Urine free cortisol and imaging are additional tests but ACTH measurement is the logical next step for differential diagnosis."
+            },
+            {
+                question: "Which of the following best explains why patients with chronic kidney disease often develop secondary hyperparathyroidism?",
+                options: [
+                    { text: "Decreased synthesis of 25-hydroxyvitamin D in the kidneys", isCorrect: false },
+                    { text: "Reduced conversion of 25-hydroxyvitamin D to active 1,25-dihydroxyvitamin D", isCorrect: true },
+                    { text: "Increased phosphate retention leading to hypocalcemia", isCorrect: false },
+                    { text: "Direct nephrotoxic effects on parathyroid gland function", isCorrect: false },
+                    { text: "Impaired renal clearance of parathyroid hormone", isCorrect: false }
+                ],
+                explanation: "In chronic kidney disease, the kidneys lose their ability to convert 25-hydroxyvitamin D to the active form, 1,25-dihydroxyvitamin D (calcitriol), due to decreased 1alpha-hydroxylase activity. This leads to decreased intestinal calcium absorption, hypocalcemia, and compensatory PTH elevation. While phosphate retention also contributes, the primary mechanism is the failure to produce active vitamin D. The kidneys don't synthesize 25-hydroxyvitamin D (that occurs in the liver), and PTH clearance impairment is not the primary cause."
+            },
+            {
+                question: "A 35-year-old woman with a history of pituitary adenoma removal presents with fatigue and hypotension. Laboratory studies show: cortisol 2 microg/dL (normal: 5-25), ACTH 5 pg/mL (normal: 10-60). An ACTH stimulation test shows minimal cortisol response. Which statement best explains this clinical scenario?",
+                options: [
+                    { text: "Primary adrenal insufficiency due to autoimmune destruction", isCorrect: false },
+                    { text: "Secondary adrenal insufficiency due to chronic ACTH deficiency", isCorrect: true },
+                    { text: "Tertiary adrenal insufficiency due to hypothalamic CRH deficiency", isCorrect: false },
+                    { text: "Adrenal enzyme deficiency affecting cortisol synthesis", isCorrect: false },
+                    { text: "Cortisol resistance syndrome with receptor dysfunction", isCorrect: false }
+                ],
+                explanation: "The combination of low cortisol, low-normal ACTH, and poor response to ACTH stimulation in a patient with previous pituitary surgery indicates secondary adrenal insufficiency. Chronic ACTH deficiency leads to adrenal atrophy, explaining the poor response to acute ACTH stimulation. Primary adrenal insufficiency would show high ACTH, tertiary causes would be difficult to distinguish but the clinical context suggests pituitary involvement, enzyme deficiencies would typically present earlier, and cortisol resistance would show high ACTH and cortisol levels."
+            },
+            {
+                question: "A patient with suspected pheochromocytoma has elevated plasma metanephrines. Which of the following best explains why metanephrines are preferred over catecholamines for diagnosis?",
+                options: [
+                    { text: "Metanephrines have longer half-lives and represent continuous tumor secretion", isCorrect: true },
+                    { text: "Catecholamines are rapidly cleared by renal excretion", isCorrect: false },
+                    { text: "Metanephrines are more specific for adrenal medullary tumors", isCorrect: false },
+                    { text: "Catecholamine measurements are technically more difficult to perform", isCorrect: false },
+                    { text: "Metanephrines better correlate with tumor size and malignancy potential", isCorrect: false }
+                ],
+                explanation: "Metanephrines are the stable metabolites of catecholamines produced by catechol-O-methyltransferase (COMT). They have longer half-lives than the parent catecholamines and reflect continuous tumor secretion rather than episodic release. This makes them more reliable markers, as catecholamines can be normal between episodes of secretion due to their very short half-lives (2-3 minutes). The other options are not the primary reasons for preferring metanephrines."
+            },
+            {
+                question: "A 28-year-old male presents with gynecomastia and infertility. Laboratory studies show: testosterone 150 ng/dL (normal: 300-1000), LH 2 mU/mL (normal: 2-12), FSH 3 mU/mL (normal: 2-12), prolactin 45 ng/mL (normal: 2-15). Which mechanism best explains this presentation?",
+                options: [
+                    { text: "Primary testicular failure with compensatory pituitary response", isCorrect: false },
+                    { text: "Prolactin-mediated suppression of hypothalamic GnRH release", isCorrect: true },
+                    { text: "Pituitary adenoma causing selective gonadotroph destruction", isCorrect: false },
+                    { text: "Androgen resistance syndrome with defective testosterone receptors", isCorrect: false },
+                    { text: "Hypothalamic dysfunction due to chronic systemic illness", isCorrect: false }
+                ],
+                explanation: "Elevated prolactin with low testosterone and low-normal LH/FSH indicates prolactin-mediated suppression of the hypothalamic-pituitary-gonadal axis. Prolactin inhibits GnRH release from the hypothalamus, leading to decreased LH/FSH and subsequently low testosterone. This explains both the gynecomastia (due to low testosterone and altered estrogen/testosterone ratio) and infertility. Primary testicular failure would show elevated LH/FSH, selective gonadotroph destruction wouldn't typically cause hyperprolactinemia, and androgen resistance would show elevated testosterone levels."
+            },
+            {
+                question: "A patient with Type 2 diabetes develops progressive insulin resistance despite increasing doses. Which receptor-level mechanism most likely contributes to this phenomenon?",
+                options: [
+                    { text: "Increased insulin receptor synthesis in response to hyperinsulinemia", isCorrect: false },
+                    { text: "Enhanced insulin receptor tyrosine kinase activity", isCorrect: false },
+                    { text: "Receptor downregulation due to chronic insulin exposure", isCorrect: true },
+                    { text: "Improved insulin-receptor binding affinity", isCorrect: false },
+                    { text: "Increased expression of glucose transporter proteins", isCorrect: false }
+                ],
+                explanation: "Chronic exposure to high insulin levels leads to receptor downregulation, where cells decrease the number of insulin receptors on their surface. This is a protective mechanism against overstimulation but contributes to insulin resistance. The other options would actually improve insulin sensitivity rather than cause resistance. Receptor upregulation, enhanced kinase activity, improved binding affinity, and increased glucose transporters would all facilitate better insulin action."
+            },
+            {
+                question: "A patient with Graves' disease is treated with methimazole but continues to have symptoms. Laboratory shows: TSH <0.01 mU/L, free T4 normal, free T3 elevated. Which mechanism best explains this pattern?",
+                options: [
+                    { text: "Incomplete blockade of thyroid peroxidase by methimazole", isCorrect: false },
+                    { text: "Peripheral conversion of stored T4 to active T3", isCorrect: true },
+                    { text: "Development of methimazole resistance in thyroid tissue", isCorrect: false },
+                    { text: "Concurrent iodine deficiency limiting hormone synthesis", isCorrect: false },
+                    { text: "Antibody cross-reactivity affecting TSH receptor function", isCorrect: false }
+                ],
+                explanation: "Methimazole blocks new thyroid hormone synthesis by inhibiting thyroid peroxidase, but it doesn't affect the peripheral conversion of T4 to T3 by deiodinases. In hyperthyroid patients, there's often increased peripheral conversion of the stored T4 (which may normalize with treatment) to the more active T3, maintaining the hyperthyroid state despite effective blockade of new synthesis. This explains why T3 remains elevated while T4 normalizes, and TSH remains suppressed."
+            },
+            {
+                question: "A 45-year-old woman presents with muscle weakness, hypertension, and hypokalemia. Laboratory studies show: cortisol 25 microg/dL (normal: 5-25), ACTH 150 pg/mL (normal: 10-60), high-dose dexamethasone suppression test shows no cortisol suppression. What is the most likely diagnosis?",
+                options: [
+                    { text: "Pituitary adenoma secreting ACTH (Cushing's disease)", isCorrect: false },
+                    { text: "Ectopic ACTH syndrome from non-pituitary tumor", isCorrect: true },
+                    { text: "Primary adrenal adenoma secreting cortisol", isCorrect: false },
+                    { text: "Exogenous glucocorticoid administration", isCorrect: false },
+                    { text: "Pseudo-Cushing's syndrome due to depression", isCorrect: false }
+                ],
+                explanation: "The combination of high cortisol, markedly elevated ACTH, and failure to suppress with high-dose dexamethasone is characteristic of ectopic ACTH syndrome. Pituitary adenomas (Cushing's disease) typically suppress with high-dose dexamethasone, primary adrenal tumors would have suppressed ACTH, exogenous glucocorticoids would suppress both ACTH and endogenous cortisol, and pseudo-Cushing's syndrome would not typically show such extreme ACTH elevation with failure to suppress."
+            },
+            {
+                question: "A neonate presents with ambiguous genitalia. Genetic testing reveals 46,XY karyotype. Laboratory studies show: testosterone 400 ng/dL (normal for male), LH 15 mU/mL (elevated), dihydrotestosterone (DHT) 20 ng/dL (low). Which enzyme deficiency is most likely?",
+                options: [
+                    { text: "17beta-hydroxysteroid dehydrogenase", isCorrect: false },
+                    { text: "5alpha-reductase", isCorrect: true },
+                    { text: "21-hydroxylase", isCorrect: false },
+                    { text: "11beta-hydroxylase", isCorrect: false },
+                    { text: "Aromatase", isCorrect: false }
+                ],
+                explanation: "The combination of normal testosterone levels with low DHT and elevated LH in a 46,XY individual with ambiguous genitalia strongly suggests 5alpha-reductase deficiency. This enzyme converts testosterone to the more potent DHT, which is essential for external male genital development. The elevated LH indicates appropriate feedback response to functional androgen deficiency at the tissue level despite normal testosterone. Other enzyme deficiencies would present with different hormonal patterns or affect earlier steps in steroid synthesis."
+            },
+            {
+                question: "A patient with chronic renal failure on dialysis develops bone pain and muscle weakness. Laboratory studies show: calcium 7.5 mg/dL (low), phosphate 6.8 mg/dL (high), PTH 450 pg/mL (markedly elevated), 25-hydroxyvitamin D 15 ng/mL (low-normal). Which therapeutic intervention would be most effective?",
+                options: [
+                    { text: "Calcium carbonate supplementation alone", isCorrect: false },
+                    { text: "Phosphate binders with dietary phosphate restriction", isCorrect: false },
+                    { text: "Active vitamin D (calcitriol) supplementation", isCorrect: true },
+                    { text: "Parathyroidectomy to reduce PTH levels", isCorrect: false },
+                    { text: "Increased dialysis frequency to remove phosphate", isCorrect: false }
+                ],
+                explanation: "The patient has secondary hyperparathyroidism due to chronic kidney disease. The primary issue is the kidney's inability to produce active vitamin D (calcitriol), leading to poor calcium absorption and hypocalcemia, which stimulates PTH release. Calcitriol supplementation addresses the root cause by improving calcium absorption and directly suppressing PTH synthesis. While phosphate management is important, calcitriol supplementation is the most effective single intervention. Calcium alone won't address the underlying vitamin D deficiency, and parathyroidectomy is reserved for severe, refractory cases."
+            },
+            {
+                question: "A 25-year-old athlete presents with amenorrhea, low bone density, and stress fractures. Laboratory studies show: LH 1.2 mU/mL (low), FSH 2.1 mU/mL (low), estradiol 15 pg/mL (very low), cortisol 18 microg/dL (normal), thyroid function normal. A GnRH stimulation test shows a normal LH/FSH response. Which mechanism best explains this clinical scenario?",
+                options: [
+                    { text: "Hypothalamic dysfunction due to energy deficit and exercise stress", isCorrect: true },
+                    { text: "Pituitary microadenoma causing selective gonadotroph suppression", isCorrect: false },
+                    { text: "Premature ovarian insufficiency with early follicular depletion", isCorrect: false },
+                    { text: "Polycystic ovary syndrome with insulin resistance", isCorrect: false },
+                    { text: "Autoimmune destruction of hypothalamic GnRH neurons", isCorrect: false }
+                ],
+                explanation: "This presentation is classic for functional hypothalamic amenorrhea in an athlete. The normal response to GnRH stimulation indicates intact pituitary function, ruling out pituitary causes. The low baseline LH/FSH with very low estradiol, combined with the clinical context (athlete with stress fractures suggesting low bone density from estrogen deficiency), points to hypothalamic suppression of GnRH pulsatility due to energy deficit and exercise stress. Premature ovarian insufficiency would show elevated gonadotropins, PCOS would have different hormonal patterns, and autoimmune destruction would be extremely rare and not reversible with lifestyle changes."
+            },
+            {
+                question: "A patient with multiple endocrine neoplasia syndrome develops hypertensive crisis. Laboratory studies show: epinephrine 2000 pg/mL (markedly elevated), norepinephrine 1500 pg/mL (elevated), dopamine 200 pg/mL (normal), plasma metanephrines elevated. The patient was started on propranolol for tachycardia, which paradoxically worsened the hypertension. Which pathophysiologic mechanism explains this paradoxical response?",
+                options: [
+                    { text: "Propranolol blocks beta2-receptors, leaving alpha-adrenergic vasoconstriction unopposed", isCorrect: true },
+                    { text: "Beta-blockade increases catecholamine synthesis through feedback mechanisms", isCorrect: false },
+                    { text: "Propranolol directly stimulates alpha-adrenergic receptors at high doses", isCorrect: false },
+                    { text: "Beta-blockers increase catecholamine release from pheochromocytoma tissue", isCorrect: false },
+                    { text: "Propranolol interferes with catecholamine metabolism by blocking MAO", isCorrect: false }
+                ],
+                explanation: "In pheochromocytoma, catecholamines activate both alpha-adrenergic receptors (causing vasoconstriction) and beta2-adrenergic receptors (causing vasodilation in skeletal muscle). When beta-blockers are given without prior alpha-blockade, the beta2-mediated vasodilation is blocked while alpha-mediated vasoconstriction remains unopposed, leading to paradoxical worsening of hypertension. This is why alpha-blockade must always precede beta-blockade in pheochromocytoma management. The other mechanisms are not correct explanations for this well-recognized phenomenon."
+            }
+        ];
+
+        /**
+         * Shuffles an array in place using the Fisher-Yates (Knuth) algorithm.
+         * @param {Array} array The array to shuffle.
+         */
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+            }
+        }
+
+        /**
+         * Toggles the visibility of the explanation and highlights the correct answer.
+         * @param {HTMLElement} questionCard The HTML element representing the question card.
+         */
+        function toggleExplanation(questionCard) {
+            const explanationContent = questionCard.querySelector('.explanation-content');
+            const explanationButton = questionCard.querySelector('.explanation-button');
+            // Find the element marked as the correct answer.
+            const correctOption = questionCard.querySelector('.correct-answer-marker');
+
+            // Check if the explanation is currently visible
+            if (explanationContent.style.display === 'block') {
+                // If visible, hide it and reset button text and highlighting
+                explanationContent.style.display = 'none';
+                explanationButton.textContent = 'Show Explanation';
+                if (correctOption) {
+                    correctOption.classList.remove('correct'); // Remove green background
+                }
+            } else {
+                // If hidden, show it and update button text and highlighting
+                explanationContent.style.display = 'block';
+                explanationButton.textContent = 'Hide Explanation';
+                if (correctOption) {
+                    correctOption.classList.add('correct'); // Add green background
+                }
+            }
+        }
+
+        // Event listener to ensure the DOM is fully loaded before running the script
+        document.addEventListener('DOMContentLoaded', () => {
+            const quizContainer = document.getElementById('quiz-container');
+
+            // Iterate over each question in the data array
+            questionsData.forEach((qData, index) => {
+                // Shuffle the options for the current question to randomize their order
+                shuffleArray(qData.options);
+
+                // Create a div element for the question card
+                const questionCard = document.createElement('div');
+                questionCard.classList.add('question-card');
+                // Store the original question index as a data attribute for potential future use
+                questionCard.setAttribute('data-question-index', index);
+
+                // Create and append the question text element
+                const questionText = document.createElement('p');
+                questionText.classList.add('question-text');
+                questionText.textContent = `Question ${index + 1}: ${qData.question}`;
+                questionCard.appendChild(questionText);
+
+                // Create a container for the options
+                const optionsContainer = document.createElement('div');
+                optionsContainer.classList.add('options-container');
+                // Iterate over each option for the current question
+                qData.options.forEach(option => {
+                    // Create a div for each option
+                    const optionDiv = document.createElement('div');
+                    optionDiv.classList.add('option');
+                    optionDiv.textContent = option.text;
+                    // If this option is the correct one, add a marker class for later highlighting
+                    if (option.isCorrect) {
+                        optionDiv.classList.add('correct-answer-marker');
+                    }
+                    optionsContainer.appendChild(optionDiv);
+                });
+                questionCard.appendChild(optionsContainer);
+
+                // Create and append the "Show Explanation" button
+                const explanationButton = document.createElement('button');
+                explanationButton.classList.add('explanation-button');
+                explanationButton.textContent = 'Show Explanation';
+                // Attach an event listener to the button to toggle the explanation
+                explanationButton.addEventListener('click', () => {
+                    toggleExplanation(questionCard);
+                });
+                questionCard.appendChild(explanationButton);
+
+                // Create and append the explanation content div (initially hidden by CSS)
+                const explanationContent = document.createElement('div');
+                explanationContent.classList.add('explanation-content');
+                explanationContent.textContent = `Explanation: ${qData.explanation}`;
+                questionCard.appendChild(explanationContent);
+
+                // Add the completed question card to the main quiz container
+                quizContainer.appendChild(questionCard);
+            });
+
+            // Add the disclaimer at the very end of the quiz container
+            const disclaimerDiv = document.createElement('div');
+            disclaimerDiv.classList.add('disclaimer');
+            disclaimerDiv.innerHTML = `Disclaimer: This file was created by Ktp, with assistance from AI tools (e.g., ChatGPT, Gemini, Claude, and Perplexity) for content generation and editing. Please double-check all information for accuracy and reliability.`;
+            quizContainer.appendChild(disclaimerDiv);
+        });
+    </script>
+</body>
+</html>

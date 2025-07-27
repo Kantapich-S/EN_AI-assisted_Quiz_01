@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thyroid Pathology USMLE Step 1 Practice Questions</title>
+    <style>
+        /* Base styles for the body and overall layout */
+        body {
+            font-family: 'Inter', sans-serif; /* Attempts to use Inter, falls back to generic sans-serif */
+            background-color: #f3f4f6; /* Light gray background */
+            color: #1f2937; /* Dark gray text color */
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        /* Main container for the entire quiz */
+        .container-quiz {
+            max-width: 800px;
+            margin: 0 auto; /* Center the container */
+            padding: 20px;
+            background-color: #ffffff; /* White background for the quiz content */
+            border-radius: 8px; /* Slightly rounded corners */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Subtle shadow */
+        }
+
+        /* Styles for each individual question card */
+        .question-card {
+            background-color: #ffffff; /* White background */
+            padding: 20px;
+            margin-bottom: 20px; /* Space between question cards */
+            border-radius: 8px; /* Rounded corners */
+            border: 1px solid #e5e7eb; /* Light gray border */
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); /* Smaller shadow */
+        }
+
+        /* Styling for the question text */
+        .question-text {
+            font-size: 1.125rem; /* Large text for questions */
+            font-weight: 600; /* Semi-bold font weight */
+            margin-bottom: 16px; /* Space below the question */
+            color: #1f2937; /* Dark text color */
+        }
+
+        /* Styling for the list of options */
+        .options-list {
+            list-style: none; /* Remove default list bullets */
+            padding: 0;
+            margin: 0;
+        }
+
+        /* Styling for each individual answer option */
+        .option-item {
+            padding: 12px 16px; /* Padding inside each option */
+            margin-bottom: 8px; /* Space between options */
+            border: 1px solid #d1d5db; /* Medium gray border */
+            border-radius: 6px; /* Rounded corners for options */
+            cursor: pointer; /* Indicate clickable item */
+            transition: background-color 0.2s ease-in-out; /* Smooth hover effect */
+            color: #374151; /* Medium dark text color */
+        }
+
+        /* Hover effect for options */
+        .option-item:hover {
+            background-color: #e5e7eb; /* Light gray background on hover */
+        }
+
+        /* Highlight for the correct answer when explanation is shown */
+        .option-correct {
+            background-color: #dcfce7; /* Light green background */
+            border-color: #34d399; /* Green border */
+            color: #065f46; /* Dark green text */
+        }
+
+        /* Styling for the "Show Explanation" button */
+        .button-show-explanation {
+            background-color: #4f46e5; /* Indigo background */
+            color: #ffffff; /* White text */
+            padding: 10px 16px; /* Padding inside the button */
+            border-radius: 6px; /* Rounded corners */
+            border: none; /* No default border */
+            cursor: pointer; /* Indicate clickable button */
+            font-weight: 500; /* Medium font weight */
+            margin-top: 16px; /* Space above the button */
+            transition: background-color 0.2s ease-in-out; /* Smooth hover effect */
+        }
+
+        /* Hover effect for the button */
+        .button-show-explanation:hover {
+            background-color: #4338ca; /* Darker indigo on hover */
+        }
+
+        /* Container for the explanation text */
+        .explanation-container {
+            margin-top: 16px; /* Space above the explanation */
+            padding: 16px;
+            background-color: #f0f9ff; /* Light blue background */
+            border-left: 4px solid #3b82f6; /* Blue left border */
+            border-radius: 4px; /* Rounded right corners */
+            color: #1e40af; /* Dark blue text */
+        }
+
+        /* Utility class to hide elements */
+        .hidden-element {
+            display: none;
+        }
+
+        /* Styling for the disclaimer at the bottom */
+        .disclaimer {
+            text-align: center;
+            margin-top: 40px; /* Space above the disclaimer */
+            font-size: 0.875rem; /* Smaller text size */
+            color: #6b7280; /* Gray text color */
+            padding-top: 20px;
+            border-top: 1px solid #e5e7eb; /* Light gray top border */
+        }
+    </style>
+</head>
+<body>
+    <div class="container-quiz">
+        <h1 class="question-text" style="text-align: center; margin-bottom: 30px;">Thyroid Pathology USMLE Step 1 Practice Questions</h1>
+        <!-- Questions will be dynamically inserted here by JavaScript -->
+    </div>
+
+    <div class="disclaimer">
+        Disclaimer: This file was created by Ktp, with assistance from AI tools (e.g., ChatGPT, Gemini, Claude, and Perplexity) for content generation and editing. Please double-check all information for accuracy and reliability.
+    </div>
+
+    <script>
+        // Array containing all quiz questions, options, correct answers, and explanations.
+        const questions = [
+            {
+                id: 1,
+                question: "What is the normal weight of the adult thyroid gland?",
+                options: [
+                    "5-10 grams",
+                    "15-20 grams",
+                    "25-30 grams",
+                    "35-40 grams",
+                    "45-50 grams"
+                ],
+                correctAnswer: "15-20 grams",
+                explanation: "The normal adult thyroid gland weighs 15-20 grams and is slightly heavier in women. This weight can increase physiologically during menstruation and pregnancy. A weight of 5-10 grams would be too small for normal function, while weights above 25 grams typically indicate pathological enlargement or goiter formation."
+            },
+            {
+                id: 2,
+                question: "Which embryological structure gives rise to parafollicular C cells of the thyroid?",
+                options: [
+                    "First pharyngeal pouch",
+                    "Second pharyngeal pouch",
+                    "Third pharyngeal pouch",
+                    "Fourth pharyngeal pouch",
+                    "Fifth pharyngeal pouch"
+                ],
+                correctAnswer: "Fifth pharyngeal pouch",
+                explanation: "Parafollicular C cells originate from neural crest cells that migrate from the fifth pharyngeal pouch. These cells are responsible for calcitonin secretion and calcium regulation. The thyroid follicular cells themselves develop from endodermal proliferation at the midline pharyngeal floor, but the C cells have a distinct neural crest origin from the fifth pouch."
+            },
+            {
+                id: 3,
+                question: "What is the most common congenital neck anomaly related to thyroid development?",
+                options: [
+                    "Ectopic thyroid tissue",
+                    "Thyroglossal duct cyst",
+                    "Accessory thyroid tissue",
+                    "Thyroid agenesis",
+                    "Pyramidal lobe persistence"
+                ],
+                correctAnswer: "Thyroglossal duct cyst",
+                explanation: "Thyroglossal duct cysts represent the most common congenital neck anomaly, accounting for 2-4% of all neck masses. Over 50% present in the first decade of life. These cysts result from persistence of the thyroglossal duct, which normally disappears during fetal development. They characteristically move with tongue protrusion and require the Sistrunk procedure for treatment."
+            },
+            {
+                id: 4,
+                question: "A 35-year-old woman presents with weight loss, palpitations, and heat intolerance. Laboratory studies show suppressed TSH and elevated free T4. What is the most likely cause of her thyrotoxicosis?",
+                options: [
+                    "Hyperfunctional multinodular goiter",
+                    "Hyperfunctional adenoma",
+                    "Diffuse hyperplasia (Graves disease)",
+                    "Subacute thyroiditis",
+                    "Factitious thyrotoxicosis"
+                ],
+                correctAnswer: "Diffuse hyperplasia (Graves disease)",
+                explanation: "Graves disease (diffuse toxic hyperplasia) accounts for approximately 85% of all thyrotoxicosis cases. It typically affects women of reproductive age and presents with the classic symptoms of hyperthyroidism. While hyperfunctional multinodular goiter and adenoma can cause thyrotoxicosis, they are much less common. Subacute thyroiditis causes a triphasic course, and factitious thyrotoxicosis is rare."
+            },
+            {
+                id: 5,
+                question: "Which laboratory pattern is most consistent with primary hypothyroidism?",
+                options: [
+                    "High TSH, high free T4",
+                    "High TSH, low free T4",
+                    "Low TSH, high free T4",
+                    "Low TSH, low free T4",
+                    "Normal TSH, low free T4"
+                ],
+                correctAnswer: "High TSH, low free T4",
+                explanation: "Primary hypothyroidism results from thyroid gland dysfunction, leading to decreased thyroid hormone production. This triggers compensatory elevation of TSH from the pituitary gland. The pattern of high TSH with low free T4 is diagnostic of primary hypothyroidism. Low TSH with low free T4 suggests secondary hypothyroidism (pituitary/hypothalamic disease), while low TSH with high free T4 indicates hyperthyroidism."
+            },
+            {
+                id: 6,
+                question: "What is the female-to-male ratio in Graves disease?",
+                options: [
+                    "2:1",
+                    "3:1",
+                    "5:1",
+                    "7:1",
+                    "10:1"
+                ],
+                correctAnswer: "7:1",
+                explanation: "Graves disease shows a strong female predominance with a female-to-male ratio of 7:1. This significant gender disparity reflects the autoimmune nature of the disease, as autoimmune conditions typically affect women more frequently than men. While other thyroid conditions also show female predominance, the 7:1 ratio is specifically characteristic of Graves disease."
+            },
+            {
+                id: 7,
+                question: "A 45-year-old woman with a history of autoimmune thyroid disease develops a rapidly enlarging neck mass. Fine needle aspiration shows lymphocytes and plasma cells with destroyed thyroid follicles. What is the most likely diagnosis?",
+                options: [
+                    "Papillary thyroid carcinoma",
+                    "Follicular thyroid carcinoma",
+                    "Hashimoto thyroiditis",
+                    "De Quervain thyroiditis",
+                    "Anaplastic thyroid carcinoma"
+                ],
+                correctAnswer: "Hashimoto thyroiditis",
+                explanation: "The combination of autoimmune thyroid disease history, lymphoplasmacytic infiltration, and destroyed thyroid follicles is characteristic of Hashimoto thyroiditis. This condition shows massive lymphoplasmacytic infiltration with follicle formation and progressive thyrocyte depletion. The patient's age and gender (middle-aged woman) also fit the typical demographic for Hashimoto thyroiditis."
+            },
+            {
+                id: 8,
+                question: "Which pathological feature is pathognomonic for papillary thyroid carcinoma?",
+                options: [
+                    "Capsular invasion",
+                    "Vascular invasion",
+                    "Ground-glass nuclei with intranuclear inclusions",
+                    "Amyloid deposits",
+                    "Psammoma bodies"
+                ],
+                correctAnswer: "Ground-glass nuclei with intranuclear inclusions",
+                explanation: "Ground-glass 'Orphan Annie eye' nuclei with intranuclear inclusions and grooves are pathognomonic (uniquely characteristic) for papillary thyroid carcinoma. While psammoma bodies are often present in papillary carcinoma, they can occur in other conditions. Capsular and vascular invasion are features of follicular carcinoma, and amyloid deposits are characteristic of medullary thyroid carcinoma."
+            },
+            {
+                id: 9,
+                question: "A 50-year-old woman presents with a painless thyroid nodule. Fine needle aspiration shows follicular cells but cannot distinguish between adenoma and carcinoma. What is the key histological feature that differentiates follicular carcinoma from follicular adenoma?",
+                options: [
+                    "Nuclear pleomorphism",
+                    "Mitotic activity",
+                    "Capsular and/or vascular invasion",
+                    "Cellular atypia",
+                    "Necrosis"
+                ],
+                correctAnswer: "Capsular and/or vascular invasion",
+                explanation: "The key differentiating feature between follicular adenoma and follicular carcinoma is the presence of capsular and/or vascular invasion in carcinoma. Follicular adenomas have intact capsules without invasion, while carcinomas show invasion through the capsule and/or into blood vessels. This distinction cannot be made on fine needle aspiration and requires examination of the entire tumor with its capsule."
+            },
+            {
+                id: 10,
+                question: "What is the most common cause of hypothyroidism in developed countries?",
+                options: [
+                    "Iodine deficiency",
+                    "Hashimoto thyroiditis",
+                    "Subacute thyroiditis",
+                    "Congenital hypothyroidism",
+                    "Drug-induced hypothyroidism"
+                ],
+                correctAnswer: "Hashimoto thyroiditis",
+                explanation: "Hashimoto thyroiditis is the most common cause of hypothyroidism in areas with adequate iodine intake (developed countries). It results from autoimmune destruction of thyroid tissue leading to progressive thyroid failure. While iodine deficiency is the most common cause worldwide, it is rare in developed countries with adequate iodine supplementation."
+            },
+            {
+                id: 11,
+                question: "A 40-year-old woman presents with neck pain radiating to her ear following a recent upper respiratory infection. Physical examination reveals a tender, enlarged thyroid. Laboratory studies show elevated T4 and T3 with suppressed TSH. What is the most likely diagnosis?",
+                options: [
+                    "Graves disease",
+                    "Hashimoto thyroiditis",
+                    "De Quervain thyroiditis",
+                    "Suppurative thyroiditis",
+                    "Riedel thyroiditis"
+                ],
+                correctAnswer: "De Quervain thyroiditis",
+                explanation: "De Quervain (subacute granulomatous) thyroiditis typically follows an upper respiratory infection and presents with painful thyroid enlargement, neck pain radiating to the ear, and a triphasic clinical course. The initial phase shows thyrotoxicosis (elevated T4/T3, suppressed TSH) due to follicular destruction and hormone release. This distinguishes it from Graves disease, which is painless, and other forms of thyroiditis."
+            },
+            {
+                id: 12,
+                question: "A 25-year-old man presents with a family history of thyroid cancer and pheochromocytoma. Calcitonin levels are markedly elevated. What genetic alteration is most likely associated with his condition?",
+                options: [
+                    "RAS mutation",
+                    "p53 mutation",
+                    "RET protooncogene mutation",
+                    "BRAF mutation",
+                    "PIK3CA mutation"
+                ],
+                correctAnswer: "RET protooncogene mutation",
+                explanation: "The combination of medullary thyroid carcinoma (indicated by elevated calcitonin) and pheochromocytoma suggests MEN-2 syndrome, which is associated with germline RET protooncogene mutations. Medullary thyroid carcinoma arises from parafollicular C cells and produces calcitonin. Both familial and sporadic cases of medullary thyroid carcinoma show RET mutations, while RAS mutations are more associated with follicular carcinoma."
+            },
+            {
+                id: 13,
+                question: "A 30-year-old woman presents 4 months postpartum with fatigue and palpitations. Initial labs show suppressed TSH with normal T4 and T3. Follow-up labs 8 weeks later show elevated TSH with low T4. TPO antibodies are positive. What is the most likely diagnosis?",
+                options: [
+                    "Graves disease",
+                    "Subacute lymphocytic thyroiditis",
+                    "De Quervain thyroiditis",
+                    "Hashimoto thyroiditis",
+                    "Postpartum depression"
+                ],
+                correctAnswer: "Subacute lymphocytic thyroiditis",
+                explanation: "Subacute lymphocytic (silent) thyroiditis often occurs postpartum (3-6 months after delivery) and follows a characteristic triphasic course: initial hyperthyroid phase, followed by hypothyroid phase, then recovery. The presence of TPO antibodies and the painless nature distinguish it from De Quervain thyroiditis. The triphasic pattern and postpartum timing are classic for this condition."
+            },
+            {
+                id: 14,
+                question: "A 60-year-old woman with a long history of multinodular goiter presents with a rapidly enlarging, hard neck mass and hoarseness. Biopsy shows large pleomorphic giant cells with extensive necrosis. What is the most likely prognosis?",
+                options: [
+                    "Excellent with complete surgical resection",
+                    "Good with radioiodine therapy",
+                    "Fair with chemotherapy",
+                    "Poor with palliative care",
+                    "Variable depending on staging"
+                ],
+                correctAnswer: "Poor with palliative care",
+                explanation: "The description of large pleomorphic giant cells with extensive necrosis in the setting of rapid growth and local symptoms (hoarseness suggesting recurrent laryngeal nerve involvement) is consistent with anaplastic thyroid carcinoma. This tumor has nearly 100% mortality rate and is extremely aggressive. The association with prior multinodular goiter (50% of cases) supports this diagnosis."
+            },
+            {
+                id: 15,
+                question: "A 12-year-old girl presents with exophthalmos, goiter, and hyperthyroidism. Which of the following antibodies is most specific for her likely diagnosis?",
+                options: [
+                    "Anti-thyroglobulin",
+                    "Anti-thyroid peroxidase (TPO)",
+                    "Thyroid-stimulating immunoglobulin (TSI)",
+                    "TSH receptor blocking antibodies",
+                    "Anti-nuclear antibodies"
+                ],
+                correctAnswer: "Thyroid-stimulating immunoglobulin (TSI)",
+                explanation: "The combination of hyperthyroidism, goiter, and exophthalmos in a young patient strongly suggests Graves disease. TSI (thyroid-stimulating immunoglobulin) antibodies are relatively specific for Graves disease, as they mimic TSH action and stimulate both hormone production and thyroid growth. While anti-thyroglobulin and anti-TPO antibodies can be present, they are not specific for Graves disease and are more associated with Hashimoto thyroiditis."
+            },
+            {
+                id: 16,
+                question: "A 45-year-old man presents with a 2 cm thyroid nodule that is 'cold' on radioiodine scan. Fine needle aspiration shows cellular follicular lesion. Which factor most significantly increases the likelihood of malignancy?",
+                options: [
+                    "Patient's age",
+                    "Nodule size",
+                    "Cold appearance on scan",
+                    "Male gender",
+                    "Cellular appearance on FNA"
+                ],
+                correctAnswer: "Male gender",
+                explanation: "While all listed factors contribute to malignancy risk, male gender is particularly significant as thyroid cancer shows a strong female predominance (2.5-3:1). When thyroid cancer does occur in men, it tends to be more aggressive. The combination of male gender with a cold nodule significantly increases malignancy risk compared to the same presentation in a woman."
+            },
+            {
+                id: 17,
+                question: "A 55-year-old woman undergoes thyroidectomy for a 3 cm follicular lesion. Histology shows a well-encapsulated tumor with uniform follicular architecture. Extensive sectioning reveals three microscopic foci of capsular invasion, each <1 mm. What is the most appropriate classification?",
+                options: [
+                    "Follicular adenoma",
+                    "Minimally invasive follicular carcinoma",
+                    "Widely invasive follicular carcinoma",
+                    "Follicular variant of papillary carcinoma",
+                    "Atypical follicular adenoma"
+                ],
+                correctAnswer: "Minimally invasive follicular carcinoma",
+                explanation: "Any evidence of capsular invasion, regardless of extent, classifies a follicular lesion as carcinoma rather than adenoma. The limited extent of invasion (microscopic foci <1 mm) classifies this as minimally invasive follicular carcinoma, which has an excellent prognosis (90% 10-year survival). Widely invasive tumors show gross invasion through the capsule or extensive vascular invasion."
+            },
+            {
+                id: 18,
+                question: "A 38-year-old woman presents with a thyroid mass and diarrhea. Biopsy shows polygonal cells in a solid growth pattern with Congo red-positive deposits that show apple-green birefringence under polarized light. Immunohistochemistry would most likely be positive for which marker?",
+                options: [
+                    "Thyroglobulin",
+                    "TTF-1",
+                    "Calcitonin",
+                    "Chromogranin A",
+                    "Cytokeratin 20"
+                ],
+                correctAnswer: "Calcitonin",
+                explanation: "The solid growth pattern with Congo red-positive deposits showing apple-green birefringence indicates amyloid, which is characteristic of medullary thyroid carcinoma. The amyloid consists of altered calcitonin deposits. Medullary carcinoma arises from parafollicular C cells and produces calcitonin, which would be positive on immunohistochemistry. The diarrhea can result from elevated calcitonin levels."
+            },
+            {
+                id: 19,
+                question: "A 32-year-old woman with Graves disease develops worsening exophthalmos with diplopia and decreased visual acuity. According to the NOSPECS classification, what stage best describes her ophthalmopathy?",
+                options: [
+                    "Stage O (only signs)",
+                    "Stage S (soft tissue involvement)",
+                    "Stage P (proptosis)",
+                    "Stage E (extraocular muscle involvement)",
+                    "Stage C (corneal involvement)"
+                ],
+                correctAnswer: "Stage E (extraocular muscle involvement)",
+                explanation: "The NOSPECS classification progresses from N (no signs) to S (sight loss). This patient has diplopia (indicating extraocular muscle involvement) and decreased visual acuity. While she likely has proptosis and soft tissue involvement, the presence of extraocular muscle dysfunction (diplopia) places her in Stage E. The decreased visual acuity could suggest progression toward Stage S (sight loss from optic nerve compression)."
+            },
+            {
+                id: 20,
+                question: "A 28-year-old pregnant woman in her second trimester presents with neck pain, fever, and thyrotoxicosis. ESR is markedly elevated. Given the clinical context, what is the most appropriate immediate management approach?",
+                options: [
+                    "Antithyroid drugs (methimazole)",
+                    "Radioiodine therapy",
+                    "Emergency thyroidectomy",
+                    "Anti-inflammatory therapy and beta-blockers",
+                    "Observation with serial monitoring"
+                ],
+                correctAnswer: "Anti-inflammatory therapy and beta-blockers",
+                explanation: "This presentation suggests De Quervain thyroiditis (neck pain, fever, elevated ESR, thyrotoxicosis). During pregnancy, management is particularly challenging because radioiodine is contraindicated and antithyroid drugs have limited efficacy since thyrotoxicosis results from hormone release rather than overproduction. The self-limiting nature of De Quervain thyroiditis makes anti-inflammatory therapy and beta-blockers (for symptom control) the most appropriate approach, avoiding potentially harmful interventions."
+            }
+        ];
+
+        /**
+         * Shuffles an array in place using the Fisher-Yates (Knuth) shuffle algorithm.
+         * @param {Array} array The array to shuffle.
+         */
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+            }
+        }
+
+        /**
+         * Renders all questions and their shuffled options into the DOM.
+         */
+        function renderQuestions() {
+            const quizContainer = document.querySelector('.container-quiz');
+            questions.forEach(q => {
+                // Create the main card element for each question
+                const questionCard = document.createElement('div');
+                questionCard.className = 'question-card';
+                questionCard.id = `question-${q.id}`; // Unique ID for each question card
+
+                // Create and append the question text
+                const questionText = document.createElement('p');
+                questionText.className = 'question-text';
+                questionText.textContent = `Question ${q.id}: ${q.question}`;
+                questionCard.appendChild(questionText);
+
+                // Create the unordered list for options
+                const optionsList = document.createElement('ul');
+                optionsList.className = 'options-list';
+
+                // Create a copy of options and shuffle them
+                const shuffledOptions = [...q.options];
+                shuffleArray(shuffledOptions);
+
+                // Append each shuffled option to the options list
+                shuffledOptions.forEach(option => {
+                    const optionItem = document.createElement('li');
+                    optionItem.className = 'option-item';
+                    optionItem.textContent = option;
+                    // Store question ID and option value as data attributes for easy retrieval
+                    optionItem.setAttribute('data-question-id', q.id);
+                    optionItem.setAttribute('data-option-value', option);
+                    optionsList.appendChild(optionItem);
+                });
+                questionCard.appendChild(optionsList);
+
+                // Create and append the "Show Explanation" button
+                const showExplanationButton = document.createElement('button');
+                showExplanationButton.className = 'button-show-explanation';
+                showExplanationButton.textContent = 'Show Explanation';
+                // Attach click event listener to toggle explanation
+                showExplanationButton.onclick = () => toggleExplanation(q.id);
+                questionCard.appendChild(showExplanationButton);
+
+                // Create and append the explanation container (initially hidden)
+                const explanationContainer = document.createElement('div');
+                explanationContainer.className = 'explanation-container hidden-element'; // Starts hidden
+                explanationContainer.id = `explanation-${q.id}`; // Unique ID for each explanation
+                explanationContainer.innerHTML = `<strong>Explanation:</strong> ${q.explanation}`;
+                questionCard.appendChild(explanationContainer);
+
+                // Add the complete question card to the quiz container
+                quizContainer.appendChild(questionCard);
+            });
+        }
+
+        /**
+         * Toggles the visibility of a question's explanation and highlights the correct answer.
+         * @param {number} questionId The ID of the question to toggle.
+         */
+        function toggleExplanation(questionId) {
+            const explanationDiv = document.getElementById(`explanation-${questionId}`);
+            const optionsList = document.querySelector(`#question-${questionId} .options-list`);
+            const button = document.querySelector(`#question-${questionId} .button-show-explanation`);
+            const questionData = questions.find(q => q.id === questionId); // Find the question data
+
+            if (explanationDiv.classList.contains('hidden-element')) {
+                // If explanation is hidden, show it
+                explanationDiv.classList.remove('hidden-element');
+                button.textContent = 'Hide Explanation'; // Change button text
+
+                // Iterate through options to find and highlight the correct one
+                Array.from(optionsList.children).forEach(optionItem => {
+                    if (optionItem.getAttribute('data-option-value') === questionData.correctAnswer) {
+                        optionItem.classList.add('option-correct'); // Apply highlight class
+                    }
+                });
+            } else {
+                // If explanation is visible, hide it
+                explanationDiv.classList.add('hidden-element');
+                button.textContent = 'Show Explanation'; // Change button text back
+
+                // Remove highlight from all options
+                Array.from(optionsList.children).forEach(optionItem => {
+                    optionItem.classList.remove('option-correct'); // Remove highlight class
+                });
+            }
+        }
+
+        // Event listener to render questions once the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', renderQuestions);
+    </script>
+</body>
+</html>

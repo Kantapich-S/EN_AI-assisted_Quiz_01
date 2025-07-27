@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USMLE Step 1-Style Quiz: Adrenal Hormones</title>
+    <style>
+        /* Basic Reset & Font */
+        body {
+            font-family: 'Inter', sans-serif; /* Using a common sans-serif font */
+            background-color: #f3f4f6; /* Light gray background */
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+            color: #374151; /* Dark gray text */
+        }
+
+        /* Main Container */
+        .quiz-container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 12px; /* Rounded corners */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow */
+        }
+
+        /* Question Card */
+        .question-card {
+            background-color: #ffffff;
+            padding: 24px;
+            margin-bottom: 24px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Lighter shadow for individual cards */
+            border: 1px solid #e5e7eb; /* Light border */
+        }
+
+        .question-card h2 {
+            font-size: 1.5rem; /* Larger font for questions */
+            font-weight: 600; /* Semi-bold */
+            margin-bottom: 16px;
+            color: #1f2937; /* Darker text for questions */
+        }
+
+        /* Options List */
+        .options-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .option-item {
+            background-color: #f9fafb; /* Very light gray for options */
+            padding: 12px 16px;
+            margin-bottom: 8px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+            border: 1px solid #e0e7ff; /* Light blue border */
+        }
+
+        .option-item:hover {
+            background-color: #eef2ff; /* Lighter blue on hover */
+        }
+
+        /* Correct Answer Highlight */
+        .option-item.correct-answer {
+            background-color: #d1fae5; /* Light green */
+            border-color: #34d399; /* Green border */
+            font-weight: 500; /* Medium font weight */
+        }
+
+        /* Explanation Section */
+        .explanation-section {
+            background-color: #ecfdf5; /* Very light green for explanation */
+            padding: 16px;
+            margin-top: 16px;
+            border-radius: 8px;
+            border: 1px solid #a7f3d0; /* Green border */
+            color: #065f46; /* Dark green text */
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Button Styling */
+        .show-explanation-btn {
+            background-color: #4f46e5; /* Indigo */
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            margin-top: 16px;
+            transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .show-explanation-btn:hover {
+            background-color: #4338ca; /* Darker indigo on hover */
+            transform: translateY(-1px);
+        }
+
+        .show-explanation-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Hidden class for explanations */
+        .hidden {
+            display: none;
+        }
+
+        /* Disclaimer */
+        .disclaimer {
+            font-size: 0.85rem;
+            color: #6b7280;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e5e7eb;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>USMLE Step 1-Style Questions: Adrenal Hormones</h1>
+
+        <!-- Questions will be dynamically inserted here by JavaScript -->
+        <div id="quiz-questions"></div>
+
+        <div class="disclaimer">
+            Disclaimer: This file was created by Ktp, with assistance from AI tools (e.g., ChatGPT, Gemini, Claude, and Perplexity) for content generation and editing. Please double-check all information for accuracy and reliability.
+        </div>
+    </div>
+
+    <script>
+        // Array of question objects
+        const questionsData = [
+            {
+                question: "Which zone of the adrenal cortex is primarily responsible for aldosterone production?",
+                options: [
+                    { text: "A) Zona fasciculata", isCorrect: false },
+                    { text: "B) Zona glomerulosa", isCorrect: true },
+                    { text: "C) Zona reticularis", isCorrect: false },
+                    { text: "D) Adrenal medulla", isCorrect: false },
+                    { text: "E) Zona intermedia", isCorrect: false }
+                ],
+                explanation: "The zona glomerulosa is the outermost layer of the adrenal cortex and is specifically responsible for mineralocorticoid production, primarily aldosterone. The zona fasciculata produces glucocorticoids like cortisol, while the zona reticularis produces adrenal androgens. The adrenal medulla produces catecholamines, and there is no zona intermedia in the human adrenal gland."
+            },
+            {
+                question: "What percentage of circulating cortisol is typically bound to transport proteins under normal conditions?",
+                options: [
+                    { text: "A) 50%", isCorrect: false },
+                    { text: "B) 75%", isCorrect: false },
+                    { text: "C) 85%", isCorrect: false },
+                    { text: "D) 95%", isCorrect: true },
+                    { text: "E) 99%", isCorrect: false }
+                ],
+                explanation: "Approximately 95% of circulating cortisol is bound to transport proteins, primarily cortisol-binding globulin (CBG) and albumin, while only 5% remains free and biologically active. This high binding percentage is crucial for hormone transport and regulation. Lower percentages would not provide adequate hormone stability and transport, while higher percentages would leave insufficient free hormone for biological activity."
+            },
+            {
+                question: "Which enzyme is required for the conversion of norepinephrine to epinephrine in the adrenal medulla?",
+                options: [
+                    { text: "A) Tyrosine hydroxylase", isCorrect: false },
+                    { text: "B) DOPA decarboxylase", isCorrect: false },
+                    { text: "C) Dopamine-β-hydroxylase", isCorrect: false },
+                    { text: "D) Phenylethanolamine N-methyltransferase (PNMT)", isCorrect: true },
+                    { text: "E) Monoamine oxidase", isCorrect: false }
+                ],
+                explanation: "PNMT (phenylethanolamine N-methyltransferase) catalyzes the final step in catecholamine synthesis, converting norepinephrine to epinephrine. This enzyme requires cortisol for its activity, explaining why the adrenal cortex surrounds the medulla. Tyrosine hydroxylase converts tyrosine to DOPA, DOPA decarboxylase converts DOPA to dopamine, and dopamine-β-hydroxylase converts dopamine to norepinephrine."
+            },
+            {
+                question: "When does cortisol secretion typically reach its peak during a normal circadian cycle?",
+                options: [
+                    { text: "A) Midnight", isCorrect: false },
+                    { text: "B) 3-4 AM", isCorrect: false },
+                    { text: "C) 6-8 AM", isCorrect: true },
+                    { text: "D) Noon", isCorrect: false },
+                    { text: "E) 6-8 PM", isCorrect: false }
+                ],
+                explanation: "Cortisol follows a distinct circadian rhythm with peak release occurring in the early morning hours (6-8 AM), preparing the body for daily activities. Levels are lowest at midnight, gradually rising through the early morning hours. This pattern is controlled by the light-dark cycle and sleep-wake patterns, with disruption of this rhythm being clinically significant."
+            },
+            {
+                question: "Which second messenger system is primarily activated by ACTH in adrenocortical cells?",
+                options: [
+                    { text: "A) IP₃/DAG system", isCorrect: false },
+                    { text: "B) cAMP system", isCorrect: true },
+                    { text: "C) cGMP system", isCorrect: false },
+                    { text: "D) Calcium/calmodulin system", isCorrect: false },
+                    { text: "E) Tyrosine kinase system", isCorrect: false }
+                ],
+                explanation: "ACTH activates the cAMP-mediated signaling pathway in adrenocortical cells. This leads to activation of protein kinase A, which promotes synthesis of enzymes necessary for steroid hormone formation and stimulates cholesterol transport into mitochondria. The IP₃/DAG system is used by angiotensin II for aldosterone regulation, while the other systems are not primary mediators of ACTH action."
+            },
+            {
+                question: "A patient with Conn's syndrome would most likely present with which combination of laboratory findings?",
+                options: [
+                    { text: "A) Hyponatremia, hyperkalemia, metabolic acidosis", isCorrect: false },
+                    { text: "B) Hypernatremia, hypokalemia, metabolic alkalosis", isCorrect: false },
+                    { text: "C) Normal sodium, hypokalemia, metabolic alkalosis", isCorrect: true },
+                    { text: "D) Hyponatremia, normal potassium, respiratory acidosis", isCorrect: false },
+                    { text: "E) Hypernatremia, hyperkalemia, metabolic acidosis", isCorrect: false }
+                ],
+                explanation: "Conn's syndrome (primary aldosterone excess) classically presents with the triad of hypertension, hypokalemia, and metabolic alkalosis. Patients typically do NOT have marked hypernatremia due to the aldosterone escape phenomenon, where the kidneys adapt to prevent excessive sodium retention. The excess aldosterone causes increased potassium and hydrogen ion excretion, leading to hypokalemia and metabolic alkalosis."
+            },
+            {
+                question: "Which receptor subtype mediates the bronchodilation effect of epinephrine during stress response?",
+                options: [
+                    { text: "A) α₁ receptors", isCorrect: false },
+                    { text: "B) α₂ receptors", isCorrect: false },
+                    { text: "C) β₁ receptors", isCorrect: false },
+                    { text: "D) β₂ receptors", isCorrect: true },
+                    { text: "E) β₃ receptors", isCorrect: false }
+                ],
+                explanation: "β₂ receptors mediate bronchodilation, and epinephrine has much higher potency at β₂ receptors compared to norepinephrine (E >> NE). This allows epinephrine to cause bronchial smooth muscle relaxation during stress responses. α₁ receptors cause vasoconstriction, α₂ receptors inhibit insulin release, β₁ receptors increase heart rate and contractility, and β₃ receptors mediate lipolysis."
+            },
+            {
+                question: "What is the most potent stimulus for aldosterone secretion under normal physiological conditions?",
+                options: [
+                    { text: "A) Increased plasma sodium", isCorrect: false },
+                    { text: "B) Decreased plasma potassium", isCorrect: false },
+                    { text: "C) Angiotensin II", isCorrect: true },
+                    { text: "D) ACTH", isCorrect: false },
+                    { text: "E) Atrial natriuretic peptide", isCorrect: false }
+                ],
+                explanation: "Angiotensin II is the most potent stimulus for aldosterone secretion. It binds to AT-II receptors and activates the PLC-DAG-IP₃ system, leading to increased intracellular calcium and aldosterone synthesis. Increased plasma potassium is also a strong stimulus, but angiotensin II is more potent. ACTH has only minor effects during stress, while increased sodium and ANP actually inhibit aldosterone secretion."
+            },
+            {
+                question: "A 45-year-old woman presents with moon face, truncal obesity, and purple striae. Laboratory studies show elevated 24-hour urinary free cortisol. Which additional finding would be most consistent with a pituitary adenoma as the cause?",
+                options: [
+                    { text: "A) Suppressed ACTH levels", isCorrect: false },
+                    { text: "B) Elevated ACTH levels", isCorrect: true },
+                    { text: "C) Unilateral adrenal mass on imaging", isCorrect: false },
+                    { text: "D) Bilateral adrenal atrophy", isCorrect: false },
+                    { text: "E) Normal dexamethasone suppression test", isCorrect: false }
+                ],
+                explanation: "Cushing's disease (pituitary ACTH excess) would present with elevated ACTH levels along with the clinical features of hypercortisolism. Suppressed ACTH levels would suggest primary adrenal disease (adenoma/carcinoma), while a unilateral adrenal mass would indicate primary adrenal pathology. Bilateral adrenal atrophy would not be seen with excess ACTH stimulation, and dexamethasone suppression would typically be abnormal in Cushing's syndrome."
+            },
+            {
+                question: "A patient with 21-hydroxylase deficiency congenital adrenal hyperplasia would be expected to have which combination of hormone levels?",
+                options: [
+                    { text: "A) Low cortisol, low aldosterone, low androgens", isCorrect: false },
+                    { text: "B) High cortisol, high aldosterone, low androgens", isCorrect: false },
+                    { text: "C) Low cortisol, low aldosterone, high androgens", isCorrect: true },
+                    { text: "D) High cortisol, low aldosterone, high androgens", isCorrect: false },
+                    { text: "E) Normal cortisol, normal aldosterone, high androgens", isCorrect: false }
+                ],
+                explanation: "In 21-hydroxylase deficiency, the enzyme defect prevents synthesis of both cortisol and aldosterone. The compensatory increase in ACTH (due to low cortisol feedback) causes adrenal hyperplasia and shunts precursors toward androgen production, resulting in androgen excess. This creates the classic triad of cortisol deficiency, mineralocorticoid deficiency, and androgen excess."
+            },
+            {
+                question: "Which mechanism best explains why patients with primary adrenal insufficiency develop hyperpigmentation?",
+                options: [
+                    { text: "A) Direct melanocyte stimulation by cortisol deficiency", isCorrect: false },
+                    { text: "B) Increased ACTH secretion due to loss of negative feedback", isCorrect: true },
+                    { text: "C) Aldosterone deficiency affecting skin metabolism", isCorrect: false },
+                    { text: "D) Increased catecholamine production", isCorrect: false },
+                    { text: "E) Direct autoimmune attack on melanocytes", isCorrect: false }
+                ],
+                explanation: "Hyperpigmentation in primary adrenal insufficiency results from increased ACTH secretion due to loss of cortisol's negative feedback. ACTH shares structural similarities with melanocyte-stimulating hormone (MSH) and can stimulate melanocytes, causing the characteristic bronze-colored hyperpigmentation. This finding helps distinguish primary from secondary adrenal insufficiency, where ACTH levels would be low."
+            },
+            {
+                question: "A patient taking high-dose corticosteroids for rheumatoid arthritis for 6 months is scheduled for emergency surgery. What is the most appropriate perioperative management regarding corticosteroids?",
+                options: [
+                    { text: "A) Continue the same dose throughout the perioperative period", isCorrect: false },
+                    { text: "B) Discontinue corticosteroids 24 hours before surgery", isCorrect: false },
+                    { text: "C) Increase the corticosteroid dose to account for surgical stress", isCorrect: true },
+                    { text: "D) Switch to a different class of anti-inflammatory medication", isCorrect: false },
+                    { text: "E) Taper the dose rapidly before surgery", isCorrect: false }
+                ],
+                explanation: "Patients on chronic corticosteroid therapy develop suppression of the HPA axis and cannot mount an appropriate cortisol response to stress. During surgery (a major stressor), these patients require stress-dose corticosteroids to prevent adrenal crisis. Simply continuing the same dose would be inadequate for the stress response, while discontinuing or rapidly tapering could precipitate life-threatening adrenal insufficiency."
+            },
+            {
+                question: "A hypertensive patient presents with episodic headaches, sweating, and palpitations. During an episode, blood pressure reaches 220/120 mmHg. Which approach to antihypertensive therapy would be most appropriate initially?",
+                options: [
+                    { text: "A) β-blocker alone", isCorrect: false },
+                    { text: "B) α-blocker alone", isCorrect: false },
+                    { text: "C) Combined α- and β-blocker simultaneously", isCorrect: false },
+                    { text: "D) α-blocker first, then β-blocker if needed", isCorrect: true },
+                    { text: "E) Calcium channel blocker alone", isCorrect: false }
+                ],
+                explanation: "This presentation suggests pheochromocytoma. The key principle is that α-blockade must precede β-blockade. Using a β-blocker alone or first could lead to unopposed α-stimulation and paradoxical hypertension, as β₂-mediated vasodilation would be blocked while α₁-mediated vasoconstriction continues. α-blockade should be established first to control vasoconstriction, then β-blockade can be added if needed for heart rate control."
+            },
+            {
+                question: "A patient with treated Addison's disease calls reporting fever, vomiting, and severe weakness during a viral illness. Current medications include hydrocortisone 20 mg AM and 10 mg PM, plus fludrocortisone. What is the most appropriate immediate recommendation?",
+                options: [
+                    { text: "A) Continue current medications and monitor symptoms", isCorrect: false },
+                    { text: "B) Double the hydrocortisone dose temporarily", isCorrect: false },
+                    { text: "C) Triple the hydrocortisone dose and seek immediate medical attention", isCorrect: true },
+                    { text: "D) Add a short course of prednisone to current regimen", isCorrect: false },
+                    { text: "E) Increase only the fludrocortisone dose", isCorrect: false }
+                ],
+                explanation: "Patients with Addison's disease cannot increase cortisol production during stress and are at risk for adrenal crisis during illness. The standard recommendation is to double or triple the glucocorticoid dose during illness, fever, or stress. Given the severity of symptoms (fever, vomiting, weakness), tripling the dose and seeking medical attention is most appropriate to prevent adrenal crisis. Fludrocortisone adjustment alone would not address the glucocorticoid needs during stress."
+            },
+            {
+                question: "A newborn female presents with ambiguous genitalia and salt-wasting. Laboratory studies show low cortisol, low aldosterone, elevated 17-hydroxyprogesterone, and elevated ACTH. What is the most likely enzyme deficiency?",
+                options: [
+                    { text: "A) 17α-hydroxylase deficiency", isCorrect: false },
+                    { text: "B) 11β-hydroxylase deficiency", isCorrect: false },
+                    { text: "C) 21-hydroxylase deficiency", isCorrect: true },
+                    { text: "D) 3β-hydroxysteroid dehydrogenase deficiency", isCorrect: false },
+                    { text: "E) 17,20-lyase deficiency", isCorrect: false }
+                ],
+                explanation: "This presentation is classic for 21-hydroxylase deficiency, the most common form of congenital adrenal hyperplasia. The elevated 17-hydroxyprogesterone is the key diagnostic finding, as this substrate accumulates when 21-hydroxylase is deficient. The combination of virilization (from androgen excess), salt-wasting (from aldosterone deficiency), and cortisol deficiency with compensatory ACTH elevation confirms this diagnosis."
+            },
+            {
+                question: "A patient with diabetes mellitus on insulin develops Cushing's syndrome. How would you expect their insulin requirements to change, and what is the underlying mechanism?",
+                options: [
+                    { text: "A) Decrease due to enhanced insulin sensitivity from cortisol", isCorrect: false },
+                    { text: "B) Remain unchanged as cortisol doesn't affect glucose metabolism", isCorrect: false },
+                    { text: "C) Increase due to cortisol-induced insulin resistance and gluconeogenesis", isCorrect: true },
+                    { text: "D) Initially decrease then increase due to biphasic cortisol effects", isCorrect: false },
+                    { text: "E) Become unpredictable due to disrupted circadian insulin patterns", isCorrect: false }
+                ],
+                explanation: "Cortisol has potent anti-insulin effects, including decreased glucose utilization by peripheral tissues, decreased insulin secretion and tissue sensitivity, increased gluconeogenesis, and permissive effects on glucagon and catecholamines. These effects would significantly increase insulin requirements in a diabetic patient. Cortisol promotes glucose production and impairs glucose utilization, creating a state of insulin resistance."
+            },
+            {
+                question: "A 30-year-old woman with known pheochromocytoma is scheduled for tumor resection. Intraoperatively, her blood pressure suddenly drops to 70/40 mmHg after tumor manipulation. What is the most likely explanation for this hemodynamic change?",
+                options: [
+                    { text: "A) Massive catecholamine release causing vasodilation", isCorrect: false },
+                    { text: "B) Sudden cessation of catecholamine production from tumor manipulation", isCorrect: true },
+                    { text: "C) Anesthetic-induced hypotension", isCorrect: false },
+                    { text: "D) Hemorrhage from surgical manipulation", isCorrect: false },
+                    { text: "E) Cardiac arrhythmia from catecholamine excess", isCorrect: false }
+                ],
+                explanation: "During pheochromocytoma resection, manipulation of the tumor can cause massive catecholamine release initially, but once the tumor's blood supply is interrupted or the tumor is removed, there is sudden cessation of catecholamine production. Patients often become hypotensive due to the abrupt loss of the chronic catecholamine-mediated vasoconstriction they had adapted to. This is why careful perioperative α-blockade and volume expansion are essential."
+            },
+            {
+                question: "A patient presents with hypertension, hypokalemia, and metabolic alkalosis. However, both plasma aldosterone and renin levels are suppressed. Which condition is most likely?",
+                options: [
+                    { text: "A) Primary aldosteronism (Conn's syndrome)", isCorrect: false },
+                    { text: "B) Secondary aldosteronism", isCorrect: false },
+                    { text: "C) Apparent mineralocorticoid excess syndrome", isCorrect: true },
+                    { text: "D) Renovascular hypertension", isCorrect: false },
+                    { text: "E) Pheochromocytoma", isCorrect: false }
+                ],
+                explanation: "When both aldosterone and renin are suppressed in the presence of mineralocorticoid excess symptoms, this suggests apparent mineralocorticoid excess syndrome. This can be caused by 11β-hydroxysteroid dehydrogenase deficiency (allowing cortisol to act as a mineralocorticoid) or licorice ingestion. Primary aldosteronism would have high aldosterone with suppressed renin, while secondary aldosteronism would have both elevated."
+            },
+            {
+                question: "A patient with chronic renal failure develops hyperkalemia. Through which mechanism would the adrenal glands physiologically attempt to compensate for this electrolyte imbalance?",
+                options: [
+                    { text: "A) Increased cortisol production to enhance renal potassium excretion", isCorrect: false },
+                    { text: "B) Increased aldosterone production stimulated by hyperkalemia", isCorrect: true },
+                    { text: "C) Decreased catecholamine production to reduce cellular potassium uptake", isCorrect: false },
+                    { text: "D) Increased DHEA production to enhance potassium metabolism", isCorrect: false },
+                    { text: "E) Decreased aldosterone production to prevent further potassium loss", isCorrect: false }
+                ],
+                explanation: "Hyperkalemia is a direct stimulus for aldosterone secretion from the zona glomerulosa. Even in renal failure, the adrenal glands will attempt to increase aldosterone production in response to elevated potassium levels. Aldosterone increases potassium excretion in the distal tubule and collecting duct. While this response may be less effective in renal failure, it represents the primary adrenal compensatory mechanism for hyperkalemia."
+            },
+            {
+                question: "A patient with suspected adrenal insufficiency has a baseline cortisol of 8 μg/dL at 8 AM. After ACTH stimulation testing, cortisol rises to 12 μg/dL. Simultaneously, ACTH levels are found to be low. What is the most likely diagnosis and underlying pathophysiology?",
+                options: [
+                    { text: "A) Primary adrenal insufficiency with complete adrenal destruction", isCorrect: false },
+                    { text: "B) Secondary adrenal insufficiency with pituitary dysfunction", isCorrect: true },
+                    { text: "C) Partial primary adrenal insufficiency with remaining function", isCorrect: false },
+                    { text: "D) Factitious disorder with exogenous cortisol administration", isCorrect: false },
+                    { text: "E) Laboratory error requiring repeat testing", isCorrect: false }
+                ],
+                explanation: "The combination of low baseline cortisol, blunted response to ACTH stimulation (suggesting adrenal dysfunction), but with low endogenous ACTH levels indicates secondary adrenal insufficiency. This suggests pituitary dysfunction with inadequate ACTH production, leading to adrenal atrophy from chronic understimulation. Primary adrenal insufficiency would have high ACTH levels due to loss of negative feedback, while complete adrenal destruction would show no response to ACTH stimulation."
+            }
+        ];
+
+        // Function to shuffle an array (Fisher-Yates algorithm)
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+            }
+        }
+
+        // Function to toggle explanation visibility and highlight correct answer
+        function toggleExplanation(button) {
+            const questionCard = button.closest('.question-card');
+            const explanationSection = questionCard.querySelector('.explanation-section');
+            const options = questionCard.querySelectorAll('.option-item');
+
+            // Toggle visibility of explanation
+            explanationSection.classList.toggle('hidden');
+
+            // Toggle button text
+            if (explanationSection.classList.contains('hidden')) {
+                button.textContent = 'Show Explanation';
+                // Remove highlight when explanation is hidden
+                options.forEach(option => {
+                    option.classList.remove('correct-answer');
+                });
+            } else {
+                button.textContent = 'Hide Explanation';
+                // Highlight the correct answer
+                options.forEach(option => {
+                    if (option.dataset.isCorrect === 'true') {
+                        option.classList.add('correct-answer');
+                    }
+                });
+            }
+        }
+
+        // Generate quiz questions on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const quizQuestionsContainer = document.getElementById('quiz-questions');
+
+            questionsData.forEach((q, index) => {
+                // Create question card
+                const questionCard = document.createElement('div');
+                questionCard.classList.add('question-card');
+
+                // Add question title
+                const questionTitle = document.createElement('h2');
+                questionTitle.textContent = `Question ${index + 1}: ${q.question}`;
+                questionCard.appendChild(questionTitle);
+
+                // Create options list
+                const optionsList = document.createElement('ul');
+                optionsList.classList.add('options-list');
+
+                // Shuffle options for the current question
+                shuffleArray(q.options);
+
+                // Add options to the list
+                q.options.forEach(option => {
+                    const optionItem = document.createElement('li');
+                    optionItem.classList.add('option-item');
+                    optionItem.textContent = option.text;
+                    // Store correct status as a data attribute for easy access
+                    optionItem.dataset.isCorrect = option.isCorrect;
+                    optionsList.appendChild(optionItem);
+                });
+                questionCard.appendChild(optionsList);
+
+                // Add "Show Explanation" button
+                const showExplanationBtn = document.createElement('button');
+                showExplanationBtn.classList.add('show-explanation-btn');
+                showExplanationBtn.textContent = 'Show Explanation';
+                showExplanationBtn.addEventListener('click', () => toggleExplanation(showExplanationBtn));
+                questionCard.appendChild(showExplanationBtn);
+
+                // Add explanation section (initially hidden)
+                const explanationSection = document.createElement('div');
+                explanationSection.classList.add('explanation-section', 'hidden');
+                explanationSection.textContent = `Explanation: ${q.explanation}`;
+                questionCard.appendChild(explanationSection);
+
+                // Append the complete question card to the container
+                quizQuestionsContainer.appendChild(questionCard);
+            });
+        });
+    </script>
+</body>
+</html>
