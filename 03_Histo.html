@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Endocrine System Histology Quiz</title>
+    <!-- Tailwind CSS is included via a script for easy, single-file distribution. -->
+    <!-- This allows for modern styling without requiring a build step or external CSS files. -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* A simple style to make the transition smoother */
+        .explanation {
+            transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+        .explanation.visible {
+            max-height: 1000px; /* A large enough value to accommodate any explanation text */
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans text-gray-800">
+
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8 max-w-4xl">
+        <header class="text-center mb-8">
+            <h1 class="text-3xl sm:text-4xl font-bold text-gray-900">Endocrine System Histology Quiz</h1>
+            <p class="text-gray-600 mt-2">USMLE Step 1 Practice Questions</p>
+        </header>
+
+        <!-- The quiz questions will be dynamically inserted here by JavaScript -->
+        <main id="quiz-container" class="space-y-6">
+        </main>
+
+        <footer class="mt-12 text-center text-xs text-gray-500 px-4">
+            <p>Disclaimer: This file was created by Ktp, with assistance from AI tools (e.g., ChatGPT, Gemini, Claude, and Perplexity) for content generation and editing. Please double-check all information for accuracy and reliability.</p>
+        </footer>
+    </div>
+
+    <script>
+        // --- DATA ---
+        // All questions, options, and explanations are stored in this array of objects.
+        // This makes the quiz easy to manage and update.
+        const quizData = [
+            {
+                question: "What percentage of the pituitary gland is composed of the adenohypophysis?",
+                options: ["50%", "60%", "70%", "75%", "80%"],
+                correctAnswer: "75%",
+                explanation: "The adenohypophysis comprises 75% of the pituitary gland, making it the dominant portion. This large proportion reflects its extensive secretory functions, housing multiple cell types that produce different anterior pituitary hormones. The remaining 25% consists of the neurohypophysis. The other percentages are incorrect and do not reflect the actual anatomical distribution."
+            },
+            {
+                question: "Which embryonic structure gives rise to the adenohypophysis?",
+                options: ["Neural crest cells", "Rathke's pouch", "Neurohypophyseal bud", "Third pharyngeal pouch", "Fourth pharyngeal pouch"],
+                correctAnswer: "Rathke's pouch",
+                explanation: "The adenohypophysis develops from Rathke's pouch, which is derived from pharyngeal ectoderm. This explains why the anterior pituitary is epithelial in nature. Neural crest cells give rise to various structures but not the adenohypophysis. The neurohypophyseal bud gives rise to the posterior pituitary. The third and fourth pharyngeal pouches are involved in parathyroid gland development, not pituitary development."
+            },
+            {
+                question: "What is the characteristic feature that makes corpora arenacea (brain sand) useful in clinical imaging?",
+                options: ["They fluoresce under UV light", "They contain calcium and magnesium concretions", "They produce contrast enhancement", "They emit radioactive signals", "They have magnetic properties"],
+                correctAnswer: "They contain calcium and magnesium concretions",
+                explanation: "Corpora arenacea contain calcium and magnesium concretions, making them radiopaque and visible on imaging studies. These calcifications serve as useful radiological landmarks for determining midline position of the pineal gland. They do not fluoresce, produce contrast enhancement, emit radioactive signals, or have magnetic properties that would be clinically useful for imaging purposes."
+            },
+            {
+                question: "Which cells in the thyroid gland are responsible for calcitonin secretion?",
+                options: ["Follicular cells", "Thyrocytes", "Parafollicular cells", "Colloid cells", "Capsular fibroblasts"],
+                correctAnswer: "Parafollicular cells",
+                explanation: "Parafollicular cells (C cells) secrete calcitonin and are derived from neural crest cells. They are located between follicles or within the follicular epithelium and are larger and paler than thyrocytes. Follicular cells and thyrocytes are the same cells that produce thyroid hormones T3 and T4, not calcitonin. Colloid cells do not exist as a distinct cell type, and capsular fibroblasts are structural support cells."
+            },
+            {
+                question: "In the adrenal cortex, which zone is responsible for aldosterone production?",
+                options: ["Zona glomerulosa", "Zona fasciculata", "Zona reticularis", "Zona intermedia", "Zona compacta"],
+                correctAnswer: "Zona glomerulosa",
+                explanation: "The zona glomerulosa is the outermost cortical zone that produces mineralocorticoids, primarily aldosterone, which regulates sodium reabsorption in the distal convoluted tubules. The zona fasciculata produces glucocorticoids like cortisol, while the zona reticularis produces weak androgens. Zona intermedia and zona compacta are not recognized divisions of the adrenal cortex."
+            },
+            {
+                question: "A 45-year-old patient presents with visual field defects showing bitemporal hemianopia. Which anatomical relationship best explains this clinical finding?",
+                options: ["Pineal gland compression of the superior colliculus", "Thyroid enlargement compressing the recurrent laryngeal nerve", "Pituitary tumor compressing the optic chiasm", "Adrenal mass compressing the inferior vena cava", "Parathyroid adenoma compressing the esophagus"],
+                correctAnswer: "Pituitary tumor compressing the optic chiasm",
+                explanation: "Bitemporal hemianopia is the classic visual field defect caused by compression of the optic chiasm, where crossing fibers from the nasal retina are affected. The pituitary gland lies directly beneath the optic chiasm in the sella turcica, making pituitary tumors a common cause of this specific visual field defect. The other anatomical relationships would not produce bitemporal hemianopia, as they involve different structures and would cause different symptoms."
+            },
+            {
+                question: "A patient with diabetes insipidus would most likely have damage to which specific part of the pituitary gland?",
+                options: ["Pars distalis of the adenohypophysis", "Pars intermedia of the adenohypophysis", "Pars tuberalis of the adenohypophysis", "Pars nervosa of the neurohypophysis", "Infundibular stalk only"],
+                correctAnswer: "Pars nervosa of the neurohypophysis",
+                explanation: "Diabetes insipidus results from ADH deficiency, and ADH is stored and released from the pars nervosa (posterior pituitary). Damage to this region would directly impair ADH release, leading to the inability to concentrate urine. The adenohypophysis components (pars distalis, intermedia, and tuberalis) do not produce or store ADH. While infundibular stalk damage could contribute, the pars nervosa is the primary storage and release site for ADH."
+            },
+            {
+                question: "A histological section shows cells with abundant rough endoplasmic reticulum and active Golgi apparatus. These cells are arranged around spherical structures containing gelatinous material. The height of these cells appears columnar. What functional state does this morphology indicate?",
+                options: ["Inactive thyroid gland with low hormone demand", "Hyperactive thyroid gland with increased hormone synthesis", "Normal resting thyroid gland with baseline activity", "Thyroid gland undergoing involution", "Thyroid gland with impaired iodine uptake"],
+                correctAnswer: "Hyperactive thyroid gland with increased hormone synthesis",
+                explanation: "Columnar follicular cells with abundant RER and active Golgi apparatus indicate a hyperactive thyroid gland engaged in increased hormone synthesis. The cellular height directly correlates with gland activity - columnar cells indicate hyperactivity, while squamous cells suggest hypoactivity. The abundant synthetic organelles reflect increased thyroglobulin production and processing. An inactive gland would show squamous epithelium, normal resting glands would show cuboidal cells, and involution or impaired iodine uptake would not produce this hyperactive morphology."
+            },
+            {
+                question: "A 35-year-old woman presents with muscle cramps and positive Chvostek's sign. Laboratory studies show low serum calcium and elevated phosphate. Which cellular change would you most likely observe in the relevant endocrine gland?",
+                options: ["Increased oxyphil cells with acidophilic cytoplasm", "Decreased principal cells with pale cytoplasm", "Hyperplastic principal cells with darker cytoplasm", "Atrophic follicular cells with reduced colloid", "Enlarged chromaffin cells with increased granules"],
+                correctAnswer: "Decreased principal cells with pale cytoplasm",
+                explanation: "The clinical presentation suggests primary hypoparathyroidism with hypocalcemia and hyperphosphatemia. In primary hypoparathyroidism, the parathyroid glands are damaged or destroyed, leading to decreased principal cells with pale cytoplasm due to glandular atrophy and reduced synthetic activity. This contrasts with secondary hyperparathyroidism (seen in chronic kidney disease) where principal cells would be hyperplastic. Increased oxyphil cells, follicular cell changes, and chromaffin cell enlargement are not associated with hypoparathyroidism."
+            },
+            {
+                question: "An endocrinologist examining pancreatic tissue notes pale-staining cellular clusters that comprise approximately 1-2% of the organ's volume. Within these clusters, cells at the periphery appear different from those in the center. What functional relationship explains this spatial organization?",
+                options: ["Central cells inhibit peripheral cell function through paracrine signaling", "Peripheral cells provide structural support for central cells", "Peripheral glucagon-producing cells stimulate central insulin-producing cells", "Peripheral cells filter blood before it reaches central cells", "Central cells produce enzymes that activate peripheral cell hormones"],
+                correctAnswer: "Central cells inhibit peripheral cell function through paracrine signaling",
+                explanation: "This describes the islets of Langerhans, where β cells (insulin-producing) are centrally located and α cells (glucagon-producing) are at the periphery. The spatial organization facilitates functional regulation, as insulin from central β cells acts paracrinally to inhibit glucagon release from peripheral α cells, creating an important glucose homeostasis mechanism. This central-to-peripheral inhibition is the primary regulatory relationship. The other options do not accurately describe the physiological relationships between these cell types in pancreatic islets."
+            },
+            {
+                question: "A patient with Addison's disease shows weakness, hypotension, and hyperpigmentation. Histological examination of the adrenal glands would most likely reveal changes primarily affecting which cellular populations?",
+                options: ["Chromaffin cells in the medulla with decreased catecholamine granules", "All three cortical zones with inflammatory cell infiltration and atrophy", "Zona glomerulosa cells with selective hypertrophy and hyperplasia", "Zona fasciculata cells with increased lipid droplet accumulation", "Sympathetic neurons with axonal degeneration and reduced innervation"],
+                correctAnswer: "All three cortical zones with inflammatory cell infiltration and atrophy",
+                explanation: "Addison's disease is primary adrenocortical insufficiency affecting all cortical hormone production (aldosterone, cortisol, and androgens). Histologically, this would manifest as inflammatory infiltration and atrophy of all three cortical zones. The hyperpigmentation results from elevated ACTH due to loss of cortisol feedback inhibition. Chromaffin cells and sympathetic neurons are not primarily affected in Addison's disease, and selective zona glomerulosa hypertrophy or zona fasciculata lipid accumulation would not explain the comprehensive hormone deficiencies."
+            },
+            {
+                question: "A researcher studying circadian rhythm disruption in shift workers examines pineal gland biopsies. Which cellular feature would most directly correlate with impaired melatonin production in response to altered light-dark cycles?",
+                options: ["Increased corpora arenacea formation with enhanced calcification", "Astrocyte proliferation with glial scar formation in septa", "Pinealocyte nuclear changes with altered chromatin organization", "Vascular congestion with increased blood-brain barrier permeability", "Inflammatory cell infiltration with cytokine-mediated damage"],
+                correctAnswer: "Pinealocyte nuclear changes with altered chromatin organization",
+                explanation: "Melatonin production by pinealocytes is directly regulated by light-dark cycles through the retinohypothalamic tract. Disrupted circadian rhythms would most directly affect pinealocyte nuclear activity and chromatin organization, as these cells must respond to altered neural signals about light exposure. Increased corpora arenacea are age-related, not activity-related. Astrocyte proliferation, vascular changes, and inflammation would be secondary effects rather than direct responses to circadian disruption."
+            },
+            {
+                question: "A patient with suspected pheochromocytoma undergoes adrenal biopsy. The pathologist notes cells that stain brown with chromium salts and lack typical neuronal processes. These findings are most consistent with which developmental and functional characteristics?",
+                options: ["Neural crest origin with retained synaptic transmission capabilities", "Mesenchymal origin with autocrine signaling mechanisms", "Sympathetic neuron origin with modified neurotransmitter release", "Modified postganglionic sympathetic neurons without axons or dendrites", "Parasympathetic ganglion cells with altered cholinergic function"],
+                correctAnswer: "Modified postganglionic sympathetic neurons without axons or dendrites",
+                explanation: "Chromaffin cells are modified postganglionic sympathetic neurons that have lost their typical neuronal processes (axons and dendrites) but retain their neural crest origin and catecholamine-producing capability. The brown staining with chromium salts is diagnostic for catecholamine-containing granules. They are not mesenchymal in origin, are not typical sympathetic neurons with synapses, and are not parasympathetic. The 'modified postganglionic' description accurately captures their developmental relationship while explaining their unique morphology."
+            },
+            {
+                question: "A medical student observes that follicular cells in a thyroid biopsy show varying heights within the same specimen - some areas show columnar cells while others show squamous cells. The colloid also varies in consistency. What is the most likely explanation for this heterogeneous appearance?",
+                options: ["Sampling artifact from different anatomical regions of the gland", "Normal functional heterogeneity with different follicles in different activity states", "Early pathological changes indicating autoimmune thyroiditis", "Technical processing errors causing uneven tissue fixation", "Contamination with parathyroid tissue showing different cell types"],
+                correctAnswer: "Normal functional heterogeneity with different follicles in different activity states",
+                explanation: "Normal thyroid glands show functional heterogeneity, with different follicles operating at different activity levels simultaneously. This physiological variation allows for rapid response to changing metabolic demands. Some follicles may be actively synthesizing (columnar cells, thin colloid) while others are in storage phase (squamous cells, thick colloid). This is not an artifact, pathology, or technical error, but rather represents normal functional organization that allows flexible hormone production."
+            },
+            {
+                question: "A patient presents with severe hypercalcemia and bone pain. Parathyroid imaging shows enlarged glands with increased cellular activity. However, the patient also shows evidence of hypercortisolism. Which underlying mechanism best explains this complex endocrine presentation?",
+                options: ["Multiple endocrine neoplasia syndrome affecting multiple glands simultaneously", "Primary hyperparathyroidism causing secondary adrenal stimulation", "Ectopic PTH production from an adrenal tumor", "Paraneoplastic syndrome from a non-endocrine malignancy", "Drug-induced hyperactivation of both parathyroid and adrenal axes"],
+                correctAnswer: "Multiple endocrine neoplasia syndrome affecting multiple glands simultaneously",
+                explanation: "The combination of hyperparathyroidism and hypercortisolism in the context of enlarged parathyroid glands strongly suggests Multiple Endocrine Neoplasia (MEN) syndrome, which can affect multiple endocrine glands simultaneously through inherited mutations affecting endocrine cell growth regulation. Primary hyperparathyroidism does not typically cause adrenal stimulation, ectopic PTH from adrenal tumors would not cause parathyroid enlargement, and paraneoplastic syndromes typically involve ectopic hormone production rather than glandular enlargement."
+            },
+            {
+                question: "A researcher studying diabetes mellitus examines pancreatic islets from patients with different disease durations. In long-standing Type 1 diabetes, which histological finding would most specifically indicate the underlying pathophysiological mechanism?",
+                options: ["Generalized islet atrophy affecting all cell types equally", "Selective β cell loss with preserved α and δ cell populations", "Islet fibrosis with complete replacement by connective tissue", "Vascular changes with reduced capillary density throughout islets", "Inflammatory infiltrates with predominant neutrophil accumulation"],
+                correctAnswer: "Selective β cell loss with preserved α and δ cell populations",
+                explanation: "Type 1 diabetes is characterized by autoimmune destruction specifically targeting β cells while generally sparing α and δ cells. This selective loss explains why patients lose insulin production but may retain glucagon responses. Generalized atrophy would not explain the specificity of insulin deficiency, complete fibrosis would be a very late change, vascular changes are secondary, and neutrophilic inflammation is not characteristic of the autoimmune process in Type 1 diabetes."
+            },
+            {
+                question: "A patient with suspected growth hormone excess undergoes pituitary imaging and biopsy. The pathologist notes enlarged acidophilic cells with increased rough endoplasmic reticulum in a specific region of the adenohypophysis. Which additional histological feature would most strongly support the diagnosis of a functional somatotroph adenoma?",
+                options: ["Increased chromophobe population with mitotic figures", "Vascular proliferation with increased portal vessel density", "Monomorphic cellular population replacing normal architectural diversity", "Increased basophilic cells with enhanced secretory granules", "Fibrotic changes with reduced overall cellular density"],
+                correctAnswer: "Monomorphic cellular population replacing normal architectural diversity",
+                explanation: "A functional somatotroph adenoma would show a monomorphic population of enlarged, hyperactive acidophilic cells (somatotrophs) that replaces the normal diverse cellular architecture of the adenohypophysis. The loss of normal cellular diversity and replacement with a single, abnormally active cell type is characteristic of functional adenomas. Increased chromophobes, vascular changes, increased basophils, or fibrosis would not specifically indicate somatotroph adenoma."
+            },
+            {
+                question: "A patient with refractory hypertension undergoes evaluation for secondary causes. Adrenal venous sampling shows elevated aldosterone levels. Microscopic examination of an adrenal nodule reveals cells arranged in spherical clusters with abundant smooth endoplasmic reticulum and numerous mitochondria. Which additional finding would most definitively confirm the functional significance of this lesion?",
+                options: ["Increased lipofuscin pigment deposition in surrounding tissue", "Atrophy of the contralateral zona glomerulosa", "Hypertrophy of the adjacent zona fasciculata", "Increased chromaffin cell activity in the medulla", "Compensatory enlargement of the zona reticularis"],
+                correctAnswer: "Atrophy of the contralateral zona glomerulosa",
+                explanation: "Contralateral zona glomerulosa atrophy would confirm that the nodule is producing excess aldosterone, leading to suppression of the renin-angiotensin system and subsequent atrophy of the normal aldosterone-producing tissue in the opposite adrenal gland. This is a specific consequence of autonomous aldosterone production. Lipofuscin deposition is age-related, zona fasciculata hypertrophy would suggest cortisol excess, chromaffin cell changes would relate to catecholamine production, and zona reticularis enlargement would suggest androgen excess."
+            },
+            {
+                question: "A patient presents with a complex syndrome including diabetes insipidus, visual field defects, and anterior pituitary hormone deficiencies. MRI shows a sellar mass with suprasellar extension. Biopsy reveals inflammatory infiltrates disrupting normal pituitary architecture, but no obvious neoplastic cells. Which histological pattern would most specifically help differentiate between autoimmune hypophysitis and craniopharyngioma?",
+                options: ["Predominant lymphocytic infiltration with plasma cells and fibrosis", "Squamous epithelial nests with calcifications and cholesterol crystals", "Granulomatous inflammation with multinucleated giant cells", "Vascular proliferation with endothelial hyperplasia", "Neural tissue infiltration with glial cell proliferation"],
+                correctAnswer: "Squamous epithelial nests with calcifications and cholesterol crystals",
+                explanation: "Squamous epithelial nests with calcifications and cholesterol crystals are pathognomonic for craniopharyngioma, which arises from embryonic remnants of Rathke's pouch. Autoimmune hypophysitis would show predominantly lymphocytic infiltration with plasma cells and fibrosis but would lack the characteristic epithelial elements. Granulomatous inflammation might suggest other conditions, while vascular proliferation and neural infiltration are not specific for either condition."
+            },
+            {
+                question: "A research team studying metabolic syndrome examines pancreatic tissue from patients with different stages of Type 2 diabetes progression. They observe that in early disease, β cells show increased size and insulin granule density, while in advanced disease, β cells are decreased in number but α cells appear morphologically normal. Which physiological principle best explains this temporal progression of histological changes?",
+                options: ["Initial β cell hyperfunction followed by oxidative stress-induced apoptosis", "Progressive autoimmune destruction beginning with the most metabolically active cells", "Genetic programming causing predetermined β cell senescence over time", "Mechanical compression of β cells by expanding α cell populations", "Vascular insufficiency causing selective β cell ischemia in advanced disease"],
+                correctAnswer: "Initial β cell hyperfunction followed by oxidative stress-induced apoptosis",
+                explanation: "Type 2 diabetes progression involves initial β cell compensatory hyperfunction (increased size and insulin granules) attempting to overcome insulin resistance, followed by β cell exhaustion and apoptosis due to chronic metabolic stress, oxidative damage, and lipotoxicity. This is distinct from Type 1 diabetes (autoimmune), and the preservation of α cells argues against vascular causes or mechanical compression. The progression reflects metabolic stress rather than genetic programming alone."
+            }
+        ];
+
+        /**
+         * Shuffles an array in place using the Fisher-Yates (aka Knuth) shuffle algorithm.
+         * @param {Array} array The array to shuffle.
+         */
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]]; // ES6 destructuring swap
+            }
+        }
+
+        /**
+         * Generates and displays the quiz questions on the page.
+         */
+        function displayQuiz() {
+            const quizContainer = document.getElementById('quiz-container');
+            let quizHTML = '';
+
+            quizData.forEach((item, index) => {
+                // Create a copy of the options and shuffle them for random display order
+                const shuffledOptions = [...item.options];
+                shuffleArray(shuffledOptions);
+
+                // Generate the HTML for the answer buttons
+                const optionsHTML = shuffledOptions.map(option => `
+                    <button class="option-btn w-full text-left p-3 mb-2 border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-150 ease-in-out">
+                        ${option}
+                    </button>
+                `).join('');
+
+                // Generate the HTML for the entire question card
+                quizHTML += `
+                    <div class="question-card bg-white p-6 rounded-lg shadow-md" data-question-index="${index}">
+                        <p class="text-lg font-semibold mb-4 text-gray-800">${index + 1}. ${item.question}</p>
+                        <div class="options-container">
+                            ${optionsHTML}
+                        </div>
+                        <button class="toggle-explanation-btn mt-4 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                            Show Explanation
+                        </button>
+                        <div class="explanation mt-4 p-4 bg-gray-50 border-l-4 border-gray-300 rounded-r-lg text-gray-700">
+                            <p class="font-bold mb-2">Explanation:</p>
+                            <p>${item.explanation}</p>
+                        </div>
+                    </div>
+                `;
+            });
+
+            quizContainer.innerHTML = quizHTML;
+        }
+
+        /**
+         * Sets up event listeners for the "Show Explanation" buttons.
+         */
+        function setupEventListeners() {
+            const quizContainer = document.getElementById('quiz-container');
+
+            quizContainer.addEventListener('click', function(event) {
+                // We use event delegation to handle clicks on the buttons
+                if (event.target.classList.contains('toggle-explanation-btn')) {
+                    const button = event.target;
+                    const questionCard = button.closest('.question-card');
+                    const explanationDiv = questionCard.querySelector('.explanation');
+                    const options = questionCard.querySelectorAll('.option-btn');
+                    const questionIndex = parseInt(questionCard.dataset.questionIndex, 10);
+                    const correctAnswer = quizData[questionIndex].correctAnswer;
+
+                    // Toggle the visibility of the explanation
+                    const isVisible = explanationDiv.classList.toggle('visible');
+
+                    if (isVisible) {
+                        // If the explanation is now visible, highlight the correct answer
+                        button.textContent = 'Hide Explanation';
+                        options.forEach(option => {
+                            // Remove any previous highlights first
+                            option.classList.remove('bg-green-200', 'text-green-900', 'border-green-400', 'font-semibold');
+                            
+                            // Trim whitespace to ensure accurate comparison
+                            if (option.textContent.trim() === correctAnswer) {
+                                option.classList.add('bg-green-200', 'text-green-900', 'border-green-400', 'font-semibold');
+                            }
+                        });
+                    } else {
+                        // If the explanation is hidden, remove the highlight
+                        button.textContent = 'Show Explanation';
+                        options.forEach(option => {
+                            option.classList.remove('bg-green-200', 'text-green-900', 'border-green-400', 'font-semibold');
+                        });
+                    }
+                }
+            });
+        }
+
+        // --- INITIALIZATION ---
+        // Wait for the DOM to be fully loaded before running the script
+        document.addEventListener('DOMContentLoaded', () => {
+            displayQuiz();
+            setupEventListeners();
+        });
+    </script>
+
+</body>
+</html>
